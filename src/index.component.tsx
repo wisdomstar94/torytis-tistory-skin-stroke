@@ -7,6 +7,7 @@ import { AdRow } from "./components/content/ad-row/ad-row.component";
 import { NormalPageTitleRow } from "./components/content/normal-page-title-row/normal-page-title-row.component";
 import { CategoryPageTitleRow } from "./components/content/category-page-title-row/category-page-title-row.component";
 import { GuestbookPageTitleRow } from "./components/content/guestbook-page-title-row/guestbook-page-title-row.component";
+import { TagPageTitleRow } from "./components/content/tag-page-title-row/tag-page-title-row.component";
 
 export default function App() {
   return (
@@ -29,9 +30,9 @@ export default function App() {
             <NormalPageTitleRow />
             <CategoryPageTitleRow />
             <GuestbookPageTitleRow />
-            {/* 
-            <TagPageTitleRow /> */}
+            <TagPageTitleRow />
 
+            
           </ContentContainer>
         </s_t3>
       </body>

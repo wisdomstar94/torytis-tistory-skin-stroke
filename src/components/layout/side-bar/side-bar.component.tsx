@@ -289,7 +289,7 @@ export function SideBar() {
                         "last:mb-0",
                       )}>
                       <a 
-                        href="/notice"
+                        href="/guestbook"
                         className={classes(
                           "text-xs text-inherit decoration-transparent",
                           "hover:underline",
@@ -303,7 +303,7 @@ export function SideBar() {
                         "last:mb-0",
                       )}>
                       <a 
-                        href="/notice"
+                        href="/tag"
                         className={classes(
                           "text-xs text-inherit decoration-transparent",
                           "hover:underline",

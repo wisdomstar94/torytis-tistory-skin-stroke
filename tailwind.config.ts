@@ -45,6 +45,8 @@ const variantPlugin: PluginCreator = ({ addVariant }) => {
   addVariant('tt-body-index', '#tt-body-index &');
   addVariant('tt-body-category', '#tt-body-category &');
   addVariant('tt-body-guestbook', '#tt-body-guestbook &');
+  addVariant('tt-body-tag', '#tt-body-tag &');
+
   addVariant('my-show', '.my-show&');
   addVariant('my-hide', '.my-hide&');
 };
