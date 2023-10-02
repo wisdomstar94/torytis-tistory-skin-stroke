@@ -1,16 +1,16 @@
-function getPostsTotalCountText() {
-  const target = document.querySelector('.sidebar-element-row a.link_tit span.c_cnt');
+export function getPostsTotalCountText() {
+  const target = document.querySelector('.side-bar a.link_tit span.c_cnt');
   if (target === null) {
-    return 0;
+    return '0';
   }
   const text = target.textContent;
   if (text === null) {
-    return 0;
+    return '0';
   }
   return text;
 }
 
-function getCategoryCntText() {
+export function getCategoryCntText() {
   const pathnameSplit = location.pathname.split('/');
   const categoryName = decodeURIComponent(pathnameSplit[pathnameSplit.length - 1]).trim();
 

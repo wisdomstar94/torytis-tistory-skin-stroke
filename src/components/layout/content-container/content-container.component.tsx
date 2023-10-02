@@ -1,6 +1,7 @@
+import { ReactNode } from "react";
 import { classes } from "../../../functions/common/common";
 
-export function ContentContainer() {
+export function ContentContainer(props: { children: ReactNode }) {
   return (
     <>
       <section
@@ -12,7 +13,7 @@ export function ContentContainer() {
           "tt-body-page:mr-0 lg:tt-body-page:mr-[320px]",
         )}
         >
-        ...
+        { props.children }
       </section>
     </>
   );
