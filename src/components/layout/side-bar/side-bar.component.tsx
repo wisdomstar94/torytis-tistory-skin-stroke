@@ -10,8 +10,11 @@ export function SideBar() {
       <div
         className={classes(
           "sidebar-background",
-          "animation-300ms-both w-0 h-0 hidden fixed top-0 left-0 bg-black/70 z-[3] overflow-hidden",
-          "lg:animation-0ms-both",
+          "w-0 h-0 fixed top-0 left-0 bg-black/70 z-[3] overflow-hidden",
+          "block lg:hidden",
+          "animation-300ms-both lg:animation-0ms-both",
+          "my-show:animate-[sidebar-background-show_300ms_linear_0ms_1_normal_both]",
+          "my-hide:animate-[sidebar-background-hide_300ms_linear_0ms_1_normal_both]"
         )}
       />
 
@@ -22,6 +25,7 @@ export function SideBar() {
           "h-full block fixed top-0 z-[3] overflow-y-scroll border-r border-r-black bg-white box-border scrollbar-w-1 scrollbar-track-eee scrollbar-thumb-ccc",
           "transition-all-300ms lg:transition-none",
           "-left-[320px] lg:left-0",
+          "my-show:left-0",
           "w-full--40px mini:w-[320px]",
         )}>
         <nav

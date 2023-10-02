@@ -1,15 +1,3 @@
-.sidebar-background {
-  display: block;
-  animation-duration: 300ms;
-  animation-fill-mode: both;
-}
-.sidebar-background.my-show {
-  animation-name: sidebar-background-show;
-}
-.sidebar-background.my-hide {
-  animation-name: sidebar-background-hide;
-}
-
 @keyframes sidebar-background-show {
   0% {
     width: 100%;
@@ -43,8 +31,4 @@
     height: 0;
     opacity: 0;
   }
-}
-
-.side-bar.my-show {
-  left: 0;
 }

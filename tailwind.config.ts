@@ -42,6 +42,8 @@ const animationPlugin: PluginCreator = ({ addComponents }) => {
 
 const variantPlugin: PluginCreator = ({ addVariant }) => {
   addVariant('tt-body-page', '#tt-body-page &');
+  addVariant('my-show', '.my-show&');
+  addVariant('my-hide', '.my-hide&');
 };
 
 export default {
