@@ -2,6 +2,7 @@ import React from "react";
 import './index.scss';
 import { TopBar } from "./components/layout/top-bar/top-bar.component";
 import { SideBar } from "./components/layout/side-bar/side-bar.component";
+import { ContentContainer } from "./components/layout/content-container/content-container.component";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <s_t3>
           <TopBar />
           <SideBar />
+          <ContentContainer />
         </s_t3>
       </body>
     </html>

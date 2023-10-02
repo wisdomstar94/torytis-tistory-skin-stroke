@@ -40,6 +40,10 @@ const animationPlugin: PluginCreator = ({ addComponents }) => {
   });
 };
 
+const variantPlugin: PluginCreator = ({ addVariant }) => {
+  addVariant('tt-body-page', '#tt-body-page &');
+};
+
 export default {
   content: [
     './src/**/*.tsx', './src/**/*.scss', './src/**/*.ts',
@@ -60,6 +64,7 @@ export default {
     scrollbarThumbPlugin,
     transitionPlugin,
     animationPlugin,
+    variantPlugin,
   ],
 } satisfies Config
 
