@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hljs-ln-line.hljs-ln-numbers {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  text-align: center;
+  color: #ccc;
+  border-right: 1px solid #CCC;
+  vertical-align: top;
+  padding-right: 5px !important;
+  white-space: nowrap !important;
+
+  /* your custom style here */
+}
+
+.hljs-ln-line.hljs-ln-code {
+  white-space: pre-wrap !important;
+  padding-left: 8px;
+}
