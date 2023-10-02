@@ -1,16 +1,16 @@
 import { classes } from "../../../functions/common/common";
 
-export function NormalPageTitleRow() {
+export function CategoryPageTitleRow() {
   return (
     <>
       <div
         className={classes(
           "relative text-xl font-bold mb-9",
-          "hidden tt-body-index:block"
+          "hidden tt-body-category:block"
         )}>
-        <span className="normal-page-title-row-title"></span>
+        <span className="category-page-title-row-title"></span>
         <span>&nbsp;</span>
-        <span className="normal-page-title-row-count-info"></span>
+        <span className="category-page-title-row-count-info"></span>
       </div>
     </>
   );

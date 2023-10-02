@@ -232,7 +232,7 @@ export function SideBar() {
                         )}
                         type="text" 
                         name="[##_search_name_##]" 
-                        value="[##_search_text_##]" 
+                        tt-value="[##_search_text_##]" 
                         tt-onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }"
                         placeholder="검색어를 입력하세요."
                         />

@@ -5,6 +5,7 @@ import { SideBar } from "./components/layout/side-bar/side-bar.component";
 import { ContentContainer } from "./components/layout/content-container/content-container.component";
 import { AdRow } from "./components/content/ad-row/ad-row.component";
 import { NormalPageTitleRow } from "./components/content/normal-page-title-row/normal-page-title-row.component";
+import { CategoryPageTitleRow } from "./components/content/category-page-title-row/category-page-title-row.component";
 
 export default function App() {
   return (
@@ -25,7 +26,8 @@ export default function App() {
             <AdRow />
 
             <NormalPageTitleRow />
-            {/* <CategoryPageTitleRow />
+            <CategoryPageTitleRow />
+            {/* 
             <GuestbookPageTitleRow />
             <TagPageTitleRow /> */}
 
