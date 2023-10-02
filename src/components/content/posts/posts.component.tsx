@@ -1,6 +1,8 @@
 import { classes } from "../../../functions/common/common";
 import { PostsNormalIndexItem } from "../posts-normal-index-item/posts-normal-index-item.component";
 import { PostsNormalPermalinkItem } from "../posts-normal-permalink-item/posts-normal-permalink-item.component";
+import { PostsNoticeIndexItem } from "../posts-notice-index-item/posts-notice-index-item.component";
+import { PostsNoticePermalinkItem } from "../posts-notice-permalink-item/posts-notice-permalink-item.component";
 
 export function Posts() {
   return (
@@ -30,12 +32,12 @@ export function Posts() {
         <s_notice_rep>
           {/* index item */}
           <s_index_article_rep>
-
+            <PostsNoticeIndexItem />
           </s_index_article_rep>
 
           {/* permalink item */}
           <s_permalink_article_rep>
-
+            <PostsNoticePermalinkItem />
           </s_permalink_article_rep>
         </s_notice_rep>
 
