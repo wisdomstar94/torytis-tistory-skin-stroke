@@ -65,6 +65,25 @@ export default {
       screens: {
         'mini': '360px',
       },
+      backgroundColor: {
+        'eee': '#eee',
+      },
+      borderColor: {
+        'aaa': '#aaa',
+        'ccc': '#ccc',
+        'eee': '#eee',
+      },
+      fontSize: {
+        'none': '0',
+      },
+      textColor: {
+        '666': '#666',
+        '888': '#888',
+        'aaa': '#aaa',
+      },
+      stroke: {
+        '888': '#888',
+      },
     },
   },
   plugins: [

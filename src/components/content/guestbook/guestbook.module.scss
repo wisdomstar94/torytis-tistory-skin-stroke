@@ -1,0 +1,41 @@
+.tag-row {
+  display: block;
+  margin: 0;
+  margin-bottom: 4px;
+  padding: 0;
+  position: relative;
+  font-size: 0;
+}
+.tag-row > a {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  word-break: keep-all;
+  color: #000;
+  font-size: 12px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  text-decoration: none;
+  border-radius: 100px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 4px 12px;
+}
+.tag-row > a::before {
+  content: '#';
+}
+
+.time > a {
+  display: block;
+  color: #888;
+  text-decoration: none;
+}
+.time > a:hover {
+  text-decoration: underline;
+}
+.time > a::before {
+  content: '[';
+}
+.time > a::after {
+  content: ']';
+}
