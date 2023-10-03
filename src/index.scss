@@ -24,3 +24,9 @@
   white-space: pre-wrap !important;
   padding-left: 8px;
 }
+
+#tt-body-page .tt_article_useless_p_margin {
+  > ul, > ol {
+    padding-left: 28px;
+  }
+}
