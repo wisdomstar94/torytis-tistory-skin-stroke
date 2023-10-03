@@ -44,12 +44,14 @@ export function PostsNoticePermalinkItem() {
             "block m-0 p-0 relative",
           )}>
           [##_article_rep_desc_##]
+          <div 
+            dangerouslySetInnerHTML={{ 
+              __html: `
+                <script>disposePermalinkContent(true)</script>
+              `, 
+            }} 
+          />
         </div>
-        <div dangerouslySetInnerHTML={{ 
-          __html: `
-            <script>disposePermalinkContent(true)</script>
-          `, 
-          }} />
         <div 
           className={classes(
             "block h-px my-10 mx-0 p-0 relative",

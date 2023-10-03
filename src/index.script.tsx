@@ -7,6 +7,8 @@ if (isDarkMode()) {
 
 window.addEventListener('load', () => {
   disposePermalinkContent(false);
+  window.hljs.highlightAll();
+  window.hljs.initLineNumbersOnLoad();
 });
 
 function disposePermalinkContent(isExecute: boolean) {
@@ -14,11 +16,10 @@ function disposePermalinkContent(isExecute: boolean) {
     return;
   }
 
-  window.hljs.highlightAll();
-  window.hljs.initLineNumbersOnLoad();
-
   const permalinkContentDivElements = getPermalinkContentDivElements();
+  console.log('@permalinkContentDivElements', permalinkContentDivElements);
   permalinkContentDivElements.forEach(element => {
     element.style.backgroundColor = 'transparent';
+    element.style.opacity = '1';
   });
 }

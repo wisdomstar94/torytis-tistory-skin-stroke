@@ -31,6 +31,10 @@
   }
 }
 
+#tt-body-page .tt_article_useless_p_margin > div {
+  opacity: 0;
+}
+
 @media (prefers-color-scheme: dark) {
   #tt-body-page {
     .another_category {
