@@ -3,6 +3,8 @@ import { PostsNormalIndexItem } from "../posts-normal-index-item/posts-normal-in
 import { PostsNormalPermalinkItem } from "../posts-normal-permalink-item/posts-normal-permalink-item.component";
 import { PostsNoticeIndexItem } from "../posts-notice-index-item/posts-notice-index-item.component";
 import { PostsNoticePermalinkItem } from "../posts-notice-permalink-item/posts-notice-permalink-item.component";
+import { PostsProtectedIndexItem } from "../posts-protected-index-item/posts-protected-index-item.component";
+import { PostsProtectedPermalinkItem } from "../posts-protected-permalink-item/posts-protected-permalink-item.component";
 
 export function Posts() {
   return (
@@ -45,12 +47,12 @@ export function Posts() {
         <s_article_protected>
           {/* index item */}
           <s_index_article_rep>
-
+            <PostsProtectedIndexItem />
           </s_index_article_rep>
 
           {/* permalink item */}
           <s_permalink_article_rep>
-
+            <PostsProtectedPermalinkItem />
           </s_permalink_article_rep>
         </s_article_protected>
       </ul>
