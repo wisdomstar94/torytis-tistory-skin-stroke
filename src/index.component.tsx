@@ -25,11 +25,14 @@ export default function App() {
         <title>[##_page_title_##] :: [##_title_##]</title>
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js" defer></script>
         <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js" defer></script>
+        <s_if_var_google-adsense-script-url>
+          <script async src="[##_var_google-adsense-script-url_##]" crossOrigin="anonymous"></script>
+        </s_if_var_google-adsense-script-url>
       </head>
       <body id="[##_body_id_##]">
         <s_t3>
           <TopBar />
-          
+
           <SideBar />
 
           <ContentContainer>

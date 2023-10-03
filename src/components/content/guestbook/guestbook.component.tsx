@@ -129,7 +129,9 @@ export function Guestbook() {
                                 className={classes(
                                   "w-[54px] flex flex-wrap items-start justify-end relative",
                                 )}>
-                                <SvgArrowForward />                                
+                                <SvgArrowForward 
+                                  strokeColor="#aaa"
+                                  />                                
                               </div>
                               <div
                                 className={classes(
