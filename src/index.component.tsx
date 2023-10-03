@@ -10,6 +10,7 @@ import { GuestbookPageTitleRow } from "./components/content/guestbook-page-title
 import { TagPageTitleRow } from "./components/content/tag-page-title-row/tag-page-title-row.component";
 import { Posts } from "./components/content/posts/posts.component";
 import { Guestbook } from "./components/content/guestbook/guestbook.component";
+import { Tags } from "./components/content/tags/tags.component";
 
 export default function App() {
   return (
@@ -37,6 +38,8 @@ export default function App() {
             <Posts />
 
             <Guestbook />
+
+            <Tags />
           </ContentContainer>
         </s_t3>
       </body>
