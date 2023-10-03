@@ -108,3 +108,46 @@ export function getPermalinkContentDivElements() {
   htmlCollection.forEach(item => elements.push(item));
   return elements;
 }
+
+export function getPermalinkContentPElements() {
+  const elements: HTMLDivElement[] = [];
+  const htmlCollection = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > p');
+  htmlCollection.forEach(item => elements.push(item));
+  return elements;
+}
+
+export function getPermalinkContentDivSpanElements() {
+  const elements: HTMLDivElement[] = [];
+  const divSpans = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > div > span');
+  divSpans.forEach(element => elements.push(element));
+  return elements;
+}
+
+export function getPermalinkContentHeadingElements() {
+  const elements: HTMLDivElement[] = [];
+  {
+    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > h1');
+    targets.forEach(element => elements.push(element));
+  }
+  {
+    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > h2');
+    targets.forEach(element => elements.push(element));
+  }
+  {
+    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > h3');
+    targets.forEach(element => elements.push(element));
+  }
+  {
+    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > h4');
+    targets.forEach(element => elements.push(element));
+  }
+  {
+    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > h5');
+    targets.forEach(element => elements.push(element));
+  }
+  {
+    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > h6');
+    targets.forEach(element => elements.push(element));
+  }
+  return elements;
+}

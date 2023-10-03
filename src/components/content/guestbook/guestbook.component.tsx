@@ -32,9 +32,9 @@ export function Guestbook() {
                     <div
                       className={classes(
                         "w-full border-r-0 mb-1",
-                        "md:w-[170px]",
+                        "md:w-[190px]",
                         "lg:w-full",
-                        "xl:w-[170px]",
+                        "xl:w-[190px]",
                       )}>
                       <div
                         className={classes(

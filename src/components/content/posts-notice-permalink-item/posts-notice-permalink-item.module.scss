@@ -40,12 +40,12 @@
   content: ']';
 }
 
-@media (prefers-color-scheme: dark) {
-  .tag-row > a {
-    border: 1px solid #fff;
-    color: #fff;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   .tag-row > a {
+//     border: 1px solid #fff;
+//     color: #fff;
+//   }
+// }
 .dark {
   .tag-row > a {
     border: 1px solid #fff;

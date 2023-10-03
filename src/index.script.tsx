@@ -1,4 +1,4 @@
-import { getPermalinkContentDivElements, getPostsIndexItemLiElements } from "./functions/element/element";
+import { getPermalinkContentDivElements, getPermalinkContentDivSpanElements, getPermalinkContentHeadingElements, getPermalinkContentPElements, getPostsIndexItemLiElements } from "./functions/element/element";
 import { isDarkMode } from "./functions/logic/logic";
 
 if (isDarkMode()) {
@@ -18,10 +18,29 @@ function disposePermalinkContent(isExecute: boolean) {
   }
 
   const permalinkContentDivElements = getPermalinkContentDivElements();
-  console.log('@permalinkContentDivElements', permalinkContentDivElements);
   permalinkContentDivElements.forEach(element => {
     element.style.backgroundColor = 'transparent';
     element.style.opacity = '1';
+  });
+
+  const permalinkContentPElements = getPermalinkContentPElements();
+  permalinkContentPElements.forEach(element => {
+    if (Array.from<string>(['#000', '#000000', 'rgb(0, 0, 0)']).includes(element.style.color)) {
+      element.style.color = 'inherit';
+    }
+  });
+
+  const permalinkContentDivSpanElements = getPermalinkContentDivSpanElements();
+  permalinkContentDivSpanElements.forEach(element => {
+    element.style.backgroundColor = 'transparent';
+    element.style.opacity = '1';
+  });
+
+  const permalinkContentHeadingElements = getPermalinkContentHeadingElements();
+  permalinkContentHeadingElements.forEach(element => {
+    if (Array.from<string>(['#000', '#000000', 'rgb(0, 0, 0)']).includes(element.style.color)) {
+      element.style.color = 'inherit';
+    }
   });
 }
 

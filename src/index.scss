@@ -25,21 +25,65 @@
   padding-left: 8px;
 }
 
-#tt-body-page .tt_article_useless_p_margin {
-  > ul, > ol {
-    padding-left: 28px;
-  }
-}
+// #tt-body-page .tt_article_useless_p_margin {
+//   > ul, > ol {
+//     padding-left: 28px;
+//   }
+// }
 
-#tt-body-page .tt_article_useless_p_margin > div {
-  opacity: 0;
+#tt-body-page {
+  .tt_article_useless_p_margin {
+    > div {
+      opacity: 0;
+
+      > span {
+        opacity: 0;
+      }
+    }
+
+    > ul, > ol {
+      padding-left: 28px;
+    }
+
+    > h1, > h2, > h3, > h4, > h5, > h6 {
+      margin-top: 12px;
+      margin-bottom: 4px;
+    }
+
+    > p {
+      margin-bottom: 4px;
+    }
+  }
 }
 
 // body * {
 //   @apply transition-colors duration-300;
 // }
 
-@media (prefers-color-scheme: dark) {
+// @media (prefers-color-scheme: dark) {
+//   #tt-body-page {
+//     .another_category {
+//       h4 {
+//         color: #fff !important;
+
+//         a {
+//           color: #fff !important;
+//         }
+//       }
+
+//       table {
+//         th, td {
+//           color: #fff !important;
+
+//           a, span {
+//             color: #fff !important;
+//           }
+//         }
+//       }
+//     }
+//   } 
+// }
+.dark {
   #tt-body-page {
     .another_category {
       h4 {
@@ -60,26 +104,45 @@
         }
       }
     }
-  } 
-}
-.dark {
-  #tt-body-page {
-    .another_category {
-      h4 {
-        color: #fff !important;
 
-        a {
-          color: #fff !important;
+    .tt_article_useless_p_margin {
+      > figure.fileblock {
+        .filename {
+          color: #ccc !important;
         }
       }
 
-      table {
-        th, td {
-          color: #fff !important;
+      > pre[data-ke-type='codeblock'] {
+        border: 1px solid #fff;
+        padding: 8px;
 
-          a, span {
+        code.hljs {
+          background-color: transparent;
+
+          table {
             color: #fff !important;
+
+            td {
+              > span {
+                color: #fff !important;
+              }
+            }
           }
+        }
+      }
+
+      > blockquote {
+        &[data-ke-style='style1'] {
+          color: #ccc !important; 
+        }
+
+        &[data-ke-style='style2'] {
+          color: #ccc !important; 
+        }
+
+        &[data-ke-style='style3'] {
+          background-color: transparent;
+          color: #ccc !important; 
         }
       }
     }

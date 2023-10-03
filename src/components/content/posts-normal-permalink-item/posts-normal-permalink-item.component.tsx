@@ -93,9 +93,9 @@ export function PostsNormalPermalinkItem() {
                       <div 
                         className={classes(
                           "w-full border-r-0 mb-1",
-                          "md:w-[170px]",
+                          "md:w-[190px]",
                           "lg:w-full",
-                          "xl:w-[170px]",
+                          "xl:w-[190px]",
                         )}>
                         <div
                           className={classes(
@@ -248,6 +248,7 @@ export function PostsNormalPermalinkItem() {
                                   "w-full box-border text-xs block relative",
                                   "flex-auto md:flex-1 lg:flex-auto xl:flex-1",
                                   "pl-14 md:pl-3 lg:pl-14 xl:pl-3",
+                                  "mt-2 md:mt-0 lg:mt-2 xl:mt-0",
                                 )}>
                                 <div>[##_rp_rep_desc_##]</div>
                                 <div

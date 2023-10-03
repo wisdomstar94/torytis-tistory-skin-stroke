@@ -22,23 +22,23 @@
 
 
 
-@media (prefers-color-scheme: dark) {
-  .num-a {
-    border: 1px solid #fff;
-    background-color: #000;
-    color: #fff;
-  }
-  .num-a:hover {
-    background-color: #333;
-  }
-  .num-a > span {
-    // ...
-  }
-  .num-a > span.selected {
-    background-color: #fff;
-    color: #000;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   .num-a {
+//     border: 1px solid #fff;
+//     background-color: #000;
+//     color: #fff;
+//   }
+//   .num-a:hover {
+//     background-color: #333;
+//   }
+//   .num-a > span {
+//     // ...
+//   }
+//   .num-a > span.selected {
+//     background-color: #fff;
+//     color: #000;
+//   }
+// }
 .dark {
   .num-a {
     border: 1px solid #fff;
