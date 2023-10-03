@@ -3,7 +3,7 @@ export function SvgSetting() {
     <>
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        className="icon icon-tabler icon-tabler-settings stroke-888" 
+        className="icon icon-tabler icon-tabler-settings" 
         // style="stroke: #888;" 
         width="24" 
         height="24" 

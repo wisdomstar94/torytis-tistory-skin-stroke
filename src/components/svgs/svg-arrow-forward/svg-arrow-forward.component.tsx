@@ -1,4 +1,4 @@
-export function SvgArrowForward(props?: { strokeColor?: string }) {
+export function SvgArrowForward() {
   return (
     <>
       <svg 
@@ -8,7 +8,7 @@ export function SvgArrowForward(props?: { strokeColor?: string }) {
         height="24" 
         viewBox="0 0 24 24" 
         strokeWidth="2" 
-        stroke={props.strokeColor ?? 'currentColor'}
+        stroke="currentColor"
         fill="none" 
         strokeLinecap="round" 
         strokeLinejoin="round">

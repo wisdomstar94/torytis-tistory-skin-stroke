@@ -39,3 +39,16 @@
 .time > a::after {
   content: ']';
 }
+
+@media (prefers-color-scheme: dark) {
+  .tag-row > a {
+    border: 1px solid #fff;
+    color: #fff;
+  }
+}
+.dark {
+  .tag-row > a {
+    border: 1px solid #fff;
+    color: #fff;
+  }
+}

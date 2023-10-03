@@ -1,7 +1,7 @@
 import { classes } from "../../../functions/common/common";
 import { SvgArrowForward } from "../../svgs/svg-arrow-forward/svg-arrow-forward.component";
 import { SwitchButton } from "../../switch-button/switch-button.component";
-import styles from './posts-normal-permalink-item.module.scss';
+import './posts-normal-permalink-item.scss';
 
 export function PostsNormalPermalinkItem() {
   return (
@@ -9,6 +9,7 @@ export function PostsNormalPermalinkItem() {
       <li
         className={classes(
           "w-full block m-0 p-0 relative list-none",
+          "text-black dark:text-white dark-c:text-white",
         )}>
         <div
           className={classes(
@@ -17,7 +18,7 @@ export function PostsNormalPermalinkItem() {
           [##_article_rep_title_##]
         </div>
         <div 
-          className={classes(styles['tag-row'])}>
+          className={classes('tag-row')}>
           <s_tag_label>
             [##_tag_label_rep_##]
           </s_tag_label>
@@ -34,14 +35,29 @@ export function PostsNormalPermalinkItem() {
           )}>
           작성자: [##_article_rep_author_##]
         </div>
-        <div className={classes("block h-px bg-black my-10 mx-0 p-0 relative")} />
+        <div 
+          className={classes(
+            "block h-px my-10 mx-0 p-0 relative",
+            "bg-black dark:bg-white dark-c:bg-white",
+          )} 
+          />
         <div
           className={classes(
             "block m-0 p-0 relative",
           )}>
           [##_article_rep_desc_##]
         </div>
-        <div className={classes("block h-px bg-black my-10 mx-0 p-0 relative")} />
+        <div dangerouslySetInnerHTML={{ 
+          __html: `
+            <script>disposePermalinkContent(true)</script>
+          `, 
+          }} />
+        <div 
+          className={classes(
+            "block h-px my-10 mx-0 p-0 relative",
+            "bg-black dark:bg-white dark-c:bg-white",
+          )} 
+          />
         <div 
           className={classes(
             "comment-row",
@@ -68,8 +84,9 @@ export function PostsNormalPermalinkItem() {
                     )}>
                     <div
                       className={classes(
-                        "w-full flex items-stretch justify-start box-border p-4 border-b border-b-black",
+                        "w-full flex items-stretch justify-start box-border p-4 border-b",
                         "flex-wrap md:flex-nowrap lg:flex-wrap xl:flex-nowrap",
+                        "border-b-black dark:border-b-white dark-c:border-b-white",
                       )}>
                       <div 
                         className={classes(
@@ -103,14 +120,15 @@ export function PostsNormalPermalinkItem() {
                             )}>
                             <div
                               className={classes(
-                                "block text-xs text-black mb-1",
+                                "block text-xs mb-1",
                               )}>
                               [##_rp_rep_name_##]
                             </div>
                             <div
                               className={classes(
-                                styles['time'],
-                                "block text-xs text-888 mb-1",
+                                'time',
+                                "block text-xs mb-1",
+                                "text-888 dark:text-ccc dark-c:text-ccc",
                               )}>
                               [##_rp_rep_date_##]
                             </div>
@@ -131,7 +149,7 @@ export function PostsNormalPermalinkItem() {
                             href="#" 
                             tt-onclick="[##_rp_rep_onclick_reply_##]"
                             className={classes(
-                              "inline-block mr-1 cursor-pointer decoration-transparent text-black relative",
+                              "inline-block mr-1 cursor-pointer decoration-transparent relative",
                               "hover:underline",
                             )}
                             >
@@ -141,7 +159,7 @@ export function PostsNormalPermalinkItem() {
                             href="#" 
                             tt-onclick="[##_rp_rep_onclick_delete_##]"
                             className={classes(
-                              "inline-block mr-1 cursor-pointer decoration-transparent text-black relative",
+                              "inline-block mr-1 cursor-pointer decoration-transparent relative",
                               "hover:underline",
                             )}
                             >
@@ -174,10 +192,9 @@ export function PostsNormalPermalinkItem() {
                                 <div
                                   className={classes(
                                     "w-[54px] flex flex-wrap items-start justify-end relative",
+                                    "stroke-aaa",
                                   )}>
-                                  <SvgArrowForward
-                                    strokeColor="#aaa"
-                                    />                                  
+                                  <SvgArrowForward />                  
                                 </div>
                                 <div
                                   className={classes(
@@ -185,7 +202,8 @@ export function PostsNormalPermalinkItem() {
                                   )}>
                                   <div
                                     className={classes(
-                                      "w-full flex flex-wrap items-start justify-start relative",
+                                      "w-full flex items-start justify-start relative",
+                                      "flex-wrap md:flex-nowrap lg:flex-wrap xl:flex-nowrap",
                                     )}>
                                     <div
                                       className={classes(
@@ -207,13 +225,15 @@ export function PostsNormalPermalinkItem() {
                                       )}>
                                       <div 
                                         className={classes(
-                                          "block text-xs text-black mb-1 relative",
+                                          "block text-xs mb-1 relative",
                                         )}>
                                         [##_rp_rep_name_##]
                                       </div>
                                       <div 
                                         className={classes(
-                                          "block text-xs text-888 mb-1 relative",
+                                          'time',
+                                          "block text-xs mb-1 relative",
+                                          "text-888 dark:text-ccc dark-c:text-ccc",
                                         )}>
                                         [##_rp_rep_date_##]
                                       </div>
@@ -263,7 +283,8 @@ export function PostsNormalPermalinkItem() {
               <div
                 className={classes(
                   "comment-list-empty",
-                  "w-full text-xs text-aaa mb-3 relative hidden",
+                  "w-full text-xs mb-3 relative hidden",
+                  "text-aaa",
                 )}>
                 등록된 댓글이 없습니다.
               </div>
@@ -280,18 +301,19 @@ export function PostsNormalPermalinkItem() {
                     )}>
                     <div
                       className={classes(
-                        "w-full block text-sm text-black mb-1 relative",
+                        "w-full block text-sm mb-1 relative",
                       )}>
                       <label htmlFor="[##_rp_input_name_##]">이름</label>
                     </div>
                     <div
                       className={classes(
-                        "w-full block text-xs text-black relative",
+                        "w-full block text-xs relative",
                       )}>
                       <input 
                         type="text" 
                         className={classes(
-                          "w-full inline-block border border-black rounded-none px-2 py-1.5 text-xs text-black box-border h-[30px]",
+                          "w-full inline-block border rounded-none px-2 py-1.5 text-xs box-border h-[30px]",
+                          "border-black dark:border-white dark-c:border-white",
                         )}
                         id="[##_rp_input_name_##]" 
                         name="[##_rp_input_name_##]" 
@@ -304,18 +326,19 @@ export function PostsNormalPermalinkItem() {
                     )}>
                     <div
                       className={classes(
-                        "w-full block text-sm text-black mb-1 relative",
+                        "w-full block text-sm mb-1 relative",
                       )}>
                       <label htmlFor="[##_rp_input_password_##]">비밀번호</label>
                     </div>
                     <div
                       className={classes(
-                        "w-full block text-xs text-black relative",
+                        "w-full block text-xs relative",
                       )}>
                       <input 
                         type="password" 
                         className={classes(
-                          "w-full inline-block border border-black rounded-none px-2 py-1.5 text-xs text-black box-border h-[30px]",
+                          "w-full inline-block border rounded-none px-2 py-1.5 text-xs box-border h-[30px]",
+                          "border-black dark:border-white dark-c:border-white",
                         )}
                         id="[##_rp_input_password_##]" 
                         name="[##_rp_input_password_##]" 
@@ -332,13 +355,13 @@ export function PostsNormalPermalinkItem() {
                     )}>
                     <div
                       className={classes(
-                        "w-full block text-sm text-black mb-1 relative",
+                        "w-full block text-sm mb-1 relative",
                       )}>
                       <label htmlFor="">비밀글</label>
                     </div>
                     <div
                       className={classes(
-                        "w-full block text-xs text-black relative",
+                        "w-full block text-xs relative",
                       )}>
                       <SwitchButton 
                         id={"[##_rp_input_is_secret_##]"} 
@@ -355,19 +378,22 @@ export function PostsNormalPermalinkItem() {
                   >
                   <div
                     className={classes(
-                      "w-full block text-sm text-black mb-1 relative",
+                      "w-full block text-sm mb-1 relative",
                     )}>
                     <label htmlFor="[##_rp_input_comment_##]">내용</label>
                   </div>
                   <div 
                     className={classes(
-                      "w-full block text-xs text-black relative",
+                      "w-full block text-xs relative",
                     )}>
                     <textarea 
                       id="[##_rp_input_comment_##]" 
                       className={classes(
-                        "w-full inline-block border border-black rounded-none px-2 py-1.5 text-xs text-black min-h-[180px] max-h-[180px] box-border",
-                        "focus:outline-2 focus:outline-black focus:outline-offset-1",
+                        "w-full inline-block border rounded-none px-2 py-1.5 text-xs min-h-[180px] max-h-[180px] box-border",
+                        "focus:outline-2 focus:outline-offset-1",
+                        "border-black dark:border-white dark-c:border-white",
+                        "focus:outline-black dark:focus:outline-white dark-c:focus:outline-white",
+                        "dark:bg-transparent dark-c:bg-transparent",
                       )} 
                       name="[##_rp_input_comment_##]"
                       ></textarea>
@@ -381,7 +407,10 @@ export function PostsNormalPermalinkItem() {
                   >
                   <button 
                     className={classes(
-                      "inline-flex flex-wrap text-white text-sm font-bold px-6 py-2.5 m-0 border-0 bg-black cursor-pointer box-border decoration-transparent",
+                      "inline-flex flex-wrap text-sm font-bold px-6 py-2.5 m-0 border cursor-pointer box-border decoration-transparent",
+                      "border-black dark:border-white dark-c:border-white",
+                      "bg-black",
+                      "text-white",
                     )}
                     type="submit" 
                     tt-onclick="[##_rp_onclick_submit_##]">

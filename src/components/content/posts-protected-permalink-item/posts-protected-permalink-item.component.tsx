@@ -6,6 +6,7 @@ export function PostsProtectedPermalinkItem() {
       <li
         className={classes(
           "w-full block m-0 p-0 relative list-none",
+          "text-black dark:text-white dark-c:text-white",
         )}>
         <div
           className={classes(
@@ -25,7 +26,12 @@ export function PostsProtectedPermalinkItem() {
           )}>
           작성자: [##_article_rep_author_##]
         </div>
-        <div className={classes("block h-px bg-black my-10 mx-0 p-0 relative")} />
+        <div 
+          className={classes(
+            "block h-px my-10 mx-0 p-0 relative",
+            "bg-black dark:bg-white dark-c:bg-white",
+          )} 
+          />
         <div
           className={classes(
             "block m-0 p-0 relative",
@@ -36,7 +42,8 @@ export function PostsProtectedPermalinkItem() {
             )}>
             <div
               className={classes(
-                "block text-xs text-888 mb-10",
+                "block text-xs mb-10",
+                "text-888 dark:text-ccc dark-c:text-ccc",
               )}>
               보호되어 있는 글입니다. 내용을 보시려면 비밀번호를 입력하세요.
             </div>
@@ -55,18 +62,19 @@ export function PostsProtectedPermalinkItem() {
                   )}>
                   <div
                     className={classes(
-                      "w-full block text-sm text-black mb-1",
+                      "w-full block text-sm mb-1",
                     )}>
                     <label htmlFor="[##_article_password_##]">비밀번호</label>
                   </div>
                   <div
                     className={classes(
-                      "w-full block text-xs text-black relative",
+                      "w-full block text-xs relative",
                     )}>
                     <input 
                       type="password" 
                       className={classes(
-                        "w-full inline-block border border-black rounded-none px-2 py-1.5 text-xs text-black box-border h-[30px]",
+                        "w-full inline-block border rounded-none px-2 py-1.5 text-xs box-border h-[30px]",
+                        "border-black dark:border-white dark-c:border-white",
                       )}
                       id="[##_article_password_##]" 
                       name="[##_article_password_##]" 
@@ -82,7 +90,8 @@ export function PostsProtectedPermalinkItem() {
                   )}>
                   <button 
                     className={classes(
-                      "inline-flex flex-wrap text-white text-sm font-bold px-6 py-2.5 m-0 border-0 bg-black cursor-pointer box-border decoration-transparent",
+                      "inline-flex flex-wrap text-white text-sm font-bold px-6 py-2.5 m-0 bg-black cursor-pointer box-border decoration-transparent",
+                      "border-black dark:border-white dark-c:border-white",
                     )}
                     type="submit" 
                     tt-onclick="[##_article_dissolve_##]">
@@ -93,7 +102,12 @@ export function PostsProtectedPermalinkItem() {
             </div>
           </div>
         </div>
-        <div className={classes("block h-px bg-black my-10 mx-0 p-0 relative")} />
+        <div 
+          className={classes(
+            "block h-px my-10 mx-0 p-0 relative",
+            "bg-black dark:bg-white dark-c:bg-white",
+          )} 
+          />
       </li>
     </>
   );

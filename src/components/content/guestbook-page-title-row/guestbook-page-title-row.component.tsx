@@ -6,7 +6,9 @@ export function GuestbookPageTitleRow() {
       <div 
         className={classes(
           "relative text-xl font-bold mb-9",
-          "hidden tt-body-guestbook:block"
+          "hidden tt-body-guestbook:block",
+
+          "text-black dark:text-white dark-c:text-white",
         )}>
         방명록
       </div>

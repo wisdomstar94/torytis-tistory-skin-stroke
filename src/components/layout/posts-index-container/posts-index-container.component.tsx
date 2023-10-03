@@ -6,9 +6,14 @@ export function PostsIndexContainer() {
       <aside
         className={classes(
           "posts-index-container",
-          "w-[320px] h-full m-0 py-10 px-6 fixed top-0 right-0 box-border border-l border-l-black overflow-y-scroll",
-          "scrollbar-w-1 scrollbar-track-eee scrollbar-thumb-ccc",
-          "hidden tt-body-page:hidden tt-body-page:lg:block"
+          "w-[320px] h-full m-0 py-10 px-6 fixed top-0 right-0 box-border border-l overflow-y-scroll",
+          "scrollbar-w-1",
+          "hidden tt-body-page:hidden tt-body-page:lg:block",
+
+          "text-black dark:text-white dark-c:text-white",
+          "border-l-black dark:border-l-white dark-c:border-l-white",
+          "scrollbar-track-eee dark:scrollbar-track-333 dark-c:scrollbar-track-333",
+          "scrollbar-thumb-ccc dark:scrollbar-thumb-888 dark-c:scrollbar-thumb-888",
         )}>
         <div
           className={classes(

@@ -11,12 +11,17 @@ const scrollbarWidthPlugin: PluginCreator = ({ addComponents }) => {
 const scrollbarTrackColorPlugin: PluginCreator = ({ addComponents }) => {
   addComponents({
     '.scrollbar-track-eee::-webkit-scrollbar-track': { 'background-color': '#eee' },
+    '.scrollbar-track-333::-webkit-scrollbar-track': { 'background-color': '#333' },
+    '.scrollbar-track-666::-webkit-scrollbar-track': { 'background-color': '#666' },
+    '.scrollbar-track-888::-webkit-scrollbar-track': { 'background-color': '#888' },
   });
 };
 
 const scrollbarThumbPlugin: PluginCreator = ({ addComponents }) => {
   addComponents({
     '.scrollbar-thumb-ccc::-webkit-scrollbar-thumb': { 'background-color': '#ccc' },
+    '.scrollbar-thumb-333::-webkit-scrollbar-thumb': { 'background-color': '#333' },
+    '.scrollbar-thumb-888::-webkit-scrollbar-thumb': { 'background-color': '#888' },
   });
 };
 
@@ -59,9 +64,12 @@ const variantPlugin: PluginCreator = ({ addVariant }) => {
   addVariant('parent-active', '.active > &');
   addVariant('my-show', '.my-show&');
   addVariant('my-hide', '.my-hide&');
+
+  addVariant('dark-c', '.dark &');
 };
 
 export default {
+  darkMode: 'media',
   content: [
     './src/**/*.tsx', './src/**/*.scss', './src/**/*.ts',
   ],
@@ -86,11 +94,17 @@ export default {
       },
       textColor: {
         '666': '#666',
+        '777': '#777',
         '888': '#888',
+        '999': '#999',
         'aaa': '#aaa',
+        'bbb': '#bbb',
+        'ccc': '#ccc',
+        'ddd': '#ddd',
       },
       stroke: {
         '888': '#888',
+        'aaa': '#aaa',
       },
     },
   },

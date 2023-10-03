@@ -9,6 +9,7 @@ export function Guestbook() {
       <div
         className={classes(
           "block m-0 p-0 relative",
+          "text-black dark:text-white dark-c:text-white",
         )}>
         <s_guest>
           <s_guest_container>
@@ -24,7 +25,8 @@ export function Guestbook() {
                   )}>
                   <div
                     className={classes(
-                      "w-full flex items-stretch justify-start box-border p-4 border-b border-b-black",
+                      "w-full flex items-stretch justify-start box-border p-4 border-b",
+                      "border-b-black dark:border-b-white dark-c:border-b-white",
                       "flex-wrap md:flex-nowrap lg:flex-wrap xl:flex-nowrap",
                     )}>
                     <div
@@ -59,14 +61,14 @@ export function Guestbook() {
                           )}>
                           <div 
                             className={classes(
-                              "block text-xs text-black mb-1 relative",
+                              "block text-xs mb-1 relative",
                             )}>
                             [##_guest_rep_name_##]
                           </div>
                           <div 
                             className={classes(
                               styles['time'],
-                              "block text-xs text-black mb-1 relative",
+                              "block text-xs mb-1 relative",
                             )}>
                             [##_guest_rep_date_##]
                           </div>
@@ -86,7 +88,7 @@ export function Guestbook() {
                         <a 
                           href="#" 
                           className={classes(
-                            "inline-block mr-1 cursor-pointer decoration-transparent text-black",
+                            "inline-block mr-1 cursor-pointer decoration-transparent",
                             "hover:underline",
                           )}
                           tt-onclick="[##_guest_rep_onclick_reply_##]">
@@ -95,7 +97,7 @@ export function Guestbook() {
                         <a 
                           href="#" 
                           className={classes(
-                            "inline-block mr-1 cursor-pointer decoration-transparent text-black",
+                            "inline-block mr-1 cursor-pointer decoration-transparent",
                             "hover:underline",
                           )}
                           tt-onclick="[##_guest_rep_onclick_delete_##]">
@@ -128,10 +130,9 @@ export function Guestbook() {
                               <div 
                                 className={classes(
                                   "w-[54px] flex flex-wrap items-start justify-end relative",
+                                  "stroke-aaa"
                                 )}>
-                                <SvgArrowForward 
-                                  strokeColor="#aaa"
-                                  />                                
+                                <SvgArrowForward />
                               </div>
                               <div
                                 className={classes(
@@ -161,14 +162,14 @@ export function Guestbook() {
                                     )}>
                                     <div 
                                       className={classes(
-                                        "block text-xs text-black mb-1",
+                                        "block text-xs mb-1",
                                       )}>
                                       [##_guest_rep_name_##]
                                     </div>
                                     <div 
                                       className={classes(
                                         styles['time'],
-                                        "block text-xs text-black mb-1",
+                                        "block text-xs mb-1",
                                       )}>
                                       [##_guest_rep_date_##]
                                     </div>
@@ -191,7 +192,7 @@ export function Guestbook() {
                                 <a 
                                   href="#" 
                                   className={classes(
-                                    "inline-block mr-1 cursor-pointer decoration-transparent text-black",
+                                    "inline-block mr-1 cursor-pointer decoration-transparent",
                                     "hover:underline",
                                   )}
                                   tt-onclick="[##_guest_rep_onclick_reply_##]">
@@ -200,7 +201,7 @@ export function Guestbook() {
                                 <a 
                                   href="#" 
                                   className={classes(
-                                    "inline-block mr-1 cursor-pointer decoration-transparent text-black",
+                                    "inline-block mr-1 cursor-pointer decoration-transparent",
                                     "hover:underline",
                                   )}
                                   tt-onclick="[##_guest_rep_onclick_delete_##]">
@@ -229,18 +230,18 @@ export function Guestbook() {
                   )}>
                   <div
                     className={classes(
-                      "w-full block text-sm text-black mb-1",
+                      "w-full block text-sm mb-1",
                     )}>
                     <label htmlFor="[##_guest_input_name_##]">이름</label>
                   </div>
                   <div 
                     className={classes(
-                      "w-full block text-xs text-black relative",
+                      "w-full block text-xs relative",
                     )}>
                     <input 
                       type="text" 
                       className={classes(
-                        "w-full inline-block border border-black rounded-none px-2 py-1.5 text-xs text-black box-border h-[30px]",
+                        "w-full inline-block border border-black rounded-none px-2 py-1.5 text-xs box-border h-[30px]",
                       )}
                       id="[##_guest_input_name_##]" 
                       name="[##_guest_input_name_##]" 
@@ -254,18 +255,18 @@ export function Guestbook() {
                   )}>
                   <div
                     className={classes(
-                      "w-full block text-sm text-black mb-1",
+                      "w-full block text-sm mb-1",
                     )}>
                     <label htmlFor="[##_guest_input_password_##]">비밀번호</label>
                   </div>
                   <div 
                     className={classes(
-                      "w-full block text-xs text-black relative",
+                      "w-full block text-xs relative",
                     )}>
                     <input 
                       type="password" 
                       className={classes(
-                        "w-full inline-block border border-black rounded-none px-2 py-1.5 text-xs text-black box-border h-[30px]",
+                        "w-full inline-block border border-black rounded-none px-2 py-1.5 text-xs box-border h-[30px]",
                       )}
                       id="[##_guest_input_password_##]" 
                       name="[##_guest_input_password_##]" 
@@ -281,13 +282,13 @@ export function Guestbook() {
                   )}>
                   <div
                     className={classes(
-                      "w-full block text-sm text-black mb-1",
+                      "w-full block text-sm mb-1",
                     )}>
                     <label htmlFor="">비밀글</label>
                   </div>
                   <div 
                     className={classes(
-                      "w-full block text-xs text-black relative",
+                      "w-full block text-xs relative",
                     )}>
                     <SwitchButton
                       id="[##_rp_input_is_secret_##]"
@@ -303,19 +304,22 @@ export function Guestbook() {
                 )}>
                 <div
                   className={classes(
-                    "w-full block text-sm text-black mb-1",
+                    "w-full block text-sm mb-1",
                   )}>
                   <label htmlFor="[##_guest_input_comment_##]">내용</label>
                 </div>
                 <div 
                   className={classes(
-                    "w-full block text-xs text-black relative",
+                    "w-full block text-xs relative",
                   )}>
                   <textarea 
                     id="[##_guest_input_comment_##]" 
                     className={classes(
-                      "w-full inline-block border border-black rounded-none px-2 py-1.5 text-xs text-black min-h-[180px] max-h-[180px] box-border",
-                      "focus:outline-2 focus:outline-black focus:outline-offset-1",
+                      "w-full inline-block border rounded-none px-2 py-1.5 text-xs min-h-[180px] max-h-[180px] box-border",
+                      "focus:outline-2 focus:outline-offset-1",
+                      "border-black dark:border-white dark-c:border-white",
+                      "focus:outline-black dark:focus:outline-white dark-c:focus:outline-white",
+                      "dark:bg-transparent dark-c:bg-transparent",
                     )} 
                     name="[##_guest_input_comment_##]"></textarea>
                 </div>
@@ -326,7 +330,8 @@ export function Guestbook() {
                 )}>
                 <button 
                   className={classes(
-                    "inline-flex flex-wrap text-white text-sm font-bold px-6 py-2.5 m-0 border-0 bg-black cursor-pointer box-border decoration-transparent",
+                    "inline-flex flex-wrap text-white text-sm font-bold px-6 py-2.5 m-0 bg-black cursor-pointer box-border decoration-transparent",
+                    "border-black dark:border-white dark-c:border-white",
                   )}
                   type="submit" 
                   tt-onclick="[##_guest_onclick_submit_##]">

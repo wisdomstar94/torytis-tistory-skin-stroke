@@ -24,29 +24,37 @@ export function SwitchButton(props: {
         <div 
           className={classes(
             "switch-button-body",
-            "inline-flex w-[96px] h-[32px] relative box-border border border-black rounded-[100px] cursor-pointer",
-            "active:bg-black"
+            "inline-flex w-[96px] h-[32px] relative box-border border rounded-[100px] cursor-pointer",
+            "border-black dark:border-white dark-c:border-white",
+            "active:bg-black dark:active:bg-white dark-c:active:bg-white",
           )}
           >
           <div
             className={classes(
               "w-[62px] h-full left-0 top-0 absolute",
-              "flex items-center justify-center text-xs leading-3 text-white",
+              "items-center justify-center text-xs leading-3",
+              "hidden parent-active:flex",
+              "text-white dark:text-black dark-c:text-black",
             )}>
             ON
           </div>
           <div
             className={classes(
               "w-[62px] h-full right-0 top-0 absolute",
-              "flex items-center justify-center text-xs leading-3 text-black",
+              "items-center justify-center text-xs leading-3",
+              "flex parent-active:hidden",
+              "text-black dark:text-white dark-c:text-white",
             )}>
             OFF
           </div>
           <div
             className={classes(
               "w-[30px] h-[24px] block box-border rounded-full",
-              "border border-black absolute top-[3px] left-[4px] bg-white",
+              "border absolute top-[3px] left-[4px]",
               "parent-active:!top-[3px] parent-active:!left-[62px]",
+
+              "border-black dark:border-white dark-c:border-white dark:parent-active:border-black dark-c:parent-active:border-black",
+              "bg-white dark:parent-active:bg-black dark-c:parent-active:bg-black",
             )}>
 
           </div>

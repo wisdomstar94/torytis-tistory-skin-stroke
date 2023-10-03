@@ -8,8 +8,10 @@ export function PostsNoticeIndexItem() {
         // posts-index-item
         className={classes(
           "posts-index-item",
-          "w-full h-auto border border-solid border-black cursor-pointer relative",
-          "hover:outline-2 hover:outline-black hover:outline",
+          "w-full h-auto border border-solid cursor-pointer relative",
+          "hover:outline-2 hover:outline",
+          "hover:outline-black dark:hover:outline-white dark-c:outline-white",
+          "border-black dark:border-white dark-c:border-white",
         )}
         >
         <a 
@@ -21,8 +23,10 @@ export function PostsNoticeIndexItem() {
           <div
             className={classes(
               "w-full block min-h-[180px] aspect-video relative",
-              "border-b border-b-black bg-no-repeat bg-center bg-contain",
+              "border-b bg-no-repeat bg-center bg-contain",
               "bg-[url('./images/tistory_logo_image.png')]",
+              "border-b-black dark:border-b-white dark-c:border-b-white",
+              "text-black dark:text-white dark-c:text-white",
             )}
             >
             <s_notice_rep_thumbnail>
@@ -39,7 +43,9 @@ export function PostsNoticeIndexItem() {
           </div>
           <div
             className={classes(
-              "w-full block m-0 p-5 relative box-border bg-white",
+              "w-full block m-0 p-5 relative box-border",
+              "bg-white dark:bg-black dark-c:bg-black",
+              "text-black dark:text-white dark-c:text-white",
             )}>
             <div
               className={classes(

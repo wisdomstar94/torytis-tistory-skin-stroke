@@ -22,11 +22,16 @@ export function SideBar() {
       <aside
         className={classes(
           "side-bar",
-          "h-full block fixed top-0 z-[3] overflow-y-scroll border-r border-r-black bg-white box-border scrollbar-w-1 scrollbar-track-eee scrollbar-thumb-ccc",
+          "h-full block fixed top-0 z-[3] overflow-y-scroll border-r border-r-black box-border scrollbar-w-1",
           "transition-all-300ms lg:transition-none",
           "-left-[320px] lg:left-0",
           "my-show:left-0",
           "w-full--40px mini:w-[320px]",
+
+          "bg-white dark:bg-black dark-c:bg-black",
+          "dark:text-white dark-c:text-white",
+          "scrollbar-track-eee dark:scrollbar-track-333 dark-c:scrollbar-track-333",
+          "scrollbar-thumb-ccc dark:scrollbar-thumb-888 dark-c:scrollbar-thumb-888",
         )}>
         <nav
           // side-bar-content
@@ -43,6 +48,7 @@ export function SideBar() {
               href="/manage/post"
               className={classes(
                 "inline-flex relative top-2 right-2 ml-4",
+                "stroke-888 dark:stroke-white dark-c:stroke-white",
               )}>
               <SvgPencil />
             </a>
@@ -51,6 +57,7 @@ export function SideBar() {
               href="/manage" 
               className={classes(
                 "inline-flex relative top-2 right-2 ml-4",
+                "stroke-888 dark:stroke-white dark-c:stroke-white",
               )}>
               <SvgSetting />
             </a>
@@ -66,6 +73,7 @@ export function SideBar() {
                 <div
                   className={classes(
                     "w-full flex flex-wrap text-xl font-bold text-left items-center justify-start relative",
+                    "dark:text-white dark-c:text-white",
                   )}>
                   <a href="/">[##_title_##]</a>
                 </div> 
@@ -75,7 +83,8 @@ export function SideBar() {
               <tt_html_comment>카테고리</tt_html_comment>
               <div
                 className={classes(
-                  "block relative mb-6 border-b border-b-black border-solid",
+                  "block relative mb-6 border-b border-solid",
+                  "border-b-black dark:border-white dark-c:border-white",
                 )}>
                 <div
                   className={classes(
@@ -102,7 +111,8 @@ export function SideBar() {
               <tt_html_comment>방문자 수</tt_html_comment>
               <div
                 className={classes(
-                  "block relative mb-6 border-b border-b-black border-solid",
+                  "block relative mb-6 border-b border-solid",
+                  "border-b-black dark:border-white dark-c:border-white",
                 )}>
                 <div
                   className={classes(
@@ -123,21 +133,39 @@ export function SideBar() {
                         "block m-0 p-0 relative list-none",
                       )}>
                       <span>전체 :&nbsp;</span>
-                      <span className={classes("text-666")}>[##_count_total_##]</span>
+                      <span 
+                        className={classes(
+                          "text-666 dark:text-ddd dark-c:text-bbb",
+                        )}
+                        >
+                        [##_count_total_##]
+                      </span>
                     </li>
                     <li
                       className={classes(
                         "block m-0 p-0 relative list-none",
                       )}>
                       <span>오늘 :&nbsp;</span>
-                      <span className={classes("text-666")}>[##_count_today_##]</span>
+                      <span 
+                        className={classes(
+                          "text-666 dark:text-ddd dark-c:text-bbb",
+                        )}
+                        >
+                        [##_count_today_##]
+                      </span>
                     </li>
                     <li
                       className={classes(
                         "block m-0 p-0 relative list-none",
                       )}>
                       <span>어제 :&nbsp;</span>
-                      <span className={classes("text-666")}>[##_count_yesterday_##]</span>
+                      <span 
+                        className={classes(
+                          "text-666 dark:text-ddd dark-c:text-bbb",
+                        )}
+                        >
+                        [##_count_yesterday_##]
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -147,7 +175,8 @@ export function SideBar() {
               <tt_html_comment>최근 댓글</tt_html_comment>
               <div
                 className={classes(
-                  "block relative mb-6 border-b border-b-black border-solid",
+                  "block relative mb-6 border-b border-solid",
+                  "border-b-black dark:border-white dark-c:border-white",
                 )}>
                 <div
                   className={classes(
@@ -175,13 +204,15 @@ export function SideBar() {
                           )}>
                           <span
                             className={classes(
-                              "inline-block mr-0.5 text-666"
+                              "inline-block mr-0.5",
+                              "text-666 dark:text-bbb dark-c:text-bbb",
                             )}>
                             [##_rctrp_rep_name_##]
                           </span>
                           <span
                             className={classes(
-                              "inline-block text-666"
+                              "inline-block",
+                              "text-666 dark:text-bbb dark-c:text-bbb",
                             )}>
                             ([##_rctrp_rep_time_##])
                           </span>
@@ -208,7 +239,8 @@ export function SideBar() {
               <tt_html_comment>검색</tt_html_comment>
               <div
                 className={classes(
-                  "block relative mb-6 border-b border-b-black border-solid",
+                  "block relative mb-6 border-b border-solid",
+                  "border-b-black dark:border-white dark-c:border-white",
                 )}>
                 <div
                   className={classes(
@@ -228,7 +260,10 @@ export function SideBar() {
                       <input
                         className={classes(
                           "w-full flex-1 py-1.5 px-2.5 m-0 box-border relative",
-                          "border border-solid border-black rounded-none text-xs",
+                          "border border-solid rounded-none text-xs",
+
+                          "dark:bg-transparent dark-c:bg-transparent",
+                          "border-black dark:border-white dark-c:border-white",
                         )}
                         type="text" 
                         name="[##_search_name_##]" 
@@ -238,8 +273,10 @@ export function SideBar() {
                         />
                       <button 
                         className={classes(
-                          "w-[52px] ml-1 bg-black flex justify-center items-center",
-                          "text-white cursor-pointer border-0 text-xs",
+                          "w-[52px] ml-1 bg-black flex justify-center items-center box-border",
+                          "text-white cursor-pointer border text-xs",
+
+                          "border-black dark:border-white dark-c:border-white",
                         )}
                         tt-onclick="[##_search_onclick_submit_##]">
                         찾기
@@ -253,7 +290,8 @@ export function SideBar() {
               <tt_html_comment>블로그</tt_html_comment>
               <div
                 className={classes(
-                  "block relative mb-6 border-b border-b-black border-solid",
+                  "block relative mb-6 border-b border-solid",
+                  "border-b-black dark:border-white dark-c:border-white",
                 )}>
                 <div
                   className={classes(
@@ -319,7 +357,8 @@ export function SideBar() {
               <tt_html_comment>최근 공지사항</tt_html_comment>
               <div
                 className={classes(
-                  "block relative mb-6 border-b border-b-black border-solid",
+                  "block relative mb-6 border-b border-solid",
+                  "border-b-black dark:border-white dark-c:border-white",
                 )}>
                 <div
                   className={classes(

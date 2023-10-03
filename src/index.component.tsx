@@ -14,10 +14,14 @@ import { Tags } from "./components/content/tags/tags.component";
 import { Pagination } from "./components/content/pagination/pagination.component";
 import { AdRowLower } from "./components/content/ad-row-lower/ad-row-lower.component";
 import { PostsIndexContainer } from "./components/layout/posts-index-container/posts-index-container.component";
+import { classes } from "./functions/common/common";
 
 export default function App() {
   return (
-    <html lang="ko">
+    <html 
+      lang="ko" 
+      // className="dark"
+      >
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scale=1.0, user-scalable=no" />
@@ -29,7 +33,12 @@ export default function App() {
           <script async src="[##_var_google-adsense-script-url_##]" crossOrigin="anonymous"></script>
         </s_if_var_google-adsense-script-url>
       </head>
-      <body id="[##_body_id_##]">
+      <body 
+        id="[##_body_id_##]"
+        className={classes(
+          "dark:bg-black dark-c:bg-black",
+        )}
+        >
         <s_t3>
           <TopBar />
 

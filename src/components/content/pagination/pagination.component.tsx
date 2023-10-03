@@ -8,6 +8,7 @@ export function Pagination() {
       <div 
         className={classes(
           "block m-0 mt-4 p-0 relative",
+          "text-black dark:text-white dark-c:text-white",
         )}>
         <s_paging>
           <div 

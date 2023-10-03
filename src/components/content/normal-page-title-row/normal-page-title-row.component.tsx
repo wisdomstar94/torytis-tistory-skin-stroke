@@ -6,7 +6,9 @@ export function NormalPageTitleRow() {
       <div
         className={classes(
           "relative text-xl font-bold mb-9",
-          "hidden tt-body-index:block"
+          "hidden tt-body-index:block",
+
+          "text-black dark:text-white dark-c:text-white",
         )}>
         <span className="normal-page-title-row-title"></span>
         <span>&nbsp;</span>

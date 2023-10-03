@@ -13,8 +13,11 @@ export function Tags() {
               href="[##_tag_link_##]" 
               rel="tag"
               className={classes(
-                "inline-flex flex-nowrap whitespace-nowrap break-all text-black text-xs border border-black",
+                "inline-flex flex-nowrap whitespace-nowrap break-all text-xs border",
                 "box-border decoration-transparent rounded-full mr-2 mb-2 px-3 py-1 cursor-pointer",
+
+                "border-black dark:border-white dark-c:border-white",
+                "text-black dark:text-white dark-c:text-white",
               )}>
               #[##_tag_name_##]
             </a>

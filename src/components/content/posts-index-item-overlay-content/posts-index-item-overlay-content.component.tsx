@@ -13,8 +13,14 @@ export function PostsIndexItemOverlayContent() {
         <div 
           className={classes(
             "new-post-symbol",
-            "w-[80px] relative bg-black justify-center items-center overflow-hidden",
+            "w-[80px] relative bg-black justify-center items-center overflow-hidden box-border",
             "hidden my-show:inline-flex",
+
+            // "border-black dark:border-white dark-c:border-white",
+            "dark:outline-white dark-c:outline-white",
+            "dark:outline dark-c:outline",
+            "dark:outline-4 dark-c:outline-4",
+            "dark:outline-offset-0 dark-c:outline-offset-0",
           )}
           >
           <div 

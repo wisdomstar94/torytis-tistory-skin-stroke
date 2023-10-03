@@ -101,3 +101,10 @@ export function getPostsIndexItemLiElements() {
   document.querySelectorAll<HTMLLIElement>('ul.posts-list li.posts-index-item').forEach(item => lis.push(item));
   return lis;
 }
+
+export function getPermalinkContentDivElements() {
+  const elements: HTMLDivElement[] = [];
+  const htmlCollection = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > div');
+  htmlCollection.forEach(item => elements.push(item));
+  return elements;
+}

@@ -30,3 +30,50 @@
     padding-left: 28px;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  #tt-body-page {
+    .another_category {
+      h4 {
+        color: #fff !important;
+
+        a {
+          color: #fff !important;
+        }
+      }
+
+      table {
+        th, td {
+          color: #fff !important;
+
+          a, span {
+            color: #fff !important;
+          }
+        }
+      }
+    }
+  } 
+}
+.dark {
+  #tt-body-page {
+    .another_category {
+      h4 {
+        color: #fff !important;
+
+        a {
+          color: #fff !important;
+        }
+      }
+
+      table {
+        th, td {
+          color: #fff !important;
+
+          a, span {
+            color: #fff !important;
+          }
+        }
+      }
+    }
+  } 
+}

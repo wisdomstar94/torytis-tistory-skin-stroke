@@ -79,7 +79,6 @@ window.addEventListener('load', () => {
 });
 
 function getItemElement(text: string, className: string) {
-  console.log('@getItemElement.text', text);
   const li = document.createElement('li');
   li.classList.add(
     "posts-index-item",
@@ -98,8 +97,8 @@ function getItemElement(text: string, className: string) {
 
   const span = document.createElement('span');
   span.classList.add(
-    "text-aaa",
-    "parent-active:text-black",
+    "text-aaa", "dark:text-777", "dark-c:text-777",
+    "parent-active:text-black", "dark:parent-active:text-white", "dark-c:parent-active:text-white",
   );
   span.textContent = text;
 
@@ -126,7 +125,7 @@ function getEmptyItemElement() {
 
   const span = document.createElement('span');
   span.classList.add(
-    "text-aaa",
+    "text-aaa", "dark:text-ccc", "dark-c:text-ccc",
   );
   span.textContent = '표시할 목차가 없습니다.';
 

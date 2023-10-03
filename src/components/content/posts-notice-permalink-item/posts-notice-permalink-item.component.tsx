@@ -7,6 +7,7 @@ export function PostsNoticePermalinkItem() {
       <li
         className={classes(
           "w-full block m-0 p-0 relative list-none",
+          "text-black dark:text-white dark-c:text-white",
         )}>
         <div
           className={classes(
@@ -32,14 +33,29 @@ export function PostsNoticePermalinkItem() {
           )}>
           작성자: [##_article_rep_author_##]
         </div>
-        <div className={classes("block h-px bg-black my-10 mx-0 p-0 relative")} />
+        <div 
+          className={classes(
+            "block h-px my-10 mx-0 p-0 relative",
+            "bg-black dark:bg-white dark-c:bg-white",
+          )} 
+          />
         <div
           className={classes(
             "block m-0 p-0 relative",
           )}>
           [##_article_rep_desc_##]
         </div>
-        <div className={classes("block h-px bg-black my-10 mx-0 p-0 relative")} />
+        <div dangerouslySetInnerHTML={{ 
+          __html: `
+            <script>disposePermalinkContent(true)</script>
+          `, 
+          }} />
+        <div 
+          className={classes(
+            "block h-px my-10 mx-0 p-0 relative",
+            "bg-black dark:bg-white dark-c:bg-white",
+          )} 
+          />
       </li>
     </>
   );

@@ -7,6 +7,8 @@ export function AdRowLower() {
       <div 
         className={classes(
           "w-full block relative box-border",
+
+          "text-black dark:text-white dark-c:text-white",
         )}
         >
         [##_revenue_list_lower_##]

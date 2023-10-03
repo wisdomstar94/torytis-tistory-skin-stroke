@@ -6,7 +6,9 @@ export function CategoryPageTitleRow() {
       <div
         className={classes(
           "relative text-xl font-bold mb-9",
-          "hidden tt-body-category:block"
+          "hidden tt-body-category:block",
+
+          "text-black dark:text-white dark-c:text-white",
         )}>
         <span className="category-page-title-row-title"></span>
         <span>&nbsp;</span>

@@ -7,6 +7,8 @@ export function AdRowUpper() {
       <div 
         className={classes(
           "w-full block relative box-border",
+
+          "text-black dark:text-white dark-c:text-white",
         )}
         >
         [##_revenue_list_upper_##]
