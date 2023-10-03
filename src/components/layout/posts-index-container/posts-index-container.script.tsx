@@ -51,15 +51,6 @@ window.addEventListener('load', () => {
   }
   postsIndexCheck();
 
-  getPostsIndexItemLiElements().forEach(element => {
-    const datetimeString = element.querySelector('.info-row .time-row .only-text')?.textContent;
-    if (typeof datetimeString !== 'string') return;
-    const date = new Date(datetimeString);
-    if (isNaN(date.getFullYear())) return;
-    if (Date.now() - date.getTime() > (1000 * 60 * 60 * 24 * 2)) return;
-    element.querySelector('.overlay-info-area .new-post-symbol')?.classList.add('show');
-  });
-
   window.addEventListener('scroll', () => {
     postsIndexCheck();
   });

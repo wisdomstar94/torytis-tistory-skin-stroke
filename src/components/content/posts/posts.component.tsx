@@ -12,6 +12,7 @@ export function Posts() {
       <ul
         // posts-list
         className={classes(
+          "posts-list",
           "w-full grid m-0 p-0 relative items-stretch gap-5",
           "md:grid-cols-2",
           "2xl:grid-cols-4",

@@ -2,7 +2,6 @@ import { getSidebar, getSidebarBackground, getSidebarShowButton } from "../../..
 
 window.addEventListener('load', () => {
   const sidebarShowButton = getSidebarShowButton();
-  console.log('@sidebarShowButton', sidebarShowButton);
   sidebarShowButton.addEventListener('click', () => {
     const sidebar = getSidebar();
     if (sidebar !== null) {

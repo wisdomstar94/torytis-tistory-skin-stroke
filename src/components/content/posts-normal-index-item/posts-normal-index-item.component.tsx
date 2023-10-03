@@ -1,4 +1,5 @@
 import { classes } from "../../../functions/common/common";
+import { PostsIndexItemOverlayContent } from "../posts-index-item-overlay-content/posts-index-item-overlay-content.component";
 
 export function PostsNormalIndexItem() {
   return (
@@ -6,6 +7,7 @@ export function PostsNormalIndexItem() {
       <li
         // posts-index-item
         className={classes(
+          "posts-index-item",
           "w-full h-auto border border-solid border-black cursor-pointer relative",
           "hover:outline-2 hover:outline-black hover:outline",
           // "md:w-1/2-space-20px",
@@ -56,6 +58,7 @@ export function PostsNormalIndexItem() {
               )}>
               <span
                 className={classes(
+                  "index-item-datetime-text",
                   "text-xs opacity-40",
                 )}>
                 [##_article_rep_date_year_##]-[##_article_rep_date_month_##]-[##_article_rep_date_day_##]&nbsp;[##_article_rep_date_hour_##]:[##_article_rep_date_minute_##]:[##_article_rep_date_second_##]
@@ -66,6 +69,7 @@ export function PostsNormalIndexItem() {
                 "w-full block m-0 p-0 relative text-sm whitespace-pre-line break-all overflow-hidden max-h-[120px]",
               )}>[##_article_rep_summary_##]</div>
           </div>
+          <PostsIndexItemOverlayContent />
         </a>
       </li>
     </>

@@ -40,6 +40,14 @@ const animationPlugin: PluginCreator = ({ addComponents }) => {
   });
 };
 
+const transformPlugin: PluginCreator = ({ addComponents }) => {
+  addComponents({
+    '.transform-rotate-15deg': { 
+      'transform': 'rotate(15deg)',
+    },
+  });
+};
+
 const variantPlugin: PluginCreator = ({ addVariant }) => {
   addVariant('tt-body-page', '#tt-body-page &');
   addVariant('tt-body-index', '#tt-body-index &');
@@ -92,6 +100,7 @@ export default {
     scrollbarThumbPlugin,
     transitionPlugin,
     animationPlugin,
+    transformPlugin,
     variantPlugin,
   ],
 } satisfies Config

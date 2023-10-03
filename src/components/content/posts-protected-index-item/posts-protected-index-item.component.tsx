@@ -1,10 +1,12 @@
 import { classes } from "../../../functions/common/common";
+import { PostsIndexItemOverlayContent } from "../posts-index-item-overlay-content/posts-index-item-overlay-content.component";
 
 export function PostsProtectedIndexItem() {
   return (
     <>
       <li 
         className={classes(
+          "posts-index-item",
           "w-full h-auto border border-solid border-black cursor-pointer relative",
           "hover:outline-2 hover:outline-black hover:outline",
 
@@ -43,6 +45,7 @@ export function PostsProtectedIndexItem() {
               >
               <span
                 className={classes(
+                  "index-item-datetime-text",
                   "text-xs opacity-40",
                 )}>
                 [##_article_rep_date_year_##]-[##_article_rep_date_month_##]-[##_article_rep_date_day_##]&nbsp;[##_article_rep_date_hour_##]:[##_article_rep_date_minute_##]:[##_article_rep_date_second_##]
@@ -53,6 +56,7 @@ export function PostsProtectedIndexItem() {
                 "w-full block m-0 p-0 relative text-sm whitespace-pre-line break-all overflow-hidden max-h-[120px]",
               )}>보호되어 있는 글입니다.</div>
           </div>
+          <PostsIndexItemOverlayContent />
         </a>
       </li>
     </>
