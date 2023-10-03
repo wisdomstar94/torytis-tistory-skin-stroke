@@ -13,6 +13,7 @@ import { Guestbook } from "./components/content/guestbook/guestbook.component";
 import { Tags } from "./components/content/tags/tags.component";
 import { Pagination } from "./components/content/pagination/pagination.component";
 import { AdRowLower } from "./components/content/ad-row-lower/ad-row-lower.component";
+import { PostsIndexContainer } from "./components/layout/posts-index-container/posts-index-container.component";
 
 export default function App() {
   return (
@@ -28,7 +29,9 @@ export default function App() {
       <body id="[##_body_id_##]">
         <s_t3>
           <TopBar />
+          
           <SideBar />
+
           <ContentContainer>
             <AdRowUpper />
 
@@ -47,6 +50,8 @@ export default function App() {
 
             <AdRowLower />
           </ContentContainer>
+
+          <PostsIndexContainer />
         </s_t3>
       </body>
     </html>
