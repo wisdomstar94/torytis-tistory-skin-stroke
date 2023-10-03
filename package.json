@@ -1,6 +1,6 @@
 {
   "name": "torytis-tistory-skin-stroke",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "build": "torytis build",
