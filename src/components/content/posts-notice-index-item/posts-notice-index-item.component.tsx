@@ -71,6 +71,13 @@ export function PostsNoticeIndexItem() {
               )}>[##_article_rep_summary_##]</div>
           </div>
           <PostsIndexItemOverlayContent />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `
+                <script>disposeIndexItemNewSymbol(true)</script>
+              `
+            }}
+            />
         </a>
       </li>
     </>

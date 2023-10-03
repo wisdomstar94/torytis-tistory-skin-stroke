@@ -1,6 +1,14 @@
 import { getPostsTotalCountText } from "../../../functions/logic/logic";
 
 window.addEventListener('load', () => {
+  disposeNormalPageTitle(false);
+}); 
+
+function disposeNormalPageTitle(isExecute: boolean) {
+  if (isExecute !== true) {
+    return;
+  }
+
   const titleSpan = document.querySelector<HTMLElement>(`.normal-page-title-row-title`);
   const countInfoSpan = document.querySelector<HTMLElement>(`.normal-page-title-row-count-info`);
 
@@ -15,4 +23,4 @@ window.addEventListener('load', () => {
       countInfoSpan.textContent = countText;
     }
   }
-}); 
+}

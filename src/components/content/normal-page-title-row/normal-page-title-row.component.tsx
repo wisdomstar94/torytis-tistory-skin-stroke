@@ -13,6 +13,13 @@ export function NormalPageTitleRow() {
         <span className="normal-page-title-row-title"></span>
         <span>&nbsp;</span>
         <span className="normal-page-title-row-count-info"></span>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `
+              <script>disposeNormalPageTitle(true)</script>
+            `,
+          }}
+          />
       </div>
     </>
   );

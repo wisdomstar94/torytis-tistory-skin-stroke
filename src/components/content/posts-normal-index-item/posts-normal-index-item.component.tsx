@@ -28,9 +28,6 @@ export function PostsNormalIndexItem() {
               "border-b-black dark:border-b-white dark-c:border-b-white",
               "text-black dark:text-white dark-c:text-white",
             )}
-            // style={{
-            //   backgroundImage: `url('./images/tistory_logo_image.png')`,
-            // }}
             >
             <s_article_rep_thumbnail>
               <img 
@@ -74,6 +71,13 @@ export function PostsNormalIndexItem() {
               )}>[##_article_rep_summary_##]</div>
           </div>
           <PostsIndexItemOverlayContent />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `
+                <script>disposeIndexItemNewSymbol(true)</script>
+              `
+            }}
+            />
         </a>
       </li>
     </>
