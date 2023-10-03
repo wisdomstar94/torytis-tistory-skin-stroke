@@ -11,6 +11,7 @@ import { TagPageTitleRow } from "./components/content/tag-page-title-row/tag-pag
 import { Posts } from "./components/content/posts/posts.component";
 import { Guestbook } from "./components/content/guestbook/guestbook.component";
 import { Tags } from "./components/content/tags/tags.component";
+import { Pagination } from "./components/content/pagination/pagination.component";
 
 export default function App() {
   return (
@@ -40,6 +41,8 @@ export default function App() {
             <Guestbook />
 
             <Tags />
+
+            <Pagination />
           </ContentContainer>
         </s_t3>
       </body>

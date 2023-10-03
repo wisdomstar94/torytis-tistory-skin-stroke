@@ -32,3 +32,26 @@
     opacity: 0;
   }
 }
+
+.tt_category {
+  .link_tit, .link_item, .link_sub_item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 4px;
+    position: relative;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .link_tit {
+    margin-bottom: 8px;
+  }
+
+  .link_sub_item {
+    margin-left: 12px;
+    color: #aaa;
+  }
+}

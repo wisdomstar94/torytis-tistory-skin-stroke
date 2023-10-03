@@ -1,0 +1,20 @@
+.num-a {
+  display: inline-flex;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+.num-a:hover {
+  background-color: #eee;
+}
+.num-a > span {
+  display: inline-flex;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+.num-a > span.selected {
+  background-color: #000;
+  color: #fff;
+}
