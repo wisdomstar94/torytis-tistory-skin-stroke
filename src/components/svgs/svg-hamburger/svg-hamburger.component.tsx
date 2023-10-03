@@ -1,9 +1,14 @@
-export function SvgHamburger() {
+import { classes } from "../../../functions/common/common";
+
+export function SvgHamburger(props?: { className?: string }) {
   return (
     <>
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        className="icon icon-tabler icon-tabler-menu-2" 
+        className={classes(
+          "icon icon-tabler icon-tabler-menu-2",
+          props.className ?? '',
+        )}
         width="24" 
         height="24" 
         viewBox="0 0 24 24" 

@@ -9,13 +9,15 @@ export function TopBar() {
           "top-bar",
           "w-full block fixed top-0 left-0 z-[2]",
           "lg:hidden",
-          "!transition-colors !duration-300 bg-white dark:bg-black dark-c:bg-black",
+          "!transition-colors !duration-300",
+          "bg-white dark:bg-black dark-c:bg-black",
         )}>
         <div
           // container
           className={classes(
             "w-full h-[52px] flex flex-wrap relative items-center justify-start box-border",
-            "p-3 border-b border-b-black bg-white",
+            "p-3 border-b ",
+            "border-b-black dark:border-b-white dark-c:border-b-white",
           )}
           >
           <div
@@ -29,6 +31,7 @@ export function TopBar() {
               className={classes(
                 "flex justify-start text-base font-bold whitespace-pre-line break-all relative",
                 "text-left tracking-tight overflow-ellipsis whitespace-nowrap overflow-hidden",
+                "text-black dark:text-white dark-c:text-white",
               )}
               >
               [##_title_##]
@@ -45,9 +48,11 @@ export function TopBar() {
               className={classes(
                 "sidebar-show-button",
                 "border-0 bg-transparent outline-none cursor-pointer relative",
+                "",
               )}
               >
-              <SvgHamburger />
+              <SvgHamburger 
+                className="dark:stroke-white dark-c:stroke-white" />
             </button>
           </div>
         </div>

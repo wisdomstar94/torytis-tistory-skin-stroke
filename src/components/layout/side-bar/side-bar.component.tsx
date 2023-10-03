@@ -29,7 +29,7 @@ export function SideBar() {
           "my-show:left-0",
           "w-full--40px mini:w-[320px]",
 
-          "!transition-colors !duration-300 bg-white dark:bg-black dark-c:bg-black",
+          "bg-white dark:bg-black dark-c:bg-black",
           "dark:text-white dark-c:text-white",
           "scrollbar-track-eee dark:scrollbar-track-333 dark-c:scrollbar-track-333",
           "scrollbar-thumb-ccc dark:scrollbar-thumb-888 dark-c:scrollbar-thumb-888",

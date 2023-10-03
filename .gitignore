@@ -4,3 +4,4 @@ lib
 build
 out
 .torytis
+.DS_Store
