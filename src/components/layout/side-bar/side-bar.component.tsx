@@ -1,6 +1,7 @@
 import { classes } from "../../../functions/common/common";
 import { SvgPencil } from "../../svgs/svg-pencil/svg-pencil.component";
 import { SvgSetting } from "../../svgs/svg-setting/svg-setting.component";
+import { SwitchButton } from "../../switch-button/switch-button.component";
 import './side-bar.scss';
 
 export function SideBar() {
@@ -28,7 +29,7 @@ export function SideBar() {
           "my-show:left-0",
           "w-full--40px mini:w-[320px]",
 
-          "bg-white dark:bg-black dark-c:bg-black",
+          "!transition-colors !duration-300 bg-white dark:bg-black dark-c:bg-black",
           "dark:text-white dark-c:text-white",
           "scrollbar-track-eee dark:scrollbar-track-333 dark-c:scrollbar-track-333",
           "scrollbar-thumb-ccc dark:scrollbar-thumb-888 dark-c:scrollbar-thumb-888",
@@ -77,6 +78,36 @@ export function SideBar() {
                   )}>
                   <a href="/">[##_title_##]</a>
                 </div> 
+              </div>
+            </s_sidebar_element>
+            <s_sidebar_element>
+              <tt_html_comment>다크모드 스위치 버튼</tt_html_comment>
+              <div
+                className={classes(
+                  "w-full flex flex-wrap relative mb-10 mt-2 items-center justify-start gap-2",
+                )}>
+                <div
+                  className={classes(
+                    "inline-flex relative text-sm",
+                  )}>
+                  다크모드 : 
+                </div>
+                <div
+                  className={classes(
+                    "inline-flex relative",
+                  )}>
+                  <SwitchButton 
+                    id="dark_mode_switch"
+                    name="dark_mode_switch"
+                    />
+                </div>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: `
+                      <script>checkDarkMode(true)</script>
+                    `,
+                  }}
+                  />
               </div>
             </s_sidebar_element>
             <s_sidebar_element>

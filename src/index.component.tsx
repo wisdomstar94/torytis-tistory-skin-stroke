@@ -36,7 +36,7 @@ export default function App() {
       <body 
         id="[##_body_id_##]"
         className={classes(
-          "dark:bg-black dark-c:bg-black",
+          "!transition-colors !duration-300 bg-white dark:bg-black dark-c:bg-black",
         )}
         >
         <s_t3>

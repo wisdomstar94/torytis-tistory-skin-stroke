@@ -9,7 +9,7 @@ export function TopBar() {
           "top-bar",
           "w-full block fixed top-0 left-0 z-[2]",
           "lg:hidden",
-          "dark:bg-black dark-c:bg-black",
+          "!transition-colors !duration-300 bg-white dark:bg-black dark-c:bg-black",
         )}>
         <div
           // container

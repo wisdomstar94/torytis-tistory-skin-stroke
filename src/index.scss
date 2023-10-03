@@ -35,6 +35,10 @@
   opacity: 0;
 }
 
+// body * {
+//   @apply transition-colors duration-300;
+// }
+
 @media (prefers-color-scheme: dark) {
   #tt-body-page {
     .another_category {

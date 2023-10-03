@@ -10,6 +10,7 @@ export function PostsIndexContainer() {
           "scrollbar-w-1",
           "hidden tt-body-page:hidden tt-body-page:lg:block",
 
+          "!transition-colors !duration-300 bg-white dark:bg-black dark-c:bg-black",
           "text-black dark:text-white dark-c:text-white",
           "border-l-black dark:border-l-white dark-c:border-l-white",
           "scrollbar-track-eee dark:scrollbar-track-333 dark-c:scrollbar-track-333",
