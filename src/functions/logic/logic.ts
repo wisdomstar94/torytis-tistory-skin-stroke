@@ -104,8 +104,12 @@ export function getElementAbsoluteXY(element: HTMLElement | null) {
 
 export function isDarkMode() {
   const is_dark_mode = localStorage.getItem('is_dark_mode');
-  if (is_dark_mode === 'true') {
-    return true;
+  if (is_dark_mode !== null) {
+    if (is_dark_mode === 'true') {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {

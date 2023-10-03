@@ -55,3 +55,9 @@
     color: #aaa;
   }
 }
+
+.dark-mode-switch-button {
+  &.darkmode-fixed {
+    display: none !important;
+  }
+}

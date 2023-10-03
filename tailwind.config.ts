@@ -65,11 +65,11 @@ const variantPlugin: PluginCreator = ({ addVariant }) => {
   addVariant('my-show', '.my-show&');
   addVariant('my-hide', '.my-hide&');
 
-  addVariant('dark-c', '.dark &');
+  // addVariant('dark-c', '.dark &');
 };
 
 export default {
-  darkMode: 'media',
+  darkMode: 'class',
   content: [
     './src/**/*.tsx', './src/**/*.scss', './src/**/*.ts',
   ],

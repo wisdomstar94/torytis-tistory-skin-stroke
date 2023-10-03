@@ -85,5 +85,21 @@
         <type>STRING</type>
       </variable>
     </variablegroup>
+    <variablegroup name="테마">
+      <variable>
+        <name>dark-mode-type</name>
+        <label>
+          <![CDATA[ 다크 모드 타입 ]]>
+        </label>
+        <description>다크 모드를 방문자가 컨트롤 할 수 있도록 할 것인지, 강제로 적용할 것인지에 대한 설정 값입니다.</description>
+        <type>SELECT</type>
+        <option><![CDATA[
+          [
+            {"name":"darkmode-loose", "label":"방문자가 다크모드 컨트롤 가능", "value":"darkmode-loose"},
+            {"name":"darkmode-fixed", "label":"블로그를 항상 다크모드로 고정", "value":"darkmode-fixed"}
+          ]
+        ]]></option>
+      </variable>
+    </variablegroup>
   </variables>
 </skin>

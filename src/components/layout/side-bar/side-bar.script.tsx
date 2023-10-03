@@ -14,8 +14,19 @@ window.addEventListener('load', () => {
     });
   }
 
+  applyForceDarkMode(false);
   checkDarkMode(false);
 });
+
+function applyForceDarkMode(isExecute: boolean) {
+  if (isExecute === false) {
+    return;
+  }
+
+  localStorage.setItem('is_dark_mode', 'true');
+  const htmlElement = document.querySelector<HTMLElement>('html');
+  htmlElement?.classList.add('dark');
+}
 
 function checkDarkMode(isExecute: boolean) {
   if (isExecute === false) {
