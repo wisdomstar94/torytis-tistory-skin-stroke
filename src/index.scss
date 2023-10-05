@@ -47,42 +47,61 @@
 
     > h1, > h2, > h3, > h4, > h5, > h6 {
       margin-top: 12px;
-      margin-bottom: 4px;
+      margin-bottom: 12px;
     }
 
     > p {
       margin-bottom: 4px;
     }
+
+    > ul {
+      margin-bottom: 8px;
+    }
+
+    > ol {
+      margin-bottom: 8px;
+    }
+
+    > pre[data-ke-type='codeblock'] {
+      border: 1px solid #ccc;
+      background-color: #f6f6f6;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 8px;
+
+      code.hljs {
+        background-color: transparent;
+
+        table {
+          // color: #fff !important;
+          font-size: 12ppx;
+
+          td {
+            > span {
+              // color: #fff !important;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+
+    a {
+      color: #0982f8;
+      text-decoration: underline;
+
+      &:hover {
+        color: #55aaff;
+      }
+    }
+
+    p {
+      margin-bottom: 4px !important;
+    }
   }
 }
 
-// body * {
-//   @apply transition-colors duration-300;
-// }
-
-// @media (prefers-color-scheme: dark) {
-//   #tt-body-page {
-//     .another_category {
-//       h4 {
-//         color: #fff !important;
-
-//         a {
-//           color: #fff !important;
-//         }
-//       }
-
-//       table {
-//         th, td {
-//           color: #fff !important;
-
-//           a, span {
-//             color: #fff !important;
-//           }
-//         }
-//       }
-//     }
-//   } 
-// }
+// 다크모드 스타일 셋팅
 .dark {
   #tt-body-page {
     .another_category {
@@ -114,7 +133,9 @@
 
       > pre[data-ke-type='codeblock'] {
         border: 1px solid #fff;
-        padding: 8px;
+        background-color: transparent;
+        border-radius: 12px;
+        padding: 20px;
 
         code.hljs {
           background-color: transparent;
@@ -131,6 +152,15 @@
         }
       }
 
+      a {
+        color: #58a2eb;
+        text-decoration: underline;
+
+        &:hover {
+          color: rgb(124, 190, 255);
+        }
+      }
+
       > blockquote {
         &[data-ke-style='style1'] {
           color: #ccc !important; 
@@ -143,6 +173,21 @@
         &[data-ke-style='style3'] {
           background-color: transparent;
           color: #ccc !important; 
+        }
+      }
+
+      > table {
+        border-left: 1px solid #fff;
+
+        > tbody {
+          > tr {
+            > td {
+              background-color: transparent !important;
+              color: #fff !important;
+              border-right: 1px solid #fff;
+              border-bottom: 1px solid #fff;
+            }
+          }
         }
       }
     }
