@@ -1,4 +1,5 @@
 import { classes } from "../../../functions/common/common";
+import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { SvgPencil } from "../../svgs/svg-pencil/svg-pencil.component";
 import { SvgSetting } from "../../svgs/svg-setting/svg-setting.component";
 import { SwitchButton } from "../../switch-button/switch-button.component";
@@ -109,25 +110,9 @@ export function SideBar() {
                       />
                   </div>
                   <s_if_var_dark-mode-type>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: `
-                          <script>
-                            if ("[##_var_dark-mode-type_##]".trim() === "darkmode-fixed") {
-                              applyForceDarkMode(true);
-                            }
-                          </script>
-                        `,
-                      }}
-                    />
+                    <CallJavascript code={`if ("[##_var_dark-mode-type_##]".trim() === "darkmode-fixed") { applyForceDarkMode(true); }`} />
                   </s_if_var_dark-mode-type>
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: `
-                        <script>checkDarkMode(true)</script>
-                      `,
-                    }}
-                    />
+                  <CallJavascript code="checkDarkMode(true)" />
                 </div>
               </s_sidebar_element>
 
@@ -425,6 +410,7 @@ export function SideBar() {
                     <s_rct_notice>
                       <ul
                         className={classes(
+                          "side-bar-recent-notice-ul",
                           "block m-0 p-0 relative",
                         )}>
                         <s_rct_notice_rep>
@@ -443,6 +429,7 @@ export function SideBar() {
                           </li>
                         </s_rct_notice_rep>
                       </ul>
+                      <CallJavascript code="checkNoticeEmpty(true)" />
                     </s_rct_notice>
                   </div>
                 </div>  

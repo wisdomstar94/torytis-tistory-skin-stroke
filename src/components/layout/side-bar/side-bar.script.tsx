@@ -1,4 +1,4 @@
-import { getSidebar, getSidebarBackground } from "../../../functions/element/element";
+import { getSideBarRecentNoticeUlElement, getSidebar, getSidebarBackground } from "../../../functions/element/element";
 import { isDarkMode } from "../../../functions/logic/logic";
 
 window.addEventListener('load', () => {
@@ -16,6 +16,7 @@ window.addEventListener('load', () => {
 
   applyForceDarkMode(false);
   checkDarkMode(false);
+  checkNoticeEmpty(false);
 });
 
 function applyForceDarkMode(isExecute: boolean) {
@@ -56,4 +57,20 @@ function checkDarkMode(isExecute: boolean) {
       htmlElement?.classList.remove('dark');
     }
   });
+}
+
+function checkNoticeEmpty(isExecute: boolean) {
+  if (isExecute !== true) {
+    return;
+  }
+
+  const ul = getSideBarRecentNoticeUlElement();
+  if (ul.children.length === 0) {
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    span.classList.add('text-xs', 'text-slate-500');
+    span.textContent = `등록된 공지사항이 없습니다.`;
+    li.appendChild(span);
+    ul.appendChild(li);
+  }
 }

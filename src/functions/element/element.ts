@@ -151,3 +151,7 @@ export function getPermalinkContentHeadingElements() {
   }
   return elements;
 }
+
+export function getSideBarRecentNoticeUlElement() {
+  return document.querySelector<HTMLUListElement>(`.side-bar-recent-notice-ul`);
+}

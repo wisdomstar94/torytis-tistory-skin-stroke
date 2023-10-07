@@ -1,4 +1,5 @@
 import { classes } from "../../../functions/common/common";
+import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { PostsIndexItemOverlayContent } from "../posts-index-item-overlay-content/posts-index-item-overlay-content.component";
 
 export function PostsProtectedIndexItem() {
@@ -60,13 +61,7 @@ export function PostsProtectedIndexItem() {
               )}>보호되어 있는 글입니다.</div>
           </div>
           <PostsIndexItemOverlayContent />
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `
-                <script>disposeIndexItemNewSymbol(true)</script>
-              `
-            }}
-            />
+          <CallJavascript code="disposeIndexItemNewSymbol(true)" />
         </a>
       </li>
     </>

@@ -1,4 +1,5 @@
 import { classes } from "../../../functions/common/common";
+import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 
 export function NormalPageTitleRow() {
   return (
@@ -13,13 +14,7 @@ export function NormalPageTitleRow() {
         <span className="normal-page-title-row-title"></span>
         <span>&nbsp;</span>
         <span className="normal-page-title-row-count-info"></span>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `
-              <script>disposeNormalPageTitle(true)</script>
-            `,
-          }}
-          />
+        <CallJavascript code="disposeNormalPageTitle(true)" />
       </div>
     </>
   );

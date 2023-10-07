@@ -1,4 +1,5 @@
 import { classes } from "../../../functions/common/common";
+import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import styles from './posts-notice-permalink-item.module.scss';
 
 export function PostsNoticePermalinkItem() {
@@ -44,13 +45,7 @@ export function PostsNoticePermalinkItem() {
             "block m-0 p-0 relative",
           )}>
           [##_article_rep_desc_##]
-          <div 
-            dangerouslySetInnerHTML={{ 
-              __html: `
-                <script>disposePermalinkContent(true)</script>
-              `, 
-            }} 
-          />
+          <CallJavascript code="disposePermalinkContent(true)" />
         </div>
         <div 
           className={classes(

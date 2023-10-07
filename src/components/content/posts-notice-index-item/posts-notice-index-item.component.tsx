@@ -1,4 +1,5 @@
 import { classes } from "../../../functions/common/common";
+import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { PostsIndexItemOverlayContent } from "../posts-index-item-overlay-content/posts-index-item-overlay-content.component";
 
 export function PostsNoticeIndexItem() {
@@ -71,13 +72,7 @@ export function PostsNoticeIndexItem() {
               )}>[##_article_rep_summary_##]</div>
           </div>
           <PostsIndexItemOverlayContent />
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `
-                <script>disposeIndexItemNewSymbol(true)</script>
-              `
-            }}
-            />
+          <CallJavascript code="disposeIndexItemNewSymbol(true)" />
         </a>
       </li>
     </>

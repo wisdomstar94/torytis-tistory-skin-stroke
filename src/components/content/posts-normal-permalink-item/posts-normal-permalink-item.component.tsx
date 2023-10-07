@@ -1,4 +1,5 @@
 import { classes } from "../../../functions/common/common";
+import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { SvgArrowForward } from "../../svgs/svg-arrow-forward/svg-arrow-forward.component";
 import { SwitchButton } from "../../switch-button/switch-button.component";
 import './posts-normal-permalink-item.scss';
@@ -46,13 +47,7 @@ export function PostsNormalPermalinkItem() {
             "block m-0 p-0 relative",
           )}>
           [##_article_rep_desc_##]
-          <div 
-            dangerouslySetInnerHTML={{ 
-              __html: `
-                <script>disposePermalinkContent(true)</script>
-              `, 
-            }} 
-          />
+          <CallJavascript code="disposePermalinkContent(true)" />
         </div>
         <div 
           className={classes(
