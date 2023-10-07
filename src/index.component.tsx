@@ -62,15 +62,6 @@ export default function App() {
             <Pagination />
 
             <AdRowLower />
-
-            <Modal 
-              id="test-modal"
-              defaultWidth={600}
-              className="bg-white"
-              isTestMode={true}
-              >
-              test modal!!!
-            </Modal>
           </ContentContainer>
 
           <PostsIndexContainer />
