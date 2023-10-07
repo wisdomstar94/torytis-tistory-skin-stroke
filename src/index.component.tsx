@@ -1,5 +1,6 @@
 import React from "react";
 import './index.scss';
+import 'swiper/css';
 import { TopBar } from "./components/layout/top-bar/top-bar.component";
 import { SideBar } from "./components/layout/side-bar/side-bar.component";
 import { ContentContainer } from "./components/layout/content-container/content-container.component";
@@ -15,7 +16,6 @@ import { Pagination } from "./components/content/pagination/pagination.component
 import { AdRowLower } from "./components/content/ad-row-lower/ad-row-lower.component";
 import { PostsIndexContainer } from "./components/layout/posts-index-container/posts-index-container.component";
 import { classes } from "./functions/common/common";
-import { Modal } from "./components/modal/modal.component";
 
 export default function App() {
   return (

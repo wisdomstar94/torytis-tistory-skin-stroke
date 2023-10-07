@@ -92,8 +92,9 @@ export default {
         'full--20px': 'calc(100% - 20px)',
       },
       height: {
-        'full--40px': 'calc(100% - 40px)',
         'full--20px': 'calc(100% - 20px)',
+        'full--40px': 'calc(100% - 40px)',
+        'full--60px': 'calc(100% - 60px)',
       },
       maxHeight: {
         'full--40px': 'calc(100% - 40px)',

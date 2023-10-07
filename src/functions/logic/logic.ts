@@ -123,14 +123,16 @@ export function setDarkMode(v: boolean) {
   localStorage.setItem('is_dark_mode', v === true ? 'true' : 'false');
 }
 
-export function element(params: {
-  tagName: HTMLElementTagNameMap;
+export function element<K extends keyof HTMLElementTagNameMap>(params: {
+  tagName: K;
   id?: string;
   className?: string;
   attrs?: Record<string, string>;
-  children?: HTMLElement[] | HTMLElement;
+  children?: HTMLElement[] | HTMLElement | Element;
+  onElement?: (element: HTMLElementTagNameMap[K]) => void;
+  innerHTML?: string;
 }) {
-  const target = document.createElement(params.tagName as any) as HTMLElement;
+  const target = document.createElement(params.tagName);
 
   if (typeof params.id === 'string') {
     target.id = params.id;
@@ -148,7 +150,7 @@ export function element(params: {
     }
   }
 
-  const applyChildren: HTMLElement[] = [];
+  const applyChildren: (HTMLElement | Element)[] = [];
   if (params.children !== undefined) {
     if (Array.isArray(params.children)) {
       params.children.forEach(child => applyChildren.push(child));
@@ -161,10 +163,65 @@ export function element(params: {
     applyChildren.forEach(child => target.appendChild(child));
   }
 
+  if (typeof params.onElement === 'function') {
+    params.onElement(target);
+  }
+
+  if (typeof params.innerHTML === 'string') {
+    target.innerHTML = params.innerHTML;
+  }
+
   return target;
 }
 
-function getPostImageElements() {
+export function elementSvg<K extends keyof SVGElementTagNameMap>(params: {
+  namespaceURI: "http://www.w3.org/1999/xhtml" | "http://www.w3.org/2000/svg" | "http://www.w3.org/1998/Math/MathML";
+  tagName: K;
+  id?: string;
+  className?: string;
+  attrs?: Record<string, string>;
+  children?: HTMLElement[] | HTMLElement | Element;
+  onElement?: (element: Element) => void;
+}) {
+  const target = document.createElementNS(params.namespaceURI, params.tagName);
+
+  if (typeof params.id === 'string') {
+    target.id = params.id;
+  }
+
+  if (typeof params.className === 'string') {
+    params.className.split(' ').forEach(v => target.classList.add(v));
+  }
+
+  if (params.attrs !== undefined) {
+    const keys = Object.keys(params.attrs);
+    for (const key of keys) {
+      const value = params.attrs[key];
+      target.setAttribute(key, value);
+    }
+  }
+
+  const applyChildren: (HTMLElement | Element)[] = [];
+  if (params.children !== undefined) {
+    if (Array.isArray(params.children)) {
+      params.children.forEach(child => applyChildren.push(child));
+    } else {
+      applyChildren.push(params.children);
+    }
+  }
+  
+  if (applyChildren.length > 0) {
+    applyChildren.forEach(child => target.appendChild(child));
+  }
+
+  if (typeof params.onElement === 'function') {
+    params.onElement(target);
+  }
+
+  return target;
+}
+
+export function getPostImageElements() {
   const elementList: HTMLImageElement[] = [];
   const result = document.querySelectorAll<HTMLImageElement>(`.tt_article_useless_p_margin > figure.imageblock img`);
   result.forEach(v => elementList.push(v));

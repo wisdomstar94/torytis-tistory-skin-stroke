@@ -1,5 +1,6 @@
+import { initModalImageSwiperContent, showModalImageSwiper } from "./components/modals/modal-image-swiper/modal-image-swiper.script";
 import { getPermalinkContentDivElements, getPermalinkContentDivSpanElements, getPermalinkContentHeadingElements, getPermalinkContentPElements, getPostsIndexItemLiElements } from "./functions/element/element";
-import { isDarkMode } from "./functions/logic/logic";
+import { getPostImageElements, isDarkMode } from "./functions/logic/logic";
 
 if (isDarkMode()) {
   document.querySelector<HTMLElement>('html').classList.add('dark');
@@ -8,6 +9,7 @@ if (isDarkMode()) {
 window.addEventListener('load', () => {
   disposePermalinkContent(false);
   disposeIndexItemNewSymbol(false);
+  postImageSwiperModalInit(false);
   window.hljs.highlightAll();
   window.hljs.initLineNumbersOnLoad();
 });
@@ -42,6 +44,13 @@ function disposePermalinkContent(isExecute: boolean) {
       element.style.color = 'inherit';
     }
   });
+
+  const postImageElements = getPostImageElements();
+  postImageElements.forEach((imgElement, index) => {
+    imgElement.addEventListener('click', () => {
+      showModalImageSwiper('post-image-swiper-modal', index);
+    });
+  });
 }
 
 function disposeIndexItemNewSymbol(isExecute: boolean) {
@@ -58,3 +67,21 @@ function disposeIndexItemNewSymbol(isExecute: boolean) {
     element.querySelector('.overlay-info-area .new-post-symbol')?.classList.add('my-show');
   });
 }
+
+function postImageSwiperModalInit(isExecute: boolean) {
+  if (isExecute !== true) {
+    return;
+  }
+
+  const postImageElements = getPostImageElements();
+  if (postImageElements.length === 0) {
+    return;
+  }
+
+  initModalImageSwiperContent('post-image-swiper-modal', postImageElements.map((x, index) => {
+    return {
+      src: x.src,
+      index,
+    };
+  }));
+} 

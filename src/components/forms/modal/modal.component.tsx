@@ -1,4 +1,4 @@
-import { classes } from "../../functions/common/common";
+import { classes } from "../../../functions/common/common";
 import { IModal } from "./modal.interface";
 import './modal.scss';
 
@@ -36,15 +36,11 @@ export function Modal(props: IModal.Props) {
           tt-onclick={`hideModal('${id}')`}
           />
 
-        {/* <div
-          className={classes(
-            "w-screen h-screen relative flex items-center justify-center content-center z-10",
-          )}> */}
         <div
           className={classes(
             "relative inline-block",
-            defaultWidth === 'full' ? "w-full" : "max-w-full--20px",
-            defaultHeight === 'full' ? "h-full" : "max-h-full--20px",
+            defaultWidth === 'full' ? "w-full" : "max-w-full--40px",
+            defaultHeight === 'full' ? "h-full" : "max-h-full--40px",
             isOverflowXScroll === true ? "overflow-x-scroll" : "",
             isOverflowYScroll === true ? "overflow-y-scroll" : "",
             typeof className === 'string' ? className : "",
@@ -59,7 +55,6 @@ export function Modal(props: IModal.Props) {
           >
           { children }
         </div>
-        {/* </div> */}
       </div>
 
       {

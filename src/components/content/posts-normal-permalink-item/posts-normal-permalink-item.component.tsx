@@ -1,5 +1,6 @@
 import { classes } from "../../../functions/common/common";
 import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
+import { ModalImageSwiper } from "../../modals/modal-image-swiper/modal-image-swiper.component";
 import { SvgArrowForward } from "../../svgs/svg-arrow-forward/svg-arrow-forward.component";
 import { SwitchButton } from "../../switch-button/switch-button.component";
 import './posts-normal-permalink-item.scss';
@@ -48,6 +49,11 @@ export function PostsNormalPermalinkItem() {
           )}>
           [##_article_rep_desc_##]
           <CallJavascript code="disposePermalinkContent(true)" />
+          <ModalImageSwiper
+            id="post-image-swiper-modal"
+            // initShowState="show"
+            />
+          <CallJavascript code="postImageSwiperModalInit(true)" />
         </div>
         <div 
           className={classes(
