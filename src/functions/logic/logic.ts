@@ -163,3 +163,10 @@ export function element(params: {
 
   return target;
 }
+
+function getPostImageElements() {
+  const elementList: HTMLImageElement[] = [];
+  const result = document.querySelectorAll<HTMLImageElement>(`.tt_article_useless_p_margin > figure.imageblock img`);
+  result.forEach(v => elementList.push(v));
+  return elementList;
+}
