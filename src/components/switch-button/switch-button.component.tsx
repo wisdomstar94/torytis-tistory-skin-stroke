@@ -33,7 +33,7 @@ export function SwitchButton(props: {
             className={classes(
               "w-[62px] h-full left-0 top-0 absolute",
               "items-center justify-center text-xs leading-3",
-              "hidden parent-active:flex",
+              "hidden parent-1-active:flex",
               "text-white dark:text-black dark-c:text-black",
             )}>
             ON
@@ -42,7 +42,7 @@ export function SwitchButton(props: {
             className={classes(
               "w-[62px] h-full right-0 top-0 absolute",
               "items-center justify-center text-xs leading-3",
-              "flex parent-active:hidden",
+              "flex parent-1-active:hidden",
               "text-black dark:text-white dark-c:text-white",
             )}>
             OFF
@@ -51,10 +51,10 @@ export function SwitchButton(props: {
             className={classes(
               "w-[30px] h-[24px] block box-border rounded-full",
               "border absolute top-[3px] left-[4px]",
-              "parent-active:!top-[3px] parent-active:!left-[62px]",
+              "parent-1-active:!top-[3px] parent-1-active:!left-[62px]",
 
-              "border-black dark:border-white dark-c:border-white dark:parent-active:border-black dark-c:parent-active:border-black",
-              "bg-white dark:parent-active:bg-black dark-c:parent-active:bg-black",
+              "border-black dark:border-white dark-c:border-white dark:parent-1-active:border-black dark-c:parent-1-active:border-black",
+              "bg-white dark:parent-1-active:bg-black dark-c:parent-1-active:bg-black",
             )}>
 
           </div>

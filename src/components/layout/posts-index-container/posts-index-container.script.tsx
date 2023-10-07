@@ -98,7 +98,7 @@ function getItemElement(text: string, className: string) {
   const span = document.createElement('span');
   span.classList.add(
     "text-aaa", "dark:text-777", "dark-c:text-777",
-    "parent-active:text-black", "dark:parent-active:text-white", "dark-c:parent-active:text-white",
+    "parent-1-active:text-black", "dark:parent-1-active:text-white", "dark-c:parent-1-active:text-white",
   );
   span.textContent = text;
 

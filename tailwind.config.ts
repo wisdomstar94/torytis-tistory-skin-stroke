@@ -61,9 +61,17 @@ const variantPlugin: PluginCreator = ({ addVariant }) => {
   addVariant('tt-body-tag', '#tt-body-tag &');
 
   addVariant('active', '.active&');
-  addVariant('parent-active', '.active > &');
+  addVariant('parent-1-active', '.active > &');
+  addVariant('parent-2-active', '.active > * > &');
+  addVariant('parent-3-active', '.active > * > * > &');
   addVariant('my-show', '.my-show&');
+  addVariant('parent-1-my-show', '.my-show > &');
+  addVariant('parent-2-my-show', '.my-show > * > &');
+  addVariant('parent-3-my-show', '.my-show > * > * > &');
   addVariant('my-hide', '.my-hide&');
+  addVariant('parent-1-my-hide', '.my-hide > &');
+  addVariant('parent-2-my-hide', '.my-hide > * > &');
+  addVariant('parent-3-my-hide', '.my-hide > * > * > &');
 
   // addVariant('dark-c', '.dark &');
 };
@@ -77,6 +85,19 @@ export default {
     extend: {
       width: {
         'full--40px': 'calc(100% - 40px)',
+        'full--20px': 'calc(100% - 20px)',
+      },
+      maxWidth: {
+        'full--40px': 'calc(100% - 40px)',
+        'full--20px': 'calc(100% - 20px)',
+      },
+      height: {
+        'full--40px': 'calc(100% - 40px)',
+        'full--20px': 'calc(100% - 20px)',
+      },
+      maxHeight: {
+        'full--40px': 'calc(100% - 40px)',
+        'full--20px': 'calc(100% - 20px)',
       },
       screens: {
         'mini': '360px',

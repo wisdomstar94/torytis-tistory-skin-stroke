@@ -34,7 +34,7 @@ export function PostsIndexContainer() {
             )}>
             <span
               className={classes(
-                "text-aaa parent-active:text-black",
+                "text-aaa parent-1-active:text-black",
               )}>
               item.text
             </span>

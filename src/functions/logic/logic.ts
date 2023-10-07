@@ -122,3 +122,44 @@ export function isDarkMode() {
 export function setDarkMode(v: boolean) {
   localStorage.setItem('is_dark_mode', v === true ? 'true' : 'false');
 }
+
+export function element(params: {
+  tagName: HTMLElementTagNameMap;
+  id?: string;
+  className?: string;
+  attrs?: Record<string, string>;
+  children?: HTMLElement[] | HTMLElement;
+}) {
+  const target = document.createElement(params.tagName as any) as HTMLElement;
+
+  if (typeof params.id === 'string') {
+    target.id = params.id;
+  }
+
+  if (typeof params.className === 'string') {
+    params.className.split(' ').forEach(v => target.classList.add(v));
+  }
+
+  if (params.attrs !== undefined) {
+    const keys = Object.keys(params.attrs);
+    for (const key of keys) {
+      const value = params.attrs[key];
+      target.setAttribute(key, value);
+    }
+  }
+
+  const applyChildren: HTMLElement[] = [];
+  if (params.children !== undefined) {
+    if (Array.isArray(params.children)) {
+      params.children.forEach(child => applyChildren.push(child));
+    } else {
+      applyChildren.push(params.children);
+    }
+  }
+  
+  if (applyChildren.length > 0) {
+    applyChildren.forEach(child => target.appendChild(child));
+  }
+
+  return target;
+}
