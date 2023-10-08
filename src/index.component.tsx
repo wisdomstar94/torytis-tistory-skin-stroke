@@ -30,7 +30,7 @@ export default function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content="[##_page_title_##] :: [##_title_##]" />
         <title>[##_page_title_##] :: [##_title_##]</title>
-        {/* <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js" defer></script> */}
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js" defer></script>
         <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js" defer></script>
         <s_if_var_google-adsense-script-url>
           <script async src="[##_var_google-adsense-script-url_##]" crossOrigin="anonymous"></script>
