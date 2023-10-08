@@ -26,6 +26,7 @@ export function PostsIndexItemOverlayContent() {
           <div 
             // white-effect
             className={classes(
+              "white-effect",
               "w-2 h-[40px] flex bg-white transform-rotate-15deg absolute",
               "animate-[new-post-symbol-white-effect-animation_3000ms_cubic-bezier(0.25,_1,_0.5,_1)_0ms_infinite_normal_both]",
             )}

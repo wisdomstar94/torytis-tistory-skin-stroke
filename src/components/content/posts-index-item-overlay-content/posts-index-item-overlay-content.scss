@@ -1,3 +1,7 @@
+.white-effect {
+  will-change: left;
+}
+
 @keyframes new-post-symbol-white-effect-animation {
   0% {
     left: -50px;
@@ -6,6 +10,6 @@
     left: 120px;
   }
   100% {
-    left: 120px;
+    left: 121px;
   }
 }

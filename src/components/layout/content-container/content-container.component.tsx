@@ -4,7 +4,7 @@ import { classes } from "../../../functions/common/common";
 export function ContentContainer(props: { children: ReactNode }) {
   return (
     <>
-      <section
+      <main
         className={classes(
           "content-container",
           "block relative m-0 box-border transition-all-300ms",
@@ -14,7 +14,7 @@ export function ContentContainer(props: { children: ReactNode }) {
         )}
         >
         { props.children }
-      </section>
+      </main>
     </>
   );
 }

@@ -18,16 +18,19 @@ export function SwitchButton(props: {
             "switch-button-hidden-checkbox",
             "w-0 h-0 overflow-hidden opacity-0 m-0 p-0 absolute -z-10",
           )}
+          aria-label="switch button check flag"
           id={props.id}
           name={props.name}
           />
-        <div 
+        <label 
+          htmlFor={props.id}
           className={classes(
             "switch-button-body",
             "inline-flex w-[96px] h-[32px] relative box-border border rounded-[100px] cursor-pointer",
             "border-black dark:border-white dark-c:border-white",
             "active:bg-black dark:active:bg-white dark-c:active:bg-white",
           )}
+          tt-onclick="switchButtonBodyClick(true, this)"
           >
           <div
             className={classes(
@@ -58,7 +61,7 @@ export function SwitchButton(props: {
             )}>
 
           </div>
-        </div>
+        </label>
       </div>
     </>
   );

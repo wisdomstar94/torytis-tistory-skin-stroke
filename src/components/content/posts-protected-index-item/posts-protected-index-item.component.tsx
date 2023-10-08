@@ -1,5 +1,6 @@
 import { classes } from "../../../functions/common/common";
 import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
+import { SvgLock } from "../../svgs/svg-lock/svg-lock.component";
 import { PostsIndexItemOverlayContent } from "../posts-index-item-overlay-content/posts-index-item-overlay-content.component";
 
 export function PostsProtectedIndexItem() {
@@ -22,12 +23,14 @@ export function PostsProtectedIndexItem() {
             className={classes(
               "w-full block min-h-[180px] aspect-video relative",
               "border-b bg-no-repeat bg-center bg-contain",
-              "bg-[url('./images/shield-lock.png')]",
+              // "bg-[url('./images/shield-lock.png')]",
               "border-b-black dark:border-b-white dark-c:border-b-white",
               "text-black dark:text-white dark-c:text-white",
             )}
             >
-            
+            <div className="w-full h-full flex flex-wrap items-center justify-center">
+              <SvgLock className="stroke-black dark:stroke-white" width={100} height={100} strokeWidth={1} />
+            </div>
           </div>
           <div 
             className={classes(
@@ -50,7 +53,8 @@ export function PostsProtectedIndexItem() {
               <span
                 className={classes(
                   "index-item-datetime-text",
-                  "text-xs opacity-40",
+                  "text-xs",
+                  "text-666 dark:text-white dark-c:text-white",
                 )}>
                 [##_article_rep_date_year_##]-[##_article_rep_date_month_##]-[##_article_rep_date_day_##]&nbsp;[##_article_rep_date_hour_##]:[##_article_rep_date_minute_##]:[##_article_rep_date_second_##]
               </span>

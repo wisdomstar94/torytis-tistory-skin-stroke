@@ -45,6 +45,7 @@ export function TopBar() {
             >
             <button
               // sidebar-show-button
+              aria-label="side bar show button"
               className={classes(
                 "sidebar-show-button",
                 "border-0 bg-transparent outline-none cursor-pointer relative",

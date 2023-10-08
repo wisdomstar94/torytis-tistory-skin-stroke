@@ -17,6 +17,7 @@ export function Pagination() {
             )}>
             <a 
               tt-onlyattr="[##_prev_page_##]"
+              href="#"
               className={classes(
                 "inline-flex flex-wrap text-sm cursor-pointer decoration-transparent text-inherit relative",
               )}>
@@ -24,7 +25,7 @@ export function Pagination() {
             </a>
             <ul
               className={classes(
-                "flex flex-wrap relative items-center justify-start my-0 mx-2 p-0",
+                "flex flex-wrap relative items-center justify-start my-0 mx-4 p-0 gap-2",
               )}>
               <s_paging_rep>
                 <li
@@ -43,6 +44,7 @@ export function Pagination() {
             </ul>
             <a 
               tt-onlyattr="[##_next_page_##]"
+              href="#"
               className={classes(
                 "inline-flex flex-wrap text-sm cursor-pointer decoration-transparent text-inherit relative",
               )}>

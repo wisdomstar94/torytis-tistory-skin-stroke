@@ -36,7 +36,8 @@
 .tt_category {
   .link_tit, .link_item, .link_sub_item {
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
+    align-content: flex-start;
     justify-content: flex-start;
     margin-bottom: 4px;
     position: relative;
@@ -46,13 +47,42 @@
     }
   }
 
+  img[alt='N'] {
+    margin-top: 3px;
+  }
+
   .link_tit {
     margin-bottom: 8px;
   }
 
   .link_sub_item {
     margin-left: 12px;
-    color: #aaa;
+    color: #777;
+
+    &::before {
+      content: 'ㄴ ';
+      margin-right: 4px;
+    }
+  }
+
+  .c_cnt {
+    display: inline-block;
+    position: relative;
+
+    &::before {
+      content: '';
+      margin-left: 4px !important;
+      display: inline-block;
+      position: relative;
+    }
+  }
+}
+
+.dark {
+  .tt_category {
+    .link_sub_item {
+      color: #bbb;
+    }
   }
 }
 

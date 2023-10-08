@@ -1,6 +1,6 @@
 {
   "name": "torytis-tistory-skin-stroke",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "index.js",
   "scripts": {
     "build": "torytis build",
@@ -11,7 +11,7 @@
     "@types/node": "^20.7.0",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
-    "@wisdomstar94/torytis": "^0.0.22",
+    "@wisdomstar94/torytis": "^0.0.30",
     "esbuild": "^0.19.4",
     "fast-xml-parser": "^4.3.2",
     "postcss-modules": "^6.0.0",

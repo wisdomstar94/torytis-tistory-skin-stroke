@@ -25,10 +25,12 @@ export default function App() {
       >
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scale=1.0, user-scalable=no" />
+        {/* <meta httpEquiv="Content-Security-Policy" content="default-src 'self' daumcdn.net *.daumcdn.net jsdelivr.net *.jsdelivr.net cloudflare.com *.cloudflare.com kakao.com *.kakao.com kakaocdn.net *.kakaocdn.net daum.net *.daum.net tistory.com *.tistory.com; script-src 'unsafe-inline'; script-src-elem https://cdn.jsdelivr.net/ https://tistory1.daumcdn.net/ https://search1.daumcdn.net/ https://cdnjs.cloudflare.com/ https://t1.daumcdn.net/; style-src 'unsafe-inline'; style-src-elem https://tistory1.daumcdn.net/ https://t1.daumcdn.net/ https://cdnjs.cloudflare.com/; font-src 'unsafe-inline';" /> */}
+        {/* <meta httpEquiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;" /> */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content="[##_page_title_##] :: [##_title_##]" />
         <title>[##_page_title_##] :: [##_title_##]</title>
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js" defer></script>
+        {/* <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js" defer></script> */}
         <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js" defer></script>
         <s_if_var_google-adsense-script-url>
           <script async src="[##_var_google-adsense-script-url_##]" crossOrigin="anonymous"></script>

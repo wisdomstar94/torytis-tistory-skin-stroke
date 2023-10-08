@@ -10,6 +10,8 @@ window.addEventListener('load', () => {
   disposePermalinkContent(false);
   disposeIndexItemNewSymbol(false);
   postImageSwiperModalInit(false);
+  checkPostsIndexItemThumbnailImageError(false, undefined);
+  checkPostsIndexItemThumbnailImageLoad(false, undefined);
   window.hljs.highlightAll();
   window.hljs.initLineNumbersOnLoad();
 });
@@ -85,3 +87,22 @@ function postImageSwiperModalInit(isExecute: boolean) {
     };
   }));
 } 
+
+function checkPostsIndexItemThumbnailImageError(isExecute: boolean, thisObj: HTMLElement | undefined) {
+  if (isExecute !== true) {
+    return;
+  }
+
+  thisObj.style.display = 'none';
+}
+
+function checkPostsIndexItemThumbnailImageLoad(isExecute: boolean, thisObj: HTMLElement | undefined) {
+  if (isExecute !== true) {
+    return;
+  }
+
+  const defaultImgContainer = thisObj.parentElement.querySelector<HTMLElement>(`.posts-index-item-thumbnail-img-default-container`);
+  if (defaultImgContainer !== null) {
+    defaultImgContainer.style.display = 'none';
+  }
+}

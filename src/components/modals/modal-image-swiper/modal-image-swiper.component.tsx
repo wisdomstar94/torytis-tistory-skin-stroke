@@ -22,7 +22,7 @@ export function ModalImageSwiper(props: IModalImageSwiper.Props) {
           <div className={classes("w-full h-full--60px relative")}>
             <div className={classes("w-full h-full--20px relative overflow-hidden")}>
               {/* Slider main container */}
-              <div className="swiper modal-image-siwper" data-id={id}>
+              <div className="swiper modal-image-siwper w-full h-full relative" data-id={id}>
                 {/* Additional required wrapper */}
                 <div className="swiper-wrapper">
                   {/* Slides */}

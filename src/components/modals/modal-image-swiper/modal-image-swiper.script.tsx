@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
   hideModalImageSwiper(undefined);
 
   const closeButtonElement = document.querySelector<HTMLElement>(`.modal-image-swiper-container-close-button`);
-  closeButtonElement.addEventListener('click', () => {
+  closeButtonElement?.addEventListener('click', () => {
     const modalImageSwiperElement = closeButtonElement.parentElement.parentElement;
     const modalImageSwiperId = modalImageSwiperElement.id;
     hideModalImageSwiper(modalImageSwiperId);

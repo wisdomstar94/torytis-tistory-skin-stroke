@@ -48,6 +48,7 @@ export function SideBar() {
             {/* write-button */}
             <a 
               href="/manage/post"
+              aria-label="새 글을 작성하는 페이지로 이동하는 링크입니다."
               className={classes(
                 "inline-flex relative top-2 right-2 ml-4",
                 "stroke-888 dark:stroke-white dark-c:stroke-white",
@@ -57,6 +58,7 @@ export function SideBar() {
             {/* setting-button */}
             <a 
               href="/manage" 
+              aria-label="블로그 관리 페이지로 이동하는 링크입니다."
               className={classes(
                 "inline-flex relative top-2 right-2 ml-4",
                 "stroke-888 dark:stroke-white dark-c:stroke-white",
