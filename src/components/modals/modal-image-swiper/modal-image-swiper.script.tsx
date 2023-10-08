@@ -50,7 +50,7 @@ window.addEventListener('load', () => {
 export function showModalImageSwiper(id: string | undefined, index: number) {
   if (id === undefined) return;
   showModal(id);
-  slideToIndex(id, index);
+  slideToIndex(id, index, true);
 } 
 
 export function hideModalImageSwiper(id: string | undefined) {
@@ -77,7 +77,7 @@ export function initModalImageSwiperContent(id: string, imageItems: IModalImageS
   });
 }
 
-export function slideToIndex(id: string, index: number) {
+export function slideToIndex(id: string, index: number, isBottomItemAutoFocus?: boolean) {
   swipers.find(k => k.id === id).swiper.slideTo(index, 300);
 
   const bottomItemElements = getModalImageSwiper_BottomImageItemElements(id);
@@ -89,10 +89,9 @@ export function slideToIndex(id: string, index: number) {
     }
   }); 
 
-  const bottomUlContainer = getModalImageSwiper_BottomImageListContainerElement(id);
-  // const bottomUl = getModalImageSwiper_BottomImageListElement(id);
-  const applyScrollLeft = bottomItemElements.find((k, _index) => _index === index).offsetLeft;
-  // console.log('bottomUlContainer', bottomUlContainer);
-  // console.log('applyScrollLeft', applyScrollLeft);
-  bottomUlContainer.scrollLeft = applyScrollLeft;
+  if (isBottomItemAutoFocus === true) {
+    const bottomUlContainer = getModalImageSwiper_BottomImageListContainerElement(id);
+    const applyScrollLeft = bottomItemElements.find((k, _index) => _index === index).offsetLeft;
+    bottomUlContainer.scrollLeft = applyScrollLeft;
+  }
 }

@@ -46,9 +46,11 @@ export function ModalImageSwiper(props: IModalImageSwiper.Props) {
           <div 
             className={classes(
               "bottom-image-list-container",
-              "w-full h-[60px] relative flex flex-nowrap overflow-x-scroll whitespace-nowrap flex-shrink-0"
+              "w-full h-[60px] relative flex flex-nowrap overflow-x-scroll whitespace-nowrap flex-shrink-0",
+              "scrollbar-track-transparent scrollbar-h-1",
+              "scrollbar-thumb-333 dark:scrollbar-thumb-ccc",
             )}>
-            <ul className="bottom-image-list flex flex-nowrap flex-shrink-0">
+            <ul className="bottom-image-list flex flex-nowrap flex-shrink-0 gap-2">
 
             </ul>
             {/* ... */}

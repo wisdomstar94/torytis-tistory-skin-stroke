@@ -5,6 +5,7 @@ import type { PluginCreator } from 'tailwindcss/types/config';
 const scrollbarWidthPlugin: PluginCreator = ({ addComponents }) => {
   addComponents({
     '.scrollbar-w-1::-webkit-scrollbar': { 'width': '4px' },
+    '.scrollbar-h-1::-webkit-scrollbar': { 'height': '4px' },
   });
 };
 
@@ -14,6 +15,7 @@ const scrollbarTrackColorPlugin: PluginCreator = ({ addComponents }) => {
     '.scrollbar-track-333::-webkit-scrollbar-track': { 'background-color': '#333' },
     '.scrollbar-track-666::-webkit-scrollbar-track': { 'background-color': '#666' },
     '.scrollbar-track-888::-webkit-scrollbar-track': { 'background-color': '#888' },
+    '.scrollbar-track-transparent::-webkit-scrollbar-track': { 'background-color': 'transparent' },
   });
 };
 

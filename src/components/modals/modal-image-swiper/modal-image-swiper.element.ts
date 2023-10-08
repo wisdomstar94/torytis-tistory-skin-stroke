@@ -26,7 +26,7 @@ export function getModalImageSwiperWrapperElement(id: string) {
 export function generateModalImageSwiper_BottomImageListItemElement(id: string, imageItem: IModalImageSwiper.ImageItem) {
   const item = element({
     tagName: 'li',
-    className: "bottom-image-list-item inline-flex relative border border-black",
+    className: "bottom-image-list-item inline-flex relative border border-black dark:border-white",
     children: [
       element({
         tagName: 'img',
@@ -54,7 +54,7 @@ export function generateModalImageSwiper_BottomImageListItemElement(id: string, 
     ],
   });
   item.addEventListener('click', (event) => {
-    slideToIndex(id, imageItem.index);
+    slideToIndex(id, imageItem.index, false);
   });
   return item;
 }
@@ -74,7 +74,7 @@ export function generateModalImageSwiper_SlideItemElement(imageItem: IModalImage
         image.attr('href', imageItem.src);
 
         const _zoom = zoom<SVGSVGElement, any>().on("zoom", (e: any) => {
-          console.log('zoom.e', e);
+          // console.log('zoom.e', e);
           const transform = e.transform; // {k: 1, x: -4, y: -85}
           image.attr("transform", `translate(${transform.x} ${transform.y}) scale(${transform.k})`)
         });
