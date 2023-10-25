@@ -31,7 +31,7 @@ export function getPostsIndexUlListElement() {
 export function getPostsHeadingTextElementItems(): ICommon.ElementItem[] {
   const elementItems: ICommon.ElementItem[] = [];
 
-  const postsBody = document.querySelector<HTMLElement>(`.tt_article_useless_p_margin`);
+  const postsBody = document.querySelector<HTMLElement>(`.contents_style`);
   if (postsBody === null) return elementItems;
   
   let index = 0;
@@ -89,7 +89,7 @@ export function getPostsIndexLiElement(text: string | null, index: number) {
 
 export function getCodeElements() {
   const elements: HTMLElement[] = [];
-  const targets = document.querySelectorAll(`.tt_article_useless_p_margin code`);
+  const targets = document.querySelectorAll(`.contents_style code`);
   targets.forEach((element) => {
     elements.push(element as HTMLElement);
   });
@@ -104,21 +104,21 @@ export function getPostsIndexItemLiElements() {
 
 export function getPermalinkContentDivElements() {
   const elements: HTMLDivElement[] = [];
-  const htmlCollection = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > div');
+  const htmlCollection = document.querySelectorAll<HTMLDivElement>('#tt-body-page .contents_style > div');
   htmlCollection.forEach(item => elements.push(item));
   return elements;
 }
 
 export function getPermalinkContentPElements() {
   const elements: HTMLDivElement[] = [];
-  const htmlCollection = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > p');
+  const htmlCollection = document.querySelectorAll<HTMLDivElement>('#tt-body-page .contents_style > p');
   htmlCollection.forEach(item => elements.push(item));
   return elements;
 }
 
 export function getPermalinkContentDivSpanElements() {
   const elements: HTMLDivElement[] = [];
-  const divSpans = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > div > span');
+  const divSpans = document.querySelectorAll<HTMLDivElement>('#tt-body-page .contents_style > div > span');
   divSpans.forEach(element => elements.push(element));
   return elements;
 }
@@ -126,27 +126,27 @@ export function getPermalinkContentDivSpanElements() {
 export function getPermalinkContentHeadingElements() {
   const elements: HTMLDivElement[] = [];
   {
-    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > h1');
+    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .contents_style > h1');
     targets.forEach(element => elements.push(element));
   }
   {
-    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > h2');
+    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .contents_style > h2');
     targets.forEach(element => elements.push(element));
   }
   {
-    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > h3');
+    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .contents_style > h3');
     targets.forEach(element => elements.push(element));
   }
   {
-    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > h4');
+    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .contents_style > h4');
     targets.forEach(element => elements.push(element));
   }
   {
-    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > h5');
+    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .contents_style > h5');
     targets.forEach(element => elements.push(element));
   }
   {
-    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .tt_article_useless_p_margin > h6');
+    const targets = document.querySelectorAll<HTMLDivElement>('#tt-body-page .contents_style > h6');
     targets.forEach(element => elements.push(element));
   }
   return elements;

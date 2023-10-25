@@ -25,14 +25,8 @@
   padding-left: 8px;
 }
 
-// #tt-body-page .tt_article_useless_p_margin {
-//   > ul, > ol {
-//     padding-left: 28px;
-//   }
-// }
-
 #tt-body-page {
-  .tt_article_useless_p_margin {
+  .contents_style {
     > div {
       opacity: 0;
 
@@ -124,7 +118,7 @@
       }
     }
 
-    .tt_article_useless_p_margin {
+    .contents_style {
       > figure.fileblock {
         .filename {
           color: #ccc !important;

@@ -223,7 +223,7 @@ export function elementSvg<K extends keyof SVGElementTagNameMap>(params: {
 
 export function getPostImageElements() {
   const elementList: HTMLImageElement[] = [];
-  const result = document.querySelectorAll<HTMLImageElement>(`.tt_article_useless_p_margin figure.imageblock img`);
+  const result = document.querySelectorAll<HTMLImageElement>(`.contents_style figure.imageblock img`);
   result.forEach(v => elementList.push(v));
   return elementList;
 }
