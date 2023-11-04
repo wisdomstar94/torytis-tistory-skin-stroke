@@ -69,13 +69,24 @@ window.addEventListener('load', () => {
     }
   }
 
-  setTimeout(() => {
+  // console.log('@1. performance.now()', performance.now());
+  const observer = new MutationObserver((record) => {
+    // console.log('@2. performance.now()', performance.now());
     hashCheck();
-  }, 150);
+  });
+  observer.observe(document.querySelector('.comment-list'), {
+    childList: true,
+  });
   
   window.addEventListener("hashchange", () => {
     hashCheck();
+    setTimeout(() => {
+      hashCheck();
+    }, 100);
   }); 
+  setTimeout(() => {
+    hashCheck();
+  }, 200);
 });
 
 function getItemElement(text: string, className: string) {
