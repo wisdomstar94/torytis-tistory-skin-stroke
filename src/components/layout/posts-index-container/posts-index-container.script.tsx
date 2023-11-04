@@ -82,11 +82,11 @@ window.addEventListener('load', () => {
     hashCheck();
     setTimeout(() => {
       hashCheck();
-    }, 100);
+    }, 500);
   }); 
   setTimeout(() => {
     hashCheck();
-  }, 200);
+  }, 500);
 });
 
 function getItemElement(text: string, className: string) {
