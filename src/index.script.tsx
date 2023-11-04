@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
   postImageSwiperModalInit(false);
   checkPostsIndexItemThumbnailImageError(false, undefined);
   checkPostsIndexItemThumbnailImageLoad(false, undefined);
+  subscribeCommnetListDomEvent(true);
   window.hljs.highlightAll();
   window.hljs.initLineNumbersOnLoad();
 });
@@ -105,4 +106,51 @@ function checkPostsIndexItemThumbnailImageLoad(isExecute: boolean, thisObj: HTML
   if (defaultImgContainer !== null) {
     defaultImgContainer.style.display = 'none';
   }
+}
+
+function removeHTMLTag(obj: {
+  isExecute?: boolean;
+  className: string;
+}) {
+  // console.log('@removeHTMLTag', obj);
+  const {
+    isExecute,
+    className,
+  } = obj;
+
+  if (isExecute !== true) {
+    return;
+  }
+
+  // console.log('@className', className);
+
+  const elements = document.querySelectorAll(`.${className}`);
+
+  // console.log('@elements', elements);
+  elements.forEach((element: HTMLElement) => {
+    element.innerHTML = element.textContent;
+  });
+}
+
+function convertCommentDesc() {
+  // console.log(`document.querySelector('.comment-list')`, document.querySelector('.comment-list'));
+  // console.log(`document.querySelector('.comment-list').children`, document.querySelector('.comment-list').children);
+  removeHTMLTag({ isExecute: true, className: 'comment-desc' });
+}
+
+function subscribeCommnetListDomEvent(isExecute: boolean) {
+  // console.log('@subscribeCommnetListDomEvent called!!', isExecute);
+
+  if (isExecute !== true) {
+    return;
+  }
+
+  const observer = new MutationObserver((record) => {
+    // console.log('@record', record);
+    convertCommentDesc();
+  });
+  observer.observe(document.querySelector('.comment-list'), {
+    childList: true,
+    
+  });
 }

@@ -68,7 +68,7 @@ function checkNoticeEmpty(isExecute: boolean) {
   if (ul.children.length === 0) {
     const li = document.createElement('li');
     const span = document.createElement('span');
-    span.classList.add('text-xs', 'text-slate-500');
+    span.classList.add('text-xs', 'text-slate-500', 'dark:text-white', 'dark-c:text-white');
     span.textContent = `등록된 공지사항이 없습니다.`;
     li.appendChild(span);
     ul.appendChild(li);

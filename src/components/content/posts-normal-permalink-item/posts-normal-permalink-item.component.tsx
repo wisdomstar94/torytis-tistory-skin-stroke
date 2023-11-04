@@ -143,7 +143,10 @@ export function PostsNormalPermalinkItem() {
                           "w-full pl-0 text-xs",
                           "flex-auto md:flex-1 lg:flex-auto xl:flex-1",
                         )}>
-                        <div>[##_rp_rep_desc_##]</div>
+                        <div className="comment-desc whitespace-pre-wrap">[##_rp_rep_desc_##]</div>
+                        {/* <CallJavascript 
+                          code="removeHTMLTag({ className: 'comment-desc', isExecute: true })"
+                          /> */}
                         <div
                           className={classes(
                             "block mt-1 relative",
@@ -251,7 +254,10 @@ export function PostsNormalPermalinkItem() {
                                   "pl-14 md:pl-3 lg:pl-14 xl:pl-3",
                                   "mt-2 md:mt-0 lg:mt-2 xl:mt-0",
                                 )}>
-                                <div>[##_rp_rep_desc_##]</div>
+                                <div className="comment-desc whitespace-pre-wrap">[##_rp_rep_desc_##]</div>
+                                {/* <CallJavascript 
+                                  code="removeHTMLTag({ className: 'comment-desc', isExecute: true })"
+                                  /> */}
                                 <div
                                   className={classes(
                                     "block mt-1 relative",
@@ -292,6 +298,9 @@ export function PostsNormalPermalinkItem() {
                 )}>
                 등록된 댓글이 없습니다.
               </div>
+              {/* <CallJavascript 
+                code="subscribeCommnetListDomEvent(true)"
+                /> */}
             </s_rp_container>
             <s_rp_input_form>
               <ul

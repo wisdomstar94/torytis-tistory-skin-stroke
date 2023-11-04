@@ -1,4 +1,5 @@
 import { classes } from "../../../functions/common/common";
+import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { SvgArrowForward } from "../../svgs/svg-arrow-forward/svg-arrow-forward.component";
 import { SwitchButton } from "../../switch-button/switch-button.component";
 import styles from './guestbook.module.scss';
@@ -15,7 +16,7 @@ export function Guestbook() {
           <s_guest_container>
             <ol 
               className={classes(
-                "block m-0 p-0 relative",
+                "comment-list block m-0 p-0 relative",
               )}>
               <s_guest_rep>
                 <li 
@@ -80,7 +81,10 @@ export function Guestbook() {
                         "w-full pl-0 text-xs",
                         "flex-auto md:flex-1 lg:flex-auto xl:flex-1",
                       )}>
-                      <div>[##_guest_rep_desc_##]</div>
+                      <div className="comment-desc whitespace-pre-wrap">[##_guest_rep_desc_##]</div>
+                      {/* <CallJavascript 
+                        code="removeHTMLTag({ className: 'comment-desc', isExecute: true })"
+                        /> */}
                       <div
                         className={classes(
                           "block mt-1 relative",
@@ -184,7 +188,10 @@ export function Guestbook() {
                                 "mt-1 md:mt-0 lg:mt-1 xl:mt-0",
                                 "pl-14 md:pl-3 lg:pl-14 xl:pl-3",
                               )}>
-                              <div>[##_guest_rep_desc_##]</div>
+                              <div className="comment-desc whitespace-pre-wrap">[##_guest_rep_desc_##]</div>
+                              {/* <CallJavascript 
+                                code="removeHTMLTag({ className: 'comment-desc', isExecute: true })"
+                                /> */}
                               <div
                                 className={classes(
                                   "block mt-1 relative",
@@ -217,6 +224,12 @@ export function Guestbook() {
                 </li>
               </s_guest_rep>
             </ol>
+            {/* <CallJavascript 
+              code="subscribeCommnetListDomEvent(true)"
+              /> */}
+            <CallJavascript
+              code="convertCommentDesc()"
+              />
           </s_guest_container>
           <s_guest_input_form>
             <ul 
