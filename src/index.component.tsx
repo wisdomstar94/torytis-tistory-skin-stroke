@@ -32,9 +32,62 @@ export default function App() {
         <title>[##_page_title_##] :: [##_title_##]</title>
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js" defer></script>
         <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js" defer></script>
-        <s_if_var_google-adsense-script-url>
-          <script async src="[##_var_google-adsense-script-url_##]" crossOrigin="anonymous"></script>
-        </s_if_var_google-adsense-script-url>
+        
+        <s_if_var_google_adsense_script_url>
+          <script async src="[##_var_google_adsense_script_url_##]" crossOrigin="anonymous"></script>
+        </s_if_var_google_adsense_script_url>
+
+        <s_if_var_side_bar_scrollbar_track_color 
+          dangerouslySetInnerHTML={{
+            __html: `
+              <style>
+                #common-side-bar::-webkit-scrollbar-track {
+                  background-color: [##_var_side_bar_scrollbar_track_color_##]
+                }
+              </style>
+            `,
+          }}
+        >
+        </s_if_var_side_bar_scrollbar_track_color>
+
+        <s_if_var_side_bar_scrollbar_thumb_color 
+          dangerouslySetInnerHTML={{
+            __html: `
+              <style>
+                #common-side-bar::-webkit-scrollbar-thumb {
+                  background-color: [##_var_side_bar_scrollbar_thumb_color_##]
+                }
+              </style>
+            `,
+          }}
+        >
+        </s_if_var_side_bar_scrollbar_thumb_color>
+
+        <s_if_var_post_index_item_border_color
+          dangerouslySetInnerHTML={{
+            __html: `
+              <style>
+                #[##_body_id_##] .common-post-index-item {
+                  border-color: [##_var_post_index_item_border_color_##]
+                }
+              </style>
+            `,
+          }}
+        >
+        </s_if_var_post_index_item_border_color>
+
+        <s_if_var_post_index_item_border_active_color
+          dangerouslySetInnerHTML={{
+            __html: `
+              <style>
+                #[##_body_id_##] .common-post-index-item:hover {
+                  border-color: [##_var_post_index_item_border_active_color_##]
+                }
+              </style>
+            `,
+          }}
+        >
+        </s_if_var_post_index_item_border_active_color>
       </head>
       <body 
         id="[##_body_id_##]"

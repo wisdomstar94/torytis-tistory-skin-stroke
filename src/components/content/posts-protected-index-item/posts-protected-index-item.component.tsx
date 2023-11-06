@@ -13,6 +13,7 @@ export function PostsProtectedIndexItem() {
           "hover:outline-2 hover:outline",
           "hover:outline-black dark:hover:outline-white dark-c:outline-white",
           "border-black dark:border-white dark-c:border-white",
+          "common-post-index-item",
         )}>
         <a 
           href="[##_article_rep_link_##]" 

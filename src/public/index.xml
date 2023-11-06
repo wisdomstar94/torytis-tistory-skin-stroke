@@ -2,7 +2,7 @@
 <skin>
   <information>
     <name>Stroke</name>
-    <version>1.0.14</version>
+    <version>1.0.15</version>
     <description>
       <![CDATA[XHTML 기반의 Tistory Stroke 스킨입니다.]]>
     </description>
@@ -77,7 +77,7 @@
   <variables>
     <variablegroup name="구글애드센스">
       <variable>
-        <name>google-adsense-script-url</name>
+        <name>google_adsense_script_url</name>
         <label>
           <![CDATA[ 구글애드센스 script url ]]>
         </label>
@@ -87,7 +87,7 @@
     </variablegroup>
     <variablegroup name="테마">
       <variable>
-        <name>dark-mode-type</name>
+        <name>dark_mode_type</name>
         <label>
           <![CDATA[ 다크 모드 타입 ]]>
         </label>
@@ -95,10 +95,46 @@
         <type>SELECT</type>
         <option><![CDATA[
           [
-            {"name":"darkmode-loose", "label":"방문자가 다크모드 컨트롤 가능", "value":"darkmode-loose"},
-            {"name":"darkmode-fixed", "label":"블로그를 항상 다크모드로 고정", "value":"darkmode-fixed"}
+            {"name":"darkmode_loose", "label":"방문자가 다크모드 컨트롤 가능", "value":"darkmode_loose"},
+            {"name":"darkmode_fixed", "label":"블로그를 항상 다크모드로 고정", "value":"darkmode_fixed"}
           ]
         ]]></option>
+      </variable>
+    </variablegroup>
+    <variablegroup name="사이드바 스크롤 색상">
+      <variable>
+        <name>side_bar_scrollbar_track_color</name>
+        <label>
+          <![CDATA[ 스크롤바 track 색상 ]]>
+        </label>
+        <description>사이드바의 스크롤바 track 색상을 입력하세요.</description>
+        <type>STRING</type>
+      </variable>
+      <variable>
+        <name>side_bar_scrollbar_thumb_color</name>
+        <label>
+          <![CDATA[ 스크롤바 thumb 색상 ]]>
+        </label>
+        <description>사이드바의 스크롤바 thumb 색상을 입력하세요.</description>
+        <type>STRING</type>
+      </variable>
+    </variablegroup>
+    <variablegroup name="포스트 인덱스 아이템 테두리 색상">
+      <variable>
+        <name>post_index_item_border_color</name>
+        <label>
+          <![CDATA[ 일반 색상 ]]>
+        </label>
+        <description>일반 색상을 입력하세요.</description>
+        <type>STRING</type>
+      </variable>
+      <variable>
+        <name>post_index_item_border_active_color</name>
+        <label>
+          <![CDATA[ 마우스 오버시 색상 ]]>
+        </label>
+        <description>마우스 오버시 색상을 입력하세요.</description>
+        <type>STRING</type>
       </variable>
     </variablegroup>
   </variables>

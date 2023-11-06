@@ -22,6 +22,7 @@ export function SideBar() {
 
       {/* side bar */}
       <aside
+        id="common-side-bar"
         className={classes(
           "side-bar",
           "h-full block fixed top-0 z-[3] overflow-y-scroll border-r border-r-black box-border scrollbar-w-1",
@@ -93,7 +94,7 @@ export function SideBar() {
                 <div
                   className={classes(
                     "dark-mode-switch-button",
-                    "[##_var_dark-mode-type_##]",
+                    "[##_var_dark_mode_type_##]",
                     "w-full flex flex-wrap relative items-center justify-start gap-2",
                   )}>
                   <div
@@ -111,9 +112,9 @@ export function SideBar() {
                       name="dark_mode_switch"
                       />
                   </div>
-                  <s_if_var_dark-mode-type>
-                    <CallJavascript code={`if ("[##_var_dark-mode-type_##]".trim() === "darkmode-fixed") { applyForceDarkMode(true); }`} />
-                  </s_if_var_dark-mode-type>
+                  <s_if_var_dark_mode_type>
+                    <CallJavascript code={`if ("[##_var_dark_mode_type_##]".trim() === "darkmode_fixed") { applyForceDarkMode(true); }`} />
+                  </s_if_var_dark_mode_type>
                   <CallJavascript code="checkDarkMode(true)" />
                 </div>
               </s_sidebar_element>
