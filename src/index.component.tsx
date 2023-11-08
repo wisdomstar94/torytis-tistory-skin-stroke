@@ -42,7 +42,7 @@ export default function App() {
             __html: `
               <style>
                 #common-side-bar::-webkit-scrollbar-track {
-                  background-color: [##_var_side_bar_scrollbar_track_color_##]
+                  background-color: [##_var_side_bar_scrollbar_track_color_##];
                 }
               </style>
             `,
@@ -55,7 +55,7 @@ export default function App() {
             __html: `
               <style>
                 #common-side-bar::-webkit-scrollbar-thumb {
-                  background-color: [##_var_side_bar_scrollbar_thumb_color_##]
+                  background-color: [##_var_side_bar_scrollbar_thumb_color_##];
                 }
               </style>
             `,
@@ -68,7 +68,7 @@ export default function App() {
             __html: `
               <style>
                 #[##_body_id_##] .common-post-index-item {
-                  border-color: [##_var_post_index_item_border_color_##]
+                  border-color: [##_var_post_index_item_border_color_##];
                 }
               </style>
             `,
@@ -81,7 +81,8 @@ export default function App() {
             __html: `
               <style>
                 #[##_body_id_##] .common-post-index-item:hover {
-                  border-color: [##_var_post_index_item_border_active_color_##]
+                  border-color: [##_var_post_index_item_border_active_color_##];
+                  outline-color: [##_var_post_index_item_border_active_color_##];
                 }
               </style>
             `,
