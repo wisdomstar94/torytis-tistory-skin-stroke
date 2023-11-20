@@ -66,7 +66,6 @@ export function PostsProtectedIndexItem() {
               )}>보호되어 있는 글입니다.</div>
           </div>
           <PostsIndexItemOverlayContent />
-          <CallJavascript code="disposeIndexItemNewSymbol(true)" />
         </a>
       </li>
     </>

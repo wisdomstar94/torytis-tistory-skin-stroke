@@ -62,6 +62,20 @@ const variantPlugin: PluginCreator = ({ addVariant }) => {
   addVariant('tt-body-guestbook', '#tt-body-guestbook &');
   addVariant('tt-body-tag', '#tt-body-tag &');
 
+  addVariant('cover_list_max_col_count_1', '.cover_list_max_col_count_1 &');
+  addVariant('cover_list_max_col_count_2', '.cover_list_max_col_count_2 &');
+  addVariant('cover_list_max_col_count_3', '.cover_list_max_col_count_3 &');
+  addVariant('cover_list_max_col_count_4', '.cover_list_max_col_count_4 &');
+  addVariant('cover_list_max_col_count_5', '.cover_list_max_col_count_5 &');
+  addVariant('cover_list_max_col_count_6', '.cover_list_max_col_count_6 &');
+  addVariant('cover_list_max_col_count_7', '.cover_list_max_col_count_7 &');
+  addVariant('cover_list_max_col_count_8', '.cover_list_max_col_count_8 &');
+
+  addVariant('cover_list_half_max_col_count_1', '.cover_list_half_max_col_count_1 &');
+  addVariant('cover_list_half_max_col_count_2', '.cover_list_half_max_col_count_2 &');
+  addVariant('cover_list_half_max_col_count_3', '.cover_list_half_max_col_count_3 &');
+  addVariant('cover_list_half_max_col_count_4', '.cover_list_half_max_col_count_4 &');
+
   addVariant('active', '.active&');
   addVariant('parent-1-active', '.active > &');
   addVariant('parent-2-active', '.active > * > &');
@@ -88,6 +102,61 @@ export default {
       width: {
         'full--40px': 'calc(100% - 40px)',
         'full--20px': 'calc(100% - 20px)',
+
+        '1/2-gap-1': 'calc((100% - ((4px) * 1)) / 2)',
+        '1/2-gap-2': 'calc((100% - ((4px * 2) * 1)) / 2)',
+        '1/2-gap-3': 'calc((100% - ((4px * 3) * 1)) / 2)',
+        '1/2-gap-4': 'calc((100% - ((4px * 4) * 1)) / 2)',
+        '1/2-gap-5': 'calc((100% - ((4px * 5) * 1)) / 2)',
+        '1/2-gap-6': 'calc((100% - ((4px * 6) * 1)) / 2)',
+        '1/2-gap-7': 'calc((100% - ((4px * 7) * 1)) / 2)',
+        '1/2-gap-8': 'calc((100% - ((4px * 8) * 1)) / 2)',
+        '1/2-gap-9': 'calc((100% - ((4px * 9) * 1)) / 2)',
+        '1/2-gap-10': 'calc((100% - ((4px * 10) * 1)) / 2)',
+
+        '1/3-gap-1': 'calc((100% - ((4px) * 2)) / 3)',
+        '1/3-gap-2': 'calc((100% - ((4px * 2) * 2)) / 3)',
+        '1/3-gap-3': 'calc((100% - ((4px * 3) * 2)) / 3)',
+        '1/3-gap-4': 'calc((100% - ((4px * 4) * 2)) / 3)',
+        '1/3-gap-5': 'calc((100% - ((4px * 5) * 2)) / 3)',
+        '1/3-gap-6': 'calc((100% - ((4px * 6) * 2)) / 3)',
+        '1/3-gap-7': 'calc((100% - ((4px * 7) * 2)) / 3)',
+        '1/3-gap-8': 'calc((100% - ((4px * 8) * 2)) / 3)',
+        '1/3-gap-9': 'calc((100% - ((4px * 9) * 2)) / 3)',
+        '1/3-gap-10': 'calc((100% - ((4px * 10) * 2)) / 3)',
+
+        '1/4-gap-1': 'calc((100% - ((4px) * 3)) / 4)',
+        '1/4-gap-2': 'calc((100% - ((4px * 2) * 3)) / 4)',
+        '1/4-gap-3': 'calc((100% - ((4px * 3) * 3)) / 4)',
+        '1/4-gap-4': 'calc((100% - ((4px * 4) * 3)) / 4)',
+        '1/4-gap-5': 'calc((100% - ((4px * 5) * 3)) / 4)',
+        '1/4-gap-6': 'calc((100% - ((4px * 6) * 3)) / 4)',
+        '1/4-gap-7': 'calc((100% - ((4px * 7) * 3)) / 4)',
+        '1/4-gap-8': 'calc((100% - ((4px * 8) * 3)) / 4)',
+        '1/4-gap-9': 'calc((100% - ((4px * 9) * 3)) / 4)',
+        '1/4-gap-10': 'calc((100% - ((4px * 10) * 3)) / 4)',
+
+        '1/5-gap-1': 'calc((100% - ((4px) * 4)) / 5)',
+        '1/5-gap-2': 'calc((100% - ((4px * 2) * 4)) / 5)',
+        '1/5-gap-3': 'calc((100% - ((4px * 3) * 4)) / 5)',
+        '1/5-gap-4': 'calc((100% - ((4px * 4) * 4)) / 5)',
+        '1/5-gap-5': 'calc((100% - ((4px * 5) * 4)) / 5)',
+        '1/5-gap-6': 'calc((100% - ((4px * 6) * 4)) / 5)',
+        '1/5-gap-7': 'calc((100% - ((4px * 7) * 4)) / 5)',
+        '1/5-gap-8': 'calc((100% - ((4px * 8) * 4)) / 5)',
+        '1/5-gap-9': 'calc((100% - ((4px * 9) * 4)) / 5)',
+        '1/5-gap-10': 'calc((100% - ((4px * 10) * 4)) / 5)',
+
+        '1/6-gap-1': 'calc((100% - ((4px) * 5)) / 6)',
+        '1/6-gap-2': 'calc((100% - ((4px * 2) * 5)) / 6)',
+        '1/6-gap-3': 'calc((100% - ((4px * 3) * 5)) / 6)',
+        '1/6-gap-4': 'calc((100% - ((4px * 4) * 5)) / 6)',
+        '1/6-gap-5': 'calc((100% - ((4px * 5) * 5)) / 6)',
+        '1/6-gap-6': 'calc((100% - ((4px * 6) * 5)) / 6)',
+        '1/6-gap-7': 'calc((100% - ((4px * 7) * 5)) / 6)',
+        '1/6-gap-8': 'calc((100% - ((4px * 8) * 5)) / 6)',
+        '1/6-gap-9': 'calc((100% - ((4px * 9) * 5)) / 6)',
+        '1/6-gap-10': 'calc((100% - ((4px * 10) * 5)) / 6)',
       },
       maxWidth: {
         'full--40px': 'calc(100% - 40px)',
@@ -129,6 +198,9 @@ export default {
       stroke: {
         '888': '#888',
         'aaa': '#aaa',
+      },
+      zIndex: {
+        '2': '2',
       },
     },
   },

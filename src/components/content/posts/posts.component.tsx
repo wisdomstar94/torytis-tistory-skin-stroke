@@ -1,4 +1,5 @@
 import { classes } from "../../../functions/common/common";
+import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { PostsNormalIndexItem } from "../posts-normal-index-item/posts-normal-index-item.component";
 import { PostsNormalPermalinkItem } from "../posts-normal-permalink-item/posts-normal-permalink-item.component";
 import { PostsNoticeIndexItem } from "../posts-notice-index-item/posts-notice-index-item.component";
@@ -28,7 +29,7 @@ export function Posts() {
           {/* permalink item */}
           <s_permalink_article_rep>
             <PostsNormalPermalinkItem />
-          </s_permalink_article_rep>  
+          </s_permalink_article_rep>
         </s_article_rep>
 
         {/* 공지사항 포스트 */}
@@ -57,6 +58,7 @@ export function Posts() {
           </s_permalink_article_rep>
         </s_article_protected>
       </ul>
+      <CallJavascript code="disposeIndexItemNewSymbol(true, 'ul.posts-list > li')" />
     </>
   );
 }

@@ -89,7 +89,6 @@ export function PostsNoticeIndexItem() {
               )}>[##_article_rep_summary_##]</div>
           </div>
           <PostsIndexItemOverlayContent />
-          <CallJavascript code="disposeIndexItemNewSymbol(true)" />
         </a>
       </li>
     </>

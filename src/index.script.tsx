@@ -8,7 +8,7 @@ if (isDarkMode()) {
 
 window.addEventListener('load', () => {
   disposePermalinkContent(false);
-  disposeIndexItemNewSymbol(false);
+  disposeIndexItemNewSymbol(false, '');
   postImageSwiperModalInit(false);
   checkPostsIndexItemThumbnailImageError(false, undefined);
   checkPostsIndexItemThumbnailImageLoad(false, undefined);
@@ -56,19 +56,30 @@ function disposePermalinkContent(isExecute: boolean) {
   });
 }
 
-function disposeIndexItemNewSymbol(isExecute: boolean) {
+function disposeIndexItemNewSymbol(isExecute: boolean, itemsParentSelector: string) {
   if (isExecute !== true) {
     return;
   }
 
-  getPostsIndexItemLiElements().forEach(element => {
+  if (typeof itemsParentSelector !== 'string') {
+    console.error(`itemsParentSelector 인자가 주어지지 않았습니다.`);
+    return;
+  }
+
+  const elements = document.querySelectorAll(itemsParentSelector);
+  // console.log(`@document.querySelectorAll('${itemsParentSelector}')`, elements);
+  // getPostsIndexItemLiElements().forEach(element => {
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
     const datetimeString = element.querySelector('.index-item-datetime-text')?.textContent;
-    if (typeof datetimeString !== 'string') return;
+    // console.log('@element', element);
+    // console.log('@datetimeString', datetimeString);
+    if (typeof datetimeString !== 'string') continue;
     const date = new Date(datetimeString);
-    if (isNaN(date.getFullYear())) return;
-    if (Date.now() - date.getTime() > (1000 * 60 * 60 * 24 * 3)) return;
+    if (isNaN(date.getFullYear())) continue;
+    if (Date.now() - date.getTime() > (1000 * 60 * 60 * 24 * 3)) continue;
     element.querySelector('.overlay-info-area .new-post-symbol')?.classList.add('my-show');
-  });
+  }
 }
 
 function postImageSwiperModalInit(isExecute: boolean) {

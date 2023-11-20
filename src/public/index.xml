@@ -2,7 +2,7 @@
 <skin>
   <information>
     <name>Stroke</name>
-    <version>1.0.17</version>
+    <version>1.1.0</version>
     <description>
       <![CDATA[XHTML 기반의 Tistory Stroke 스킨입니다.]]>
     </description>
@@ -156,5 +156,57 @@
         <default>post_youtube_horizontal_align_none</default>
       </variable>
     </variablegroup>
+    <variablegroup name="홈커버 아이템 옵션">
+      <variable>
+        <name>cover_list_max_col_count</name>
+        <label>
+          <![CDATA[ 리스트의 최대 칼럼 갯수 ]]>
+        </label>
+        <description>홈커버 리스트의 최대 칼럼 갯수</description>
+        <type>SELECT</type>
+        <option><![CDATA[
+          [
+            {"name":"cover_list_max_col_count_1", "label":"1개", "value":"cover_list_max_col_count_1"},
+            {"name":"cover_list_max_col_count_2", "label":"2개", "value":"cover_list_max_col_count_2"},
+            {"name":"cover_list_max_col_count_3", "label":"3개", "value":"cover_list_max_col_count_3"},
+            {"name":"cover_list_max_col_count_4", "label":"4개", "value":"cover_list_max_col_count_4"},
+            {"name":"cover_list_max_col_count_5", "label":"5개", "value":"cover_list_max_col_count_5"},
+            {"name":"cover_list_max_col_count_6", "label":"6개", "value":"cover_list_max_col_count_6"},
+            {"name":"cover_list_max_col_count_7", "label":"7개", "value":"cover_list_max_col_count_7"},
+            {"name":"cover_list_max_col_count_8", "label":"8개", "value":"cover_list_max_col_count_8"}
+          ]
+        ]]></option>
+        <default>cover_list_max_col_count_6</default>
+      </variable>
+      <variable>
+        <name>cover_list_half_max_col_count</name>
+        <label>
+          <![CDATA[ 리스트(절반크기)의 최대 칼럼 갯수 ]]>
+        </label>
+        <description>홈커버 리스트(절반크기)의 최대 칼럼 갯수</description>
+        <type>SELECT</type>
+        <option><![CDATA[
+          [
+            {"name":"cover_list_half_max_col_count_1", "label":"1개", "value":"cover_list_half_max_col_count_1"},
+            {"name":"cover_list_half_max_col_count_2", "label":"2개", "value":"cover_list_half_max_col_count_2"},
+            {"name":"cover_list_half_max_col_count_3", "label":"3개", "value":"cover_list_half_max_col_count_3"},
+            {"name":"cover_list_half_max_col_count_4", "label":"4개", "value":"cover_list_half_max_col_count_4"}
+          ]
+        ]]></option>
+        <default>cover_list_half_max_col_count_3</default>
+      </variable>
+    </variablegroup>
   </variables>
+  <cover>
+    <item>
+      <name>list</name>
+      <label><![CDATA[리스트]]></label>
+      <description><![CDATA[글 리스트를 표시합니다.]]></description>
+    </item>
+    <item>
+      <name>list_half</name>
+      <label><![CDATA[리스트(절반크기)]]></label>
+      <description><![CDATA[글 리스트를 표시합니다.]]></description>
+    </item>
+  </cover>
 </skin>

@@ -16,6 +16,7 @@ import { Pagination } from "./components/content/pagination/pagination.component
 import { AdRowLower } from "./components/content/ad-row-lower/ad-row-lower.component";
 import { PostsIndexContainer } from "./components/layout/posts-index-container/posts-index-container.component";
 import { classes } from "./functions/common/common";
+import { HomeCover } from "./components/content/home-cover/home-cover.component";
 
 export default function App() {
   return (
@@ -104,7 +105,8 @@ export default function App() {
           <ContentContainer>
             <AdRowUpper />
 
-            <NormalPageTitleRow />
+            <HomeCover />
+
             <CategoryPageTitleRow />
             <GuestbookPageTitleRow />
             <TagPageTitleRow />

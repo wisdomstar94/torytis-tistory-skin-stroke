@@ -7,7 +7,7 @@ export function TopBar() {
       <header 
         className={classes(
           "top-bar",
-          "w-full block fixed top-0 left-0 z-[2]",
+          "w-full block fixed top-0 left-0 z-[3]",
           "lg:hidden",
           "!transition-colors !duration-300",
           "bg-white dark:bg-black dark-c:bg-black",
