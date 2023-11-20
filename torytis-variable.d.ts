@@ -14,5 +14,7 @@ declare namespace JSX {
     's_not_var_post_index_item_border_color': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
     's_if_var_post_index_item_border_active_color': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
     's_not_var_post_index_item_border_active_color': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+    's_if_var_post_youtube_horizontal_align': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+    's_not_var_post_youtube_horizontal_align': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
   }
 }

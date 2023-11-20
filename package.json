@@ -1,25 +1,25 @@
 {
   "name": "torytis-tistory-skin-stroke",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "main": "index.js",
   "scripts": {
     "build": "torytis build",
     "build:variable": "torytis build:variable"
   },
   "devDependencies": {
-    "@types/d3": "^7.4.1",
-    "@types/node": "^20.7.0",
-    "@types/react": "^18.2.22",
-    "@types/react-dom": "^18.2.7",
-    "@wisdomstar94/torytis": "^0.0.30",
-    "esbuild": "^0.19.4",
+    "@types/d3": "^7.4.3",
+    "@types/node": "^20.9.2",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@wisdomstar94/torytis": "^0.0.31",
+    "esbuild": "^0.19.6",
     "fast-xml-parser": "^4.3.2",
     "postcss-modules": "^6.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwindcss": "^3.3.3",
+    "tailwindcss": "^3.3.5",
     "typescript": "^5.2.2",
     "d3": "^7.8.5",
-    "swiper": "^10.3.1"
+    "swiper": "^11.0.4"
   }
 }

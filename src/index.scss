@@ -89,6 +89,34 @@
       margin-bottom: 4px !important;
     }
   }
+
+  // 유튜브 영상 수평 정렬
+  .post_youtube_horizontal_align_left {
+    .contents_style {
+      figure[data-video-host='youtube'] {
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .post_youtube_horizontal_align_center {
+    .contents_style {
+      figure[data-video-host='youtube'] {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .post_youtube_horizontal_align_right {
+    .contents_style {
+      figure[data-video-host='youtube'] {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
 }
 
 // 다크모드 스타일 셋팅

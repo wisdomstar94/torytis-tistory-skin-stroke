@@ -45,7 +45,7 @@ export function PostsNormalPermalinkItem() {
           />
         <div
           className={classes(
-            "block m-0 p-0 relative",
+            "block m-0 p-0 relative [##_var_post_youtube_horizontal_align_##]",
           )}>
           [##_article_rep_desc_##]
           <CallJavascript code="disposePermalinkContent(true)" />
