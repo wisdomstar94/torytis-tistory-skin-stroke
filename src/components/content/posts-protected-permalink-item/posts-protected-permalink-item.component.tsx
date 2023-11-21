@@ -1,4 +1,6 @@
 import { classes } from "../../../functions/common/common";
+import { SvgArrowBadgeLeftFilled } from "../../svgs/svg-arrow-badge-left-filled/svg-arrow-badge-left-filled.component";
+import { SvgArrowBadgeRightFilled } from "../../svgs/svg-arrow-badge-right-filled/svg-arrow-badge-right-filled.component";
 
 export function PostsProtectedPermalinkItem() {
   return (
@@ -101,6 +103,8 @@ export function PostsProtectedPermalinkItem() {
               </ul>
             </div>
           </div>
+
+          {/* 보호글 퍼머링크 페이지에서는 이전글, 다음글 치환자 작동 안함..! */}
         </div>
         <div 
           className={classes(

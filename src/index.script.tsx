@@ -13,6 +13,7 @@ window.addEventListener('load', () => {
   checkPostsIndexItemThumbnailImageError(false, undefined);
   checkPostsIndexItemThumbnailImageLoad(false, undefined);
   subscribeCommnetListDomEvent(true);
+  postDeleteButtonClick(false);
   window.hljs.highlightAll();
   window.hljs.initLineNumbersOnLoad();
 });
@@ -164,4 +165,19 @@ function subscribeCommnetListDomEvent(isExecute: boolean) {
     childList: true,
     
   });
+}
+
+function postDeleteButtonClick(isExecute: boolean) {
+  if (isExecute !== true) {
+    return;
+  }
+
+  const result = prompt('해당 글을 삭제하시려면 "삭제" 라고 입력 후 확인을 클릭해주세요.');
+  if (result !== '삭제') {
+    return;
+  }
+
+  const realDeleteButton = document.querySelector<HTMLAnchorElement>('#real_post_delete_button');
+  if (realDeleteButton === null) return;
+  realDeleteButton.click();
 }

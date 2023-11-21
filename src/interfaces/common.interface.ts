@@ -10,4 +10,11 @@ export declare namespace ICommon {
     index: number;
     element: HTMLElement;
   }
+
+  export interface SvgProps {
+    className?: string;
+    width?: number; 
+    height?: number; 
+    strokeWidth?: number;
+  }
 }
