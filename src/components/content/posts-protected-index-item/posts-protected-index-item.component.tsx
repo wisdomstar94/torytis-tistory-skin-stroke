@@ -1,5 +1,4 @@
 import { classes } from "../../../functions/common/common";
-import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { SvgLock } from "../../svgs/svg-lock/svg-lock.component";
 import { PostsIndexItemOverlayContent } from "../posts-index-item-overlay-content/posts-index-item-overlay-content.component";
 
@@ -22,7 +21,8 @@ export function PostsProtectedIndexItem() {
           )}>
           <div
             className={classes(
-              "w-full block min-h-[180px] aspect-video relative",
+              "w-full block aspect-video relative",
+              "min-h-[180px] total_list_max_col_count_5:min-h-[160px] total_list_max_col_count_6:min-h-[140px] total_list_max_col_count_7:min-h-[130px] total_list_max_col_count_8:min-h-[120px]",
               "border-b bg-no-repeat bg-center bg-contain",
               // "bg-[url('./images/shield-lock.png')]",
               "border-b-black dark:border-b-white dark-c:border-b-white",

@@ -76,6 +76,15 @@ const variantPlugin: PluginCreator = ({ addVariant }) => {
   addVariant('cover_list_half_max_col_count_3', '.cover_list_half_max_col_count_3 &');
   addVariant('cover_list_half_max_col_count_4', '.cover_list_half_max_col_count_4 &');
 
+  addVariant('total_list_max_col_count_1', '.total_list_max_col_count_1 &');
+  addVariant('total_list_max_col_count_2', '.total_list_max_col_count_2 &');
+  addVariant('total_list_max_col_count_3', '.total_list_max_col_count_3 &');
+  addVariant('total_list_max_col_count_4', '.total_list_max_col_count_4 &');
+  addVariant('total_list_max_col_count_5', '.total_list_max_col_count_5 &');
+  addVariant('total_list_max_col_count_6', '.total_list_max_col_count_6 &');
+  addVariant('total_list_max_col_count_7', '.total_list_max_col_count_7 &');
+  addVariant('total_list_max_col_count_8', '.total_list_max_col_count_8 &');
+
   addVariant('active', '.active&');
   addVariant('parent-1-active', '.active > &');
   addVariant('parent-2-active', '.active > * > &');
