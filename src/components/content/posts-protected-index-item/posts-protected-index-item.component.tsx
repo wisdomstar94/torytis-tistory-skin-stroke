@@ -39,6 +39,12 @@ export function PostsProtectedIndexItem() {
               "bg-white dark:bg-black dark-c:bg-black",
               "text-black dark:text-white dark-c:text-white",
             )}>
+            <div
+              className={classes(
+                "block m-0 mb-0.5 p-0 relative text-sm font-normal",
+              )}>
+              { `[ [##_article_rep_category_##] ]` }
+            </div>
             <div 
               className={classes(
                 "block m-0 mb-1 p-0 relative text-base font-bold",

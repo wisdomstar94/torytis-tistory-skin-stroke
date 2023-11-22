@@ -19,6 +19,21 @@ export function PostsNormalPermalinkItem() {
         )}>
         <div
           className={classes(
+            "block m-0 mb-1 p-0 relative font-normal text-base",
+          )}>
+          <a 
+            className={classes(
+              "inline-flex flex-wrap relative cursor-pointer",
+              "no-underline hover:underline",
+            )}
+            href="[##_article_rep_category_link_##]"
+            title="카테고리 페이지 이동 링크"
+            >
+            { `[ [##_article_rep_category_##] ]` }
+          </a>
+        </div>
+        <div
+          className={classes(
             "block m-0 mb-3 p-0 relative font-bold text-4xl",
           )}>
           [##_article_rep_title_##]
@@ -220,7 +235,10 @@ export function PostsNormalPermalinkItem() {
             className={classes(
               "block m-0 mb-7 p-0 relative text-xl font-bold",
             )}>
-            댓글
+            댓글 
+            <s_rp_count>
+              ([##_article_rep_rp_cnt_##])
+            </s_rp_count>
           </div>
           <s_rp>
             <s_rp_container>
