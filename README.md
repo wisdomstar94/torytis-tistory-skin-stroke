@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://funveloper.tistory.com/208" target="_blank">
-    <img alt="Stroke Tistory Skin" src="https://cdn.jsdelivr.net/gh/wisdomstar94/torytis-tistory-skin-stroke/readme-src/stroke_tistory_skin.png" width="400" height="228" style="max-width: 100%;" />
+    <img alt="Stroke Tistory Skin" src="./readme-src/stroke_tistory_skin.png" width="400" style="max-width: 100%;" />
   </a>
 </p>
 
