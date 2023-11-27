@@ -26,94 +26,96 @@
 }
 
 #tt-body-page {
-  .contents_style {
-    > div {
-      opacity: 0;
-
-      > span {
+  .contents-wrapper-container {
+    .contents_style {
+      > div {
         opacity: 0;
+  
+        > span {
+          opacity: 0;
+        }
       }
-    }
-
-    ul, ol {
-      padding-left: 20px;
-    }
-
-    > h1, > h2, > h3, > h4, > h5, > h6 {
-      margin-top: 12px;
-      margin-bottom: 12px;
-    }
-
-    > p {
-      margin-bottom: 4px;
-    }
-
-    > ul, > ol {
-      margin-bottom: 12px;
-    }
-
-    > pre[data-ke-type='codeblock'] {
-      border: 1px solid #ccc;
-      background-color: #f6f6f6;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 8px;
-
-      code.hljs {
-        background-color: transparent;
-
-        table {
-          // color: #fff !important;
-          font-size: 12ppx;
-
-          td {
-            > span {
-              // color: #fff !important;
-              margin: 0;
+  
+      ul, ol {
+        padding-left: 20px;
+      }
+  
+      > h1, > h2, > h3, > h4, > h5, > h6 {
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
+  
+      > p {
+        margin-bottom: 4px;
+      }
+  
+      > ul, > ol {
+        margin-bottom: 12px;
+      }
+  
+      > pre[data-ke-type='codeblock'] {
+        border: 1px solid #ccc;
+        background-color: #f6f6f6;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 8px;
+  
+        code.hljs {
+          background-color: transparent;
+  
+          table {
+            // color: #fff !important;
+            font-size: 12ppx;
+  
+            td {
+              > span {
+                // color: #fff !important;
+                margin: 0;
+              }
             }
           }
         }
       }
-    }
-
-    a {
-      color: #0982f8;
-      text-decoration: underline;
-
-      &:hover {
-        color: #55aaff;
+  
+      a {
+        color: #0982f8;
+        text-decoration: underline;
+  
+        &:hover {
+          color: #55aaff;
+        }
+      }
+  
+      p {
+        margin-bottom: 4px !important;
       }
     }
 
-    p {
-      margin-bottom: 4px !important;
-    }
-  }
-
-  // 유튜브 영상 수평 정렬
-  .post_youtube_horizontal_align_left {
-    .contents_style {
-      figure[data-video-host='youtube'] {
-        display: flex;
-        justify-content: flex-start;
+    // 유튜브 영상 수평 정렬
+    &.post_youtube_horizontal_align_left {
+      .contents_style {
+        figure[data-video-host='youtube'] {
+          display: flex;
+          justify-content: flex-start;
+        }
       }
     }
-  }
 
-  .post_youtube_horizontal_align_center {
-    .contents_style {
-      figure[data-video-host='youtube'] {
-        display: flex;
-        justify-content: center;
+    &.post_youtube_horizontal_align_center {
+      .contents_style {
+        figure[data-video-host='youtube'] {
+          display: flex;
+          justify-content: center;
+        }
       }
     }
-  }
 
-  .post_youtube_horizontal_align_right {
-    .contents_style {
-      figure[data-video-host='youtube'] {
-        display: flex;
-        justify-content: flex-end;
+    &.post_youtube_horizontal_align_right {
+      .contents_style {
+        figure[data-video-host='youtube'] {
+          display: flex;
+          justify-content: flex-end;
+        }
       }
     }
   }
@@ -142,68 +144,89 @@
       }
     }
 
-    .contents_style {
-      > figure.fileblock {
-        .filename {
-          color: #ccc !important;
+    .contents-wrapper-container {
+      .contents_style {
+        > figure.fileblock {
+          .filename {
+            color: #ccc !important;
+          }
         }
-      }
 
-      > pre[data-ke-type='codeblock'] {
-        border: 1px solid #fff;
-        background-color: transparent;
-        border-radius: 12px;
-        padding: 20px;
-
-        code.hljs {
+        > pre[data-ke-type='codeblock'] {
+          border: 1px solid #fff;
           background-color: transparent;
+          border-radius: 12px;
+          padding: 20px;
 
-          table {
-            color: #fff !important;
+          code.hljs {
+            background-color: transparent;
 
-            td {
-              > span {
+            table {
+              td {
+                color: #eee;
+                // > span {
+                //   color: #fff !important;
+                // }
+
+                &.hljs-ln-numbers {
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+
+        a {
+          color: #58a2eb;
+          text-decoration: underline;
+
+          &:hover {
+            color: rgb(124, 190, 255);
+          }
+        }
+
+        > blockquote {
+          &[data-ke-style='style1'] {
+            color: #ccc !important; 
+          }
+
+          &[data-ke-style='style2'] {
+            color: #ccc !important; 
+          }
+
+          &[data-ke-style='style3'] {
+            background-color: transparent;
+            color: #ccc !important; 
+          }
+        }
+
+        > table {
+          border-left: 1px solid #fff;
+
+          > tbody {
+            > tr {
+              > td {
+                background-color: transparent !important;
                 color: #fff !important;
+                border-right: 1px solid #fff;
+                border-bottom: 1px solid #fff;
               }
             }
           }
         }
       }
 
-      a {
-        color: #58a2eb;
-        text-decoration: underline;
-
-        &:hover {
-          color: rgb(124, 190, 255);
-        }
-      }
-
-      > blockquote {
-        &[data-ke-style='style1'] {
-          color: #ccc !important; 
-        }
-
-        &[data-ke-style='style2'] {
-          color: #ccc !important; 
-        }
-
-        &[data-ke-style='style3'] {
-          background-color: transparent;
-          color: #ccc !important; 
-        }
-      }
-
-      > table {
-        border-left: 1px solid #fff;
-
-        > tbody {
-          > tr {
-            > td {
-              background-color: transparent !important;
-              color: #fff !important;
-              border-right: 1px solid #fff;
-              border-bottom: 1px solid #fff;
+      &.is_post_codeblock_darkmode_text_color_all_white_true {
+        .contents_style {
+          > pre[data-ke-type='codeblock'] {
+            code.hljs {
+              table {
+                td {
+                  > span {
+                    color: #fff !important;
+                  }
+                }
+              }
             }
           }
         }

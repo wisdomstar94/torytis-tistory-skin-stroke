@@ -4,8 +4,6 @@ import { ModalImageSwiper } from "../../modals/modal-image-swiper/modal-image-sw
 import { SvgArrowBadgeLeftFilled } from "../../svgs/svg-arrow-badge-left-filled/svg-arrow-badge-left-filled.component";
 import { SvgArrowBadgeRightFilled } from "../../svgs/svg-arrow-badge-right-filled/svg-arrow-badge-right-filled.component";
 import { SvgArrowForward } from "../../svgs/svg-arrow-forward/svg-arrow-forward.component";
-import { SvgEdit } from "../../svgs/svg-edit/svg-edit.component";
-import { SvgTrash } from "../../svgs/svg-trash/svg-trash.component";
 import { SwitchButton } from "../../switch-button/switch-button.component";
 import './posts-normal-permalink-item.scss';
 
@@ -86,7 +84,9 @@ export function PostsNormalPermalinkItem() {
           />
         <div
           className={classes(
+            "contents-wrapper-container",
             "block m-0 p-0 relative [##_var_post_youtube_horizontal_align_##]",
+            "[##_var_is_post_codeblock_darkmode_text_color_all_white_##]",
           )}>
           [##_article_rep_desc_##]
 
