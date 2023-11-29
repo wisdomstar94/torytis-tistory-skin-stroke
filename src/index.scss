@@ -234,3 +234,19 @@
     }
   } 
 }
+
+.post-permalink-secret-status-icon {
+  display: none;
+
+  &[data-status='비공개'] {
+    display: inline-flex;
+  }
+}
+
+.secret-post-symbol {
+  display: none;
+
+  &[data-status='비공개'] {
+    display: flex;
+  }
+}

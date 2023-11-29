@@ -3,6 +3,7 @@ import { CallJavascript } from "../../call-javascript-function/call-javascript-f
 import { ModalImageSwiper } from "../../modals/modal-image-swiper/modal-image-swiper.component";
 import { SvgArrowBadgeLeftFilled } from "../../svgs/svg-arrow-badge-left-filled/svg-arrow-badge-left-filled.component";
 import { SvgArrowBadgeRightFilled } from "../../svgs/svg-arrow-badge-right-filled/svg-arrow-badge-right-filled.component";
+import { SvgShieldLockFilled } from "../../svgs/svg-shield-lock-filled/svg-shield-lock-filled.component";
 import styles from './posts-notice-permalink-item.module.scss';
 
 export function PostsNoticePermalinkItem() {
@@ -30,9 +31,20 @@ export function PostsNoticePermalinkItem() {
         </div>
         <div
           className={classes(
-            "block m-0 mb-3 p-0 relative font-bold text-4xl",
+            "flex flex-wrap gap-2 items-start m-0 mb-3 p-0 relative font-bold text-4xl",
           )}>
-          [##_article_rep_title_##]
+          <s_ad_div>
+            <span className="post-permalink-secret-status-icon" data-status="[##_s_ad_s1_label_##]">
+              <SvgShieldLockFilled 
+                width={36}
+                height={36}
+                className="fill-black dark:fill-white dark-c:fill-white"
+                />
+            </span>
+          </s_ad_div>
+          <span className="whitespace-pre-wrap break-all">
+            [##_article_rep_title_##]
+          </span>
         </div>
         <div 
           className={classes(styles['tag-row'])}>
@@ -71,6 +83,23 @@ export function PostsNoticePermalinkItem() {
               title="해당 글의 수정 페이지로 이동합니다."
               >
               [글 수정]
+            </a>
+          </div>
+          <div
+            className={classes(
+              "w-full flex flex-wrap m-0 mt-2 p-0 relative font-normal text-xs gap-1",
+            )}>
+            <span 
+              className="inline-flex flex-wrap whitespace-pre-line break-all text-slate-400 dark:text-white/70 dark-c:text-white/70"
+              >
+              ※ 이 글은 현재 [##_s_ad_s1_label_##] 상태입니다.
+            </span>
+            <a
+              tt-onclick="[##_s_ad_s2_onclick_##]"
+              className="inline-flex cursor-pointer no-underline hover:underline text-slate-400 dark:text-white/70 dark-c:text-white/70"
+              title="글의 상태를 변경합니다."
+              >
+              [상태 변경]
             </a>
           </div>
         </s_ad_div>

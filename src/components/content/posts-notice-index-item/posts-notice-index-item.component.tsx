@@ -1,6 +1,7 @@
 import { classes } from "../../../functions/common/common";
 import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { SvgPhotoOff } from "../../svgs/svg-photo-off/svg-photo-off.component";
+import { SvgShieldLockFilled } from "../../svgs/svg-shield-lock-filled/svg-shield-lock-filled.component";
 import { PostsIndexItemOverlayContent } from "../posts-index-item-overlay-content/posts-index-item-overlay-content.component";
 
 export function PostsNoticeIndexItem() {
@@ -73,9 +74,11 @@ export function PostsNoticeIndexItem() {
             </div>
             <div
               className={classes(
-                "block m-0 mb-1 p-0 relative text-base font-bold",
+                "flex flex-wrap gap-2 break-all whitespace-pre-wrap items-start m-0 mb-1 p-0 relative text-base font-bold",
               )}>
-              [##_article_rep_title_##]
+              <span className="inline-flex break-all whitespace-pre-wrap">
+                [##_article_rep_title_##]
+              </span>
             </div>
             <div
               className={classes(

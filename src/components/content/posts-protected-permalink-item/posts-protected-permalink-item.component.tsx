@@ -1,6 +1,5 @@
 import { classes } from "../../../functions/common/common";
-import { SvgArrowBadgeLeftFilled } from "../../svgs/svg-arrow-badge-left-filled/svg-arrow-badge-left-filled.component";
-import { SvgArrowBadgeRightFilled } from "../../svgs/svg-arrow-badge-right-filled/svg-arrow-badge-right-filled.component";
+import { SvgShieldLockFilled } from "../../svgs/svg-shield-lock-filled/svg-shield-lock-filled.component";
 
 export function PostsProtectedPermalinkItem() {
   return (
@@ -29,7 +28,14 @@ export function PostsProtectedPermalinkItem() {
           className={classes(
             "block m-0 mb-3 p-0 relative font-bold text-4xl",
           )}>
-          보호글 입니다.
+          <span className="post-permalink-secret-status-icon" data-status="[##_s_ad_s1_label_##]">
+            <SvgShieldLockFilled 
+              className="fill-black dark:fill-white dark-c:fill-white"
+              />
+          </span>
+          <span>
+            보호글 입니다.
+          </span>
         </div>
         <div
           className={classes(
