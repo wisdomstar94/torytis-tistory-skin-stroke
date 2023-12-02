@@ -97,6 +97,8 @@ const variantPlugin: PluginCreator = ({ addVariant }) => {
   addVariant('parent-1-my-hide', '.my-hide > &');
   addVariant('parent-2-my-hide', '.my-hide > * > &');
   addVariant('parent-3-my-hide', '.my-hide > * > * > &');
+  addVariant('my-copyed', '.my-copyed&');
+  addVariant('parent-1-my-copyed', '.my-copyed > &');
 
   // addVariant('dark-c', '.dark &');
 };

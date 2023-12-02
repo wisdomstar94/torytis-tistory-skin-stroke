@@ -1,6 +1,8 @@
 import { initModalImageSwiperContent, showModalImageSwiper } from "./components/modals/modal-image-swiper/modal-image-swiper.script";
+import { classes } from "./functions/common/common";
 import { getPermalinkContentDivElements, getPermalinkContentDivSpanElements, getPermalinkContentHeadingElements, getPermalinkContentPElements, getPostsIndexItemLiElements } from "./functions/element/element";
 import { getPostImageElements, isDarkMode } from "./functions/logic/logic";
+import copy from 'copy-to-clipboard';
 
 if (isDarkMode()) {
   document.querySelector<HTMLElement>('html').classList.add('dark');
@@ -14,6 +16,7 @@ window.addEventListener('load', () => {
   checkPostsIndexItemThumbnailImageLoad(false, undefined);
   subscribeCommnetListDomEvent(true);
   postDeleteButtonClick(false);
+  checkCodeBlock();
   window.hljs.highlightAll();
   window.hljs.initLineNumbersOnLoad();
 });
@@ -181,3 +184,153 @@ function postDeleteButtonClick(isExecute: boolean) {
   if (realDeleteButton === null) return;
   realDeleteButton.click();
 }
+
+function checkCodeBlock() {
+  const contentsWrapperContainer = document.querySelector('.contents-wrapper-container.is_codeblock_copy_button_show_true');
+  if (contentsWrapperContainer === null) return;
+
+  const postBody = document.body.querySelector('.contents_style');
+  if (postBody === null) return;
+
+  const codeBlockElements = postBody.querySelectorAll(`pre[data-ke-type='codeblock']`);
+  // console.log('@codeBlockElements', codeBlockElements);
+
+  codeBlockElements.forEach(element => {
+    const div = Element({
+      tag: 'div',
+      className: classes("absolute inline-flex top-2 right-2 cursor-pointer group/copy-button"),
+      attrs: {
+        onclick: "codeBlockCopyButtonClick(true, this)",
+      },
+      innerHTML: `
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="${
+            classes(
+              "w-6 h-6",
+              "stroke-black/60 group-hover/copy-button:stroke-black",
+              "dark:stroke-white/70 dark:group-hover/copy-button:stroke-white",
+              "dark-c:stroke-white/70 dark-c:group-hover/copy-button:stroke-white",
+              "inline-flex parent-1-my-copyed:hidden",
+            )
+          }" 
+          view-box="0 0 24 24" 
+          stroke-width="2"
+          stroke="currentColor" 
+          fill="none" 
+          stroke-linecap="round" 
+          stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+          <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+        </svg>
+
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          class="${
+            classes(
+              "w-6 h-6",
+              "stroke-black/60 group-hover/copy-button:stroke-black",
+              "dark:stroke-white/70 dark:group-hover/copy-button:stroke-white",
+              "dark-c:stroke-white/70 dark-c:group-hover/copy-button:stroke-white",
+              "hidden parent-1-my-copyed:inline-flex",
+            )
+          }" 
+          width="24" 
+          height="24" 
+          viewBox="0 0 24 24" 
+          stroke-width="2" 
+          stroke="currentColor" 
+          fill="none" 
+          stroke-linecap="round" 
+          stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+          <path d="M11 14l2 2l4 -4" />
+        </svg>
+      `,
+    });
+
+    element.appendChild(div);
+  });
+}
+
+function Element(props: {
+  tag: keyof HTMLElementTagNameMap;
+  className?: string;
+  attrs?: Record<string, string>;
+  children?: HTMLElement[];
+  innerHTML?: string;
+}): HTMLElement {
+  const {
+    tag,
+    className,
+    attrs,
+    children,
+    innerHTML,
+  } = props;
+
+  const element = document.createElement(tag);
+
+  if (typeof className === 'string') {
+    const classNameSplit = className.split(' ');
+    for (const cn of classNameSplit) {
+      if (cn.trim() === '') {
+        continue;
+      }
+      element.classList.add(cn);
+    }
+  }
+
+  if (attrs !== undefined) {
+    const keys = Object.keys(attrs);
+    for (const key of keys) {
+      const value = attrs[key];
+      element.setAttribute(key, value);
+    }
+  }
+
+  if (children !== undefined) {
+    for (const child of children) {
+      element.appendChild(child);
+    }
+  }
+
+  if (typeof innerHTML === 'string') {
+    element.innerHTML = innerHTML;
+  }
+
+  return element;
+}
+
+function codeBlockCopyButtonClick(isExecute: boolean, thisObj?: HTMLElement) {
+  if (isExecute !== true) {
+    return;
+  }
+
+  if (thisObj === undefined) {
+    return;
+  }
+
+  // console.log('@thisObj', thisObj);
+  const preElement = thisObj.parentElement;
+  
+  const codeRows = preElement.querySelectorAll('code > table > tbody > tr > td.hljs-ln-code');
+  let copyText = '';
+  codeRows.forEach(row => {
+    copyText += row.textContent + '\n';
+  });
+  // console.log('@copyText', copyText);
+
+  copy(copyText);
+  // alert('코드가 복사되었습니다.');
+
+  if (!thisObj.classList.contains('my-copyed')) {
+    thisObj.classList.add('my-copyed');
+    setTimeout(() => {
+      thisObj.classList.remove('my-copyed');
+    }, 1000);
+  }
+}
+codeBlockCopyButtonClick(false);
+

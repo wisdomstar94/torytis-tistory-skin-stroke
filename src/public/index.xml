@@ -170,6 +170,21 @@
         ]]></option>
         <default>is_post_codeblock_darkmode_text_color_all_white_false</default>
       </variable>
+      <variable>
+        <name>is_codeblock_copy_button_show</name>
+        <label>
+          <![CDATA[ 코드 블럭에 복사 버튼을 표시합니다. ]]>
+        </label>
+        <description>코드 블럭에 복사 버튼을 표시합니다.</description>
+        <type>SELECT</type>
+        <option><![CDATA[
+          [
+            {"name":"is_codeblock_copy_button_show_true", "label":"예", "value":"is_codeblock_copy_button_show_true"},
+            {"name":"is_codeblock_copy_button_show_false", "label":"아니오", "value":"is_codeblock_copy_button_show_false"}
+          ]
+        ]]></option>
+        <default>is_codeblock_copy_button_show_true</default>
+      </variable>
     </variablegroup>
     <variablegroup name="홈커버 아이템 옵션">
       <variable>

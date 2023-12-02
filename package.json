@@ -1,6 +1,6 @@
 {
   "name": "torytis-tistory-skin-stroke",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "main": "index.js",
   "scripts": {
     "build": "torytis build",
@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0",
     "swiper": "^11.0.4",
     "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "copy-to-clipboard": "^3.3.3"
   }
 }
