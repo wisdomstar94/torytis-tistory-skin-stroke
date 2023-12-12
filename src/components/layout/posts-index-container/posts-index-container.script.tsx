@@ -63,7 +63,7 @@ window.addEventListener('load', () => {
       if (positionInfo !== undefined) {
         window.scrollTo({
           top: positionInfo.start.y - 20,
-          behavior: 'smooth',
+          // behavior: 'smooth',
         });
       }
     }
