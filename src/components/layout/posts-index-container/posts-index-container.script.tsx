@@ -55,39 +55,39 @@ window.addEventListener('load', () => {
     postsIndexCheck();
   });
 
-  function hashCheck() {
-    const hash = location.hash;
-    if (hash.startsWith(`#comment`)) {
-      const targetCommnetElement = document.querySelector<HTMLElement>(hash);
-      const positionInfo = getElementAbsoluteXY(targetCommnetElement);
-      if (positionInfo !== undefined) {
-        window.scrollTo({
-          top: positionInfo.start.y - 20,
-          // behavior: 'smooth',
-        });
-      }
-    }
-  }
-
   // console.log('@1. performance.now()', performance.now());
-  const observer = new MutationObserver((record) => {
-    // console.log('@2. performance.now()', performance.now());
-    hashCheck();
-  });
-  observer.observe(document.querySelector('.comment-list'), {
-    childList: true,
-  });
-  
-  window.addEventListener("hashchange", () => {
-    hashCheck();
-    setTimeout(() => {
-      hashCheck();
-    }, 500);
-  }); 
+  // const observer = new MutationObserver((record) => {
+  //   // console.log('@2. performance.now()', performance.now());
+  //   hashCheck();
+  // });
+  // observer.observe(document.querySelector('.comment-list'), {
+  //   childList: true,
+  // });
   setTimeout(() => {
     hashCheck();
   }, 500);
+  setTimeout(() => {
+    hashCheck();
+  }, 1000);
 });
+
+window.addEventListener("hashchange", () => {
+  hashCheck();
+}); 
+
+function hashCheck() {
+  const hash = location.hash;
+  if (hash.startsWith(`#comment`)) {
+    const targetCommnetElement = document.querySelector<HTMLElement>(hash);
+    const positionInfo = getElementAbsoluteXY(targetCommnetElement);
+    if (positionInfo !== undefined) {
+      window.scrollTo({
+        top: positionInfo.start.y - 20,
+        // behavior: 'smooth',
+      });
+    }
+  }
+}
 
 function getItemElement(text: string, className: string) {
   const li = document.createElement('li');
