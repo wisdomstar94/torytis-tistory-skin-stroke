@@ -5,7 +5,6 @@ import { TopBar } from "./components/layout/top-bar/top-bar.component";
 import { SideBar } from "./components/layout/side-bar/side-bar.component";
 import { ContentContainer } from "./components/layout/content-container/content-container.component";
 import { AdRowUpper } from "./components/content/ad-row-upper/ad-row-upper.component";
-import { NormalPageTitleRow } from "./components/content/normal-page-title-row/normal-page-title-row.component";
 import { CategoryPageTitleRow } from "./components/content/category-page-title-row/category-page-title-row.component";
 import { GuestbookPageTitleRow } from "./components/content/guestbook-page-title-row/guestbook-page-title-row.component";
 import { TagPageTitleRow } from "./components/content/tag-page-title-row/tag-page-title-row.component";
@@ -18,6 +17,7 @@ import { PostsIndexContainer } from "./components/layout/posts-index-container/p
 import { classes } from "./functions/common/common";
 import { HomeCover } from "./components/content/home-cover/home-cover.component";
 import { version } from '../package.json';
+import { LatestVersionNotice } from "./components/latest-version-notice/latest-version-notice.component";
 
 export default function App() {
   return (
@@ -126,6 +126,8 @@ export default function App() {
           </ContentContainer>
 
           <PostsIndexContainer />
+
+          <LatestVersionNotice />
         </s_t3>
       </body>
     </html>
