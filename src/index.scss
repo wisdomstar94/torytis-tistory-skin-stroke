@@ -52,6 +52,27 @@
       > ul, > ol {
         margin-bottom: 12px;
       }
+
+      > table {
+        border-top: 1px solid #444;
+        border-left: 1px solid #444;
+
+        > tbody {
+          > tr {
+            > td {
+              border-right: 1px solid #444;
+              border-bottom: 1px solid #444;
+            }
+
+            &:first-child {
+              > td {
+                border-top: 1px solid #444;
+                border-left: 1px solid #444;
+              }
+            }
+          }
+        }
+      }
   
       > pre[data-ke-type='codeblock'] {
         position: relative;
@@ -202,6 +223,7 @@
         }
 
         > table {
+          border-top: 1px solid #fff;
           border-left: 1px solid #fff;
 
           > tbody {
@@ -211,6 +233,13 @@
                 color: #fff !important;
                 border-right: 1px solid #fff;
                 border-bottom: 1px solid #fff;
+              }
+
+              &:first-child {
+                > td {
+                  border-top: 1px solid #fff;
+                  border-left: 1px solid #fff;
+                }
               }
             }
           }
