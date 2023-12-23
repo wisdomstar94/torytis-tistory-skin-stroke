@@ -6,6 +6,7 @@ import copy from 'copy-to-clipboard';
 
 if (isDarkMode()) {
   document.querySelector<HTMLElement>('html').classList.add('dark');
+  document.querySelector('.dark-mode-checker-node')?.classList.add('dark');
 }
 
 window.addEventListener('load', () => {
@@ -19,6 +20,7 @@ window.addEventListener('load', () => {
   checkCodeBlock();
   window.hljs.highlightAll();
   window.hljs.initLineNumbersOnLoad();
+  checkDarkModeFontColor();
 });
 
 function disposePermalinkContent(isExecute: boolean) {
@@ -252,6 +254,54 @@ function checkCodeBlock() {
     });
 
     element.appendChild(div);
+  });
+}
+
+function checkDarkModeFontColor() {
+  const targetNode = document.querySelector('.dark-mode-checker-node');
+
+  const check = () => {
+    // console.log('@@dark 변동');
+    const pNodes = document.querySelectorAll<HTMLElement>(`.contents-wrapper-container .contents_style p`);
+    const spanNodes = document.querySelectorAll<HTMLElement>(`.contents-wrapper-container .contents_style span`);
+
+    const nodeCallback = (node: HTMLElement) => {
+      const styleColor = node.style.color;
+
+      let dataOriginalColor = node.getAttribute('data-original-color');
+      if (dataOriginalColor === null) {
+        node.setAttribute('data-original-color', styleColor);
+        dataOriginalColor = styleColor;
+      }
+
+      if (targetNode.classList.contains('dark')) {
+        // 다크모드일 경우 처리할 내용 작성..
+        if (['rgb(51, 51, 51)', '#333'].includes(dataOriginalColor)) {
+          node.style.color = '#fff';
+        }
+      } else {
+        node.style.color = dataOriginalColor;
+      }
+    };
+
+    pNodes.forEach((pNode) => {
+      nodeCallback(pNode);
+    });  
+
+    spanNodes.forEach((pNode) => {
+      nodeCallback(pNode);
+    });  
+  };
+
+  check();
+
+  const observer = new MutationObserver((mutations, observer) => {
+    check();
+  });
+  observer.observe(targetNode, {
+    attributes: true,
+    childList: false,
+    subtree: false,
   });
 }
 

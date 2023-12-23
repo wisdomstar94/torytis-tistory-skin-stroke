@@ -128,6 +128,8 @@ export default function App() {
           <PostsIndexContainer />
 
           <LatestVersionNotice />
+
+          <div className="dark-mode-checker-node"></div>
         </s_t3>
       </body>
     </html>
