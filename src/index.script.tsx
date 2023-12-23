@@ -6,7 +6,6 @@ import copy from 'copy-to-clipboard';
 
 if (isDarkMode()) {
   document.querySelector<HTMLElement>('html').classList.add('dark');
-  document.querySelector('.dark-mode-checker-node')?.classList.add('dark');
 }
 
 window.addEventListener('load', () => {
@@ -258,7 +257,7 @@ function checkCodeBlock() {
 }
 
 function checkDarkModeFontColor() {
-  const targetNode = document.querySelector('.dark-mode-checker-node');
+  const targetNode = document.querySelector('html');
 
   const check = () => {
     // console.log('@@dark 변동');

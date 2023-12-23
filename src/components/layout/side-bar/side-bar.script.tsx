@@ -27,7 +27,6 @@ function applyForceDarkMode(isExecute: boolean) {
   localStorage.setItem('is_dark_mode', 'true');
   const htmlElement = document.querySelector<HTMLElement>('html');
   htmlElement?.classList.add('dark');
-  document.querySelector('.dark-mode-checker-node')?.classList.add('dark');
 }
 
 function checkDarkMode(isExecute: boolean) {
@@ -54,10 +53,8 @@ function checkDarkMode(isExecute: boolean) {
     const htmlElement = document.querySelector<HTMLElement>('html');
     if (finallyChecked) {
       htmlElement?.classList.add('dark');
-      document.querySelector('.dark-mode-checker-node')?.classList.add('dark');
     } else {
       htmlElement?.classList.remove('dark');
-      document.querySelector('.dark-mode-checker-node')?.classList.remove('dark');
     }
   });
 }
