@@ -242,6 +242,7 @@ export function PostsNoticePermalinkItem() {
           </div>
 
           <CallJavascript code="disposePermalinkContent(true)" />
+          <CallJavascript code="checkFigureTags(true)" />
           <ModalImageSwiper
             id="post-image-swiper-modal"
             // initShowState="show"

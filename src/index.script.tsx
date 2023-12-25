@@ -20,6 +20,7 @@ window.addEventListener('load', () => {
   window.hljs.highlightAll();
   window.hljs.initLineNumbersOnLoad();
   checkDarkModeFontColor();
+  checkFigureTags(false);
 });
 
 function disposePermalinkContent(isExecute: boolean) {
@@ -301,6 +302,44 @@ function checkDarkModeFontColor() {
     attributes: true,
     childList: false,
     subtree: false,
+  });
+}
+
+function checkFigureTags(isExecute?: boolean) {
+  if (isExecute !== true) return;
+
+  const figures = document.querySelectorAll<HTMLElement>('.contents-wrapper-container .contents_style > figure');
+  
+  figures.forEach((figure) => {
+    const dataKeStyle = figure.getAttribute('data-ke-style');
+    const dataKeAlign = figure.getAttribute('data-ke-align');
+    const dataKe = (function() {
+      if (typeof dataKeStyle === 'string') return dataKeStyle;
+      if (typeof dataKeAlign === 'string') return dataKeAlign;
+      return undefined;
+    })();
+
+    const alignItems = (function() {
+      if (dataKe === 'alignLeft') {
+        return '!items-start';
+      }
+      if (dataKe === 'alignCenter') {
+        return '!items-center';
+      }
+      if (dataKe === 'alignRight') {
+        return '!items-end';
+      }
+      return undefined;
+    })();
+
+    if (typeof alignItems !== 'string') return;
+    figure.style.removeProperty('text-align');
+    figure.classList.add(
+      '!flex', 
+      'flex-wrap', 
+      'flex-col',
+      alignItems,
+    );
   });
 }
 
