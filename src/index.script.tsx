@@ -308,11 +308,12 @@ function checkDarkModeFontColor() {
 function checkFigureTags(isExecute?: boolean) {
   if (isExecute !== true) return;
 
-  const figures = document.querySelectorAll<HTMLElement>('.contents-wrapper-container .contents_style > figure');
+  const figuresEmoticon = document.querySelectorAll<HTMLElement>('.contents-wrapper-container .contents_style > figure[data-ke-type="emoticon"]');
+  const figuresYoutubePlugin = document.querySelectorAll<HTMLElement>('.contents-wrapper-container .contents_style > figure[data-ke-type="video"]');
   
-  figures.forEach((figure) => {
-    const dataKeStyle = figure.getAttribute('data-ke-style');
-    const dataKeAlign = figure.getAttribute('data-ke-align');
+  const callback = (element: HTMLElement) => {
+    const dataKeStyle = element.getAttribute('data-ke-style');
+    const dataKeAlign = element.getAttribute('data-ke-align');
     const dataKe = (function() {
       if (typeof dataKeStyle === 'string') return dataKeStyle;
       if (typeof dataKeAlign === 'string') return dataKeAlign;
@@ -333,13 +334,20 @@ function checkFigureTags(isExecute?: boolean) {
     })();
 
     if (typeof alignItems !== 'string') return;
-    figure.style.removeProperty('text-align');
-    figure.classList.add(
+    element.style.removeProperty('text-align');
+    element.classList.add(
       '!flex', 
       'flex-wrap', 
       'flex-col',
       alignItems,
     );
+  };
+
+  figuresEmoticon.forEach((element) => {
+    callback(element);
+  });
+  figuresYoutubePlugin.forEach((element) => {
+    callback(element);
   });
 }
 
