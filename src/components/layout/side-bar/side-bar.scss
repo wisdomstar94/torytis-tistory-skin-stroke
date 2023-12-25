@@ -1,29 +1,29 @@
 @keyframes sidebar-background-show {
   0% {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     opacity: 0;
   }
   1% {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     opacity: 0;
   }
   100% {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     opacity: 1;
   }
 }
 @keyframes sidebar-background-hide {
   0% {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     opacity: 1;
   }
   99% {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     opacity: 0;
   }
   100% {

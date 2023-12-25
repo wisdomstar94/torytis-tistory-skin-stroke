@@ -249,6 +249,17 @@
         <default>total_list_max_col_count_4</default>
       </variable>
     </variablegroup>
+    <variablegroup name="블로그 옵션">
+      <variable>
+        <name>blog_screen_max_width</name>
+        <label>
+          <![CDATA[ 블로그 화면 최대 너비 (px) ]]>
+        </label>
+        <description>블로그 화면 최대 너비 (px)</description>
+        <type>STRING</type>
+        <default>1920</default>
+      </variable>
+    </variablegroup>
   </variables>
   <cover>
     <item>

@@ -18,6 +18,7 @@ import { classes } from "./functions/common/common";
 import { HomeCover } from "./components/content/home-cover/home-cover.component";
 import { version } from '../package.json';
 import { LatestVersionNotice } from "./components/latest-version-notice/latest-version-notice.component";
+import { RootContainer } from "./components/layout/root-container/root-container.component";
 
 export default function App() {
   return (
@@ -101,33 +102,35 @@ export default function App() {
         )}
         >
         <s_t3>
-          <TopBar />
+          <RootContainer>
+            <TopBar />
 
-          <SideBar />
+            <SideBar />
 
-          <ContentContainer>
-            <AdRowUpper />
+            <ContentContainer>
+              <AdRowUpper />
 
-            <HomeCover />
+              <HomeCover />
 
-            <CategoryPageTitleRow />
-            <GuestbookPageTitleRow />
-            <TagPageTitleRow />
+              <CategoryPageTitleRow />
+              <GuestbookPageTitleRow />
+              <TagPageTitleRow />
 
-            <Posts />
+              <Posts />
 
-            <Guestbook />
+              <Guestbook />
 
-            <Tags />
+              <Tags />
 
-            <Pagination />
+              <Pagination />
 
-            <AdRowLower />
-          </ContentContainer>
+              <AdRowLower />
+            </ContentContainer>
 
-          <PostsIndexContainer />
+            <PostsIndexContainer />
 
-          <LatestVersionNotice />
+            <LatestVersionNotice />
+          </RootContainer>
         </s_t3>
       </body>
     </html>
