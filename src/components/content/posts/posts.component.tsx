@@ -10,7 +10,11 @@ import { PostsProtectedPermalinkItem } from "../posts-protected-permalink-item/p
 export function Posts() {
   return (
     <>
-      <div className="w-full block relative [##_var_total_list_max_col_count_##]">
+      <div 
+        className={classes(
+          "w-full block relative",
+          "[##_var_total_list_max_col_count_##]",
+        )}>
         <ul
           // posts-list
           className={classes(

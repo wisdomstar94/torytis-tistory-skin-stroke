@@ -115,10 +115,25 @@ export function PostsNormalPermalinkItem() {
           className={classes(
             "contents-wrapper-container",
             "[##_var_is_codeblock_copy_button_show_##]",
+            "[##_var_darkmode_post_table_style_##]",
             "block m-0 p-0 relative [##_var_post_youtube_horizontal_align_##]",
             "[##_var_is_post_codeblock_darkmode_text_color_all_white_##]",
           )}>
           [##_article_rep_desc_##]
+
+          <s_if_var_blog_post_all_line_height>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `
+                  <style>
+                    .contents-wrapper-container .contents_style > * {
+                      line-height: [##_var_blog_post_all_line_height_##];
+                    }
+                  </style>
+                `,
+              }}
+              />
+          </s_if_var_blog_post_all_line_height>
 
           <div className="w-full flex flex-wrap items-stretch relative mt-12 gap-4">
             <div 
