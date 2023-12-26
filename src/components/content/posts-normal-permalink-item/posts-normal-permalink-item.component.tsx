@@ -121,6 +121,20 @@ export function PostsNormalPermalinkItem() {
           )}>
           [##_article_rep_desc_##]
 
+          <s_if_var_blog_post_all_line_height>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `
+                  <style>
+                    .contents-wrapper-container .contents_style > * {
+                      line-height: [##_var_blog_post_all_line_height_##];
+                    }
+                  </style>
+                `,
+              }}
+              />
+          </s_if_var_blog_post_all_line_height>
+
           <div className="w-full flex flex-wrap items-stretch relative mt-12 gap-4">
             <div 
               className={classes(

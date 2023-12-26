@@ -6,6 +6,7 @@ export function PostsIndexContainer() {
       <div
         className={classes(
           "posts-index-container",
+          "hidden tt-body-page:hidden tt-body-page:lg:block",
           "w-[320px] h-screen absolute top-0 right-0",
         )}>
         <aside
