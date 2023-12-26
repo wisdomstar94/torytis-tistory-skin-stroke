@@ -200,6 +200,14 @@
         ]]></option>
         <default>darkmode_post_table_style_auto_convert</default>
       </variable>
+      <variable>
+        <name>blog_post_all_line_height</name>
+        <label>
+          <![CDATA[ 본문글의 전체 행간 (단위포함, ex. 1.2rem, 10px ...) ]]>
+        </label>
+        <description>본문글의 전체 행간 (단위포함, ex. 1.2rem, 10px ...)</description>
+        <type>STRING</type>
+      </variable>
     </variablegroup>
     <variablegroup name="홈커버 아이템 옵션">
       <variable>
