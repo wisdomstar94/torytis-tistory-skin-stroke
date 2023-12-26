@@ -91,3 +91,41 @@
     display: none !important;
   }
 }
+
+html {
+  #common-side-bar {
+    .module.module_plugin {
+      border-bottom: 1px solid #000;
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  &.dark {
+    #common-side-bar {
+      .module.module_plugin {
+        border-bottom: 1px solid #fff;
+
+        svg {
+          g[stroke='\#000000'] {
+            path {
+              stroke: #fff;
+              stroke-opacity: 1;
+            }
+
+            &[stroke-opacity='0'] {
+              path {
+                stroke-opacity: 0;
+              } 
+            }
+          }
+
+          g[fill='\#000000'] {
+            text {
+              fill: #fff;
+            }
+          }
+        }
+      }
+    } 
+  }
+}

@@ -308,6 +308,7 @@ function checkDarkModeFontColor() {
 function checkFigureTags(isExecute?: boolean) {
   if (isExecute !== true) return;
 
+  // 정렬 셋팅
   const figuresEmoticon = document.querySelectorAll<HTMLElement>('.contents-wrapper-container .contents_style > figure[data-ke-type="emoticon"]');
   const figuresYoutubePlugin = document.querySelectorAll<HTMLElement>('.contents-wrapper-container .contents_style > figure[data-ke-type="video"]');
   

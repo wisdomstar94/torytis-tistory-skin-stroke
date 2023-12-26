@@ -53,9 +53,29 @@
         margin-bottom: 12px;
       }
 
+      > blockquote {
+        // &[data-ke-style='style1'] {
+        //   color: #ccc !important; 
+        // }
+
+        &[data-ke-style='style2'] {
+          color: #999;
+          border-left: 4px solid #CACACA;
+          padding: 4px 12px;
+          position: relative;
+        }
+
+        // &[data-ke-style='style3'] {
+        //   background-color: transparent;
+        //   color: #ccc !important; 
+        // }
+      }
+
       > table {
+        color: #333;
         border-top: 1px solid #444;
         border-left: 1px solid #444;
+        background-color: #fff;
 
         > tbody {
           > tr {
@@ -174,6 +194,14 @@
           }
         }
 
+        > figure[data-ke-type='opengraph'] {
+          .og-text {
+            .og-title {
+              color: #fff !important;
+            }
+          }
+        }
+
         > pre[data-ke-type='codeblock'] {
           border: 1px solid #fff;
           background-color: transparent;
@@ -221,25 +249,42 @@
             color: #ccc !important; 
           }
         }
+      }
 
-        > table {
-          border-top: 1px solid #fff;
-          border-left: 1px solid #fff;
-
-          > tbody {
-            > tr {
-              > td {
-                background-color: transparent !important;
-                color: #fff !important;
-                border-right: 1px solid #fff;
-                border-bottom: 1px solid #fff;
-              }
-
-              &:first-child {
+      &.darkmode_post_table_style_auto_convert {
+        .contents_style {
+          > table {
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+            background-color: transparent;
+  
+            > tbody {
+              > tr {
                 > td {
-                  border-top: 1px solid #fff;
-                  border-left: 1px solid #fff;
+                  background-color: transparent !important;
+                  color: #fff !important;
+                  border-right: 1px solid #fff;
+                  border-bottom: 1px solid #fff;
                 }
+  
+                &:first-child {
+                  > td {
+                    border-top: 1px solid #fff;
+                    border-left: 1px solid #fff;
+                  }
+                }
+
+                &:nth-child(odd) {
+                  > td {
+                    border-bottom: 1px solid #999 !important;
+                  }
+                }
+
+                &:nth-child(even) {
+                  > td {
+                    border-bottom: 1px solid #fff !important;
+                  }
+                } 
               }
             }
           }
