@@ -37,7 +37,19 @@
       }
   
       ul, ol {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
         padding-left: 20px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        position: relative;
+
+        li {
+          width: 100%;
+          margin-bottom: 4px;
+          position: relative;
+        }
       }
   
       > h1, > h2, > h3, > h4, > h5, > h6 {
@@ -47,10 +59,6 @@
   
       > p {
         margin-bottom: 4px;
-      }
-  
-      > ul, > ol {
-        margin-bottom: 12px;
       }
 
       > blockquote {
