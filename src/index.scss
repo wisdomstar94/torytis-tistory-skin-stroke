@@ -81,21 +81,102 @@
 
       > table {
         color: #333;
-        border-top: 1px solid #444;
-        border-left: 1px solid #444;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
         background-color: #fff;
 
         > tbody {
           > tr {
             > td {
-              border-right: 1px solid #444;
-              border-bottom: 1px solid #444;
+              padding: 8px;
             }
+          }
+        }
 
-            &:first-child {
+        // 테이블 스타일이 없는 경우
+        &:not([data-ke-style='style1']):not([data-ke-style='style2']):not([data-ke-style='style3']):not([data-ke-style='style4']):not([data-ke-style='style5']):not([data-ke-style='style6']):not([data-ke-style='style7']):not([data-ke-style='style8']):not([data-ke-style='style9']):not([data-ke-style='style10']):not([data-ke-style='style11']):not([data-ke-style='style12']):not([data-ke-style='style13']):not([data-ke-style='style14']):not([data-ke-style='style15']) {
+          > tbody {
+            > tr {
               > td {
-                border-top: 1px solid #444;
-                border-left: 1px solid #444;
+                border-right: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+              }
+            }
+          }
+        }
+
+        &[data-ke-style='style1'],  
+        &[data-ke-style='style2'],
+        &[data-ke-style='style3'],
+        &[data-ke-style='style8'],
+        &[data-ke-style='style9'],
+        &[data-ke-style='style10'],
+        &[data-ke-style='style11']
+        {
+          
+          > tbody {
+            > tr {
+              &:not(:first-child) {
+                > td {
+                  border-right: 1px solid #ccc;
+                  border-bottom: 1px solid #ccc;
+                }
+              }
+
+              &:first-child {
+                > td {
+                  border-right: 1px solid #ccc;
+                }
+              }
+  
+              // &:first-child {
+              //   > td {
+              //     border-top: 1px solid #ccc;
+              //     border-left: 1px solid #ccc;
+              //   }
+              // }
+            }
+          }
+        }
+
+        &[data-ke-style='style8'],
+        &[data-ke-style='style9'],
+        &[data-ke-style='style10'],
+        &[data-ke-style='style11'] {
+          border-left: transparent;
+
+          > tbody {
+            > tr {
+              &:not(:first-child) {
+                > td {
+                  border-right: transparent;
+                  border-bottom: 1px solid #ccc;
+                }
+              }
+
+              &:first-child {
+                > td {
+                  border-right: transparent;
+                }
+              }
+            }
+          }
+        }
+
+        &[data-ke-style='style4'],
+        &[data-ke-style='style5'],
+        &[data-ke-style='style6'],
+        &[data-ke-style='style7'],
+        &[data-ke-style='style12'],
+        &[data-ke-style='style13'],
+        &[data-ke-style='style14'],
+        &[data-ke-style='style15']
+        {
+          > tbody {
+            > tr {
+              > td {
+                border-right: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
               }
             }
           }
@@ -262,37 +343,117 @@
       &.darkmode_post_table_style_auto_convert {
         .contents_style {
           > table {
-            border-top: 1px solid #fff;
-            border-left: 1px solid #fff;
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
             background-color: transparent;
-  
-            > tbody {
-              > tr {
-                > td {
-                  background-color: transparent !important;
-                  color: #fff !important;
-                  border-right: 1px solid #fff;
-                  border-bottom: 1px solid #fff;
-                }
-  
-                &:first-child {
+            color: #fff;
+
+            // 테이블 스타일이 없는 경우
+            &:not([data-ke-style='style1']):not([data-ke-style='style2']):not([data-ke-style='style3']):not([data-ke-style='style4']):not([data-ke-style='style5']):not([data-ke-style='style6']):not([data-ke-style='style7']):not([data-ke-style='style8']):not([data-ke-style='style9']):not([data-ke-style='style10']):not([data-ke-style='style11']):not([data-ke-style='style12']):not([data-ke-style='style13']):not([data-ke-style='style14']):not([data-ke-style='style15']) {
+              border-top: 1px solid #ccc;
+              border-left: 1px solid #ccc;
+            }
+
+            // 첫번째 행의 아래줄에만 강조되어있는 스타일
+            &[data-ke-style='style1'],
+            &[data-ke-style='style2'],
+            &[data-ke-style='style3']
+            {
+              border-top: 1px solid #999;
+              border-left: 1px solid #999;
+
+              > tbody {
+                > tr {
                   > td {
-                    border-top: 1px solid #fff;
-                    border-left: 1px solid #fff;
+                    border-right: 1px solid #999;
+                    border-bottom: 1px solid #999;
                   }
                 }
 
-                &:nth-child(odd) {
+                > tr {
+                  &:first-child {
+                    > td {
+                      border-bottom: 1px solid #fff;
+                    }
+                  }
+                }
+              }
+            }
+
+            &[data-ke-style='style8'],
+            &[data-ke-style='style9'],
+            &[data-ke-style='style10'],
+            &[data-ke-style='style11']
+            {
+              border-top: 1px solid #999;
+              border-left: transparent;
+
+              > tbody {
+                > tr {
                   > td {
-                    border-bottom: 1px solid #999 !important;
+                    border-right: transparent;
+                    border-bottom: 1px solid #999;
                   }
                 }
 
-                &:nth-child(even) {
-                  > td {
-                    border-bottom: 1px solid #fff !important;
+                > tr {
+                  &:first-child {
+                    > td {
+                      border-bottom: 2px solid #fff;
+                    }
                   }
-                } 
+                }
+              }
+            }
+
+            &[data-ke-style='style4'], 
+            &[data-ke-style='style5'],
+            &[data-ke-style='style6'],
+            &[data-ke-style='style7'] {
+              > tbody {
+                > tr {
+                  > td {
+                    border-right: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                  }
+
+                  &:nth-child(even) {
+                    > td {
+                      background-color: rgba(255, 255, 255, 0.2);
+                    }                
+                  }
+                }
+              }
+            }
+
+            &[data-ke-style='style12'], 
+            &[data-ke-style='style13'],
+            &[data-ke-style='style14'],
+            &[data-ke-style='style15'] {
+              > tbody {
+                > tr {
+                  > td {
+                    &:first-child {
+                      background-color: #333;
+                      color: #fff;
+                    }
+                  }
+
+                  &:first-child {
+                    > td {
+                      border-top: transparent;
+                      border-left: transparent;
+                      background-color: #666;
+                      color: #fff;
+                    }
+                  }
+
+                  &:nth-child(odd):not(:first-child) {
+                    > td:not(:first-child) {
+                      background-color: rgba(255, 255, 255, 0);
+                    }
+                  }
+                }
               }
             }
           }
