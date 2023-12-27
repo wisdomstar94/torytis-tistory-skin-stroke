@@ -94,7 +94,7 @@
         }
 
         // 테이블 스타일이 없는 경우
-        &:not([data-ke-style='style1']):not([data-ke-style='style2']):not([data-ke-style='style3']):not([data-ke-style='style4']):not([data-ke-style='style5']):not([data-ke-style='style6']):not([data-ke-style='style7']):not([data-ke-style='style8']):not([data-ke-style='style9']):not([data-ke-style='style10']):not([data-ke-style='style11']):not([data-ke-style='style12']):not([data-ke-style='style13']):not([data-ke-style='style14']):not([data-ke-style='style15']) {
+        &:not([data-ke-style='style1']):not([data-ke-style='style2']):not([data-ke-style='style3']):not([data-ke-style='style4']):not([data-ke-style='style5']):not([data-ke-style='style6']):not([data-ke-style='style7']):not([data-ke-style='style8']):not([data-ke-style='style9']):not([data-ke-style='style10']):not([data-ke-style='style11']):not([data-ke-style='style12']):not([data-ke-style='style13']):not([data-ke-style='style14']):not([data-ke-style='style15']):not([data-ke-style='style16']) {
           > tbody {
             > tr {
               > td {
@@ -177,6 +177,20 @@
               > td {
                 border-right: 1px solid #ccc;
                 border-bottom: 1px solid #ccc;
+              }
+            }
+          }
+        }
+
+        &[data-ke-style='style16'] {
+          border-top: transparent;
+          border-left: transparent;
+
+          > tbody {
+            > tr {
+              > td {
+                border-right: transparent;
+                border-bottom: transparent;
               }
             }
           }
@@ -349,7 +363,7 @@
             color: #fff;
 
             // 테이블 스타일이 없는 경우
-            &:not([data-ke-style='style1']):not([data-ke-style='style2']):not([data-ke-style='style3']):not([data-ke-style='style4']):not([data-ke-style='style5']):not([data-ke-style='style6']):not([data-ke-style='style7']):not([data-ke-style='style8']):not([data-ke-style='style9']):not([data-ke-style='style10']):not([data-ke-style='style11']):not([data-ke-style='style12']):not([data-ke-style='style13']):not([data-ke-style='style14']):not([data-ke-style='style15']) {
+            &:not([data-ke-style='style1']):not([data-ke-style='style2']):not([data-ke-style='style3']):not([data-ke-style='style4']):not([data-ke-style='style5']):not([data-ke-style='style6']):not([data-ke-style='style7']):not([data-ke-style='style8']):not([data-ke-style='style9']):not([data-ke-style='style10']):not([data-ke-style='style11']):not([data-ke-style='style12']):not([data-ke-style='style13']):not([data-ke-style='style14']):not([data-ke-style='style15']):not([data-ke-style='style16']) {
               border-top: 1px solid #ccc;
               border-left: 1px solid #ccc;
             }
@@ -452,6 +466,20 @@
                     > td:not(:first-child) {
                       background-color: rgba(255, 255, 255, 0);
                     }
+                  }
+                }
+              }
+            }
+
+            &[data-ke-style='style16'] {
+              border-top: transparent;
+              border-left: transparent;
+    
+              > tbody {
+                > tr {
+                  > td {
+                    border-right: transparent;
+                    border-bottom: transparent;
                   }
                 }
               }
