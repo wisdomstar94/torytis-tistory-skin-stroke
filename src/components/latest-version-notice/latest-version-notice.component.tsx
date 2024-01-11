@@ -50,12 +50,12 @@ export function LatestVersionNotice() {
             <div className="w-full">
               현재 적용된 Stroke 스킨의 버전이 최신버전이 아닙니다.
             </div>
-            <div className="w-full block mb-4">
+            {/* <div className="w-full block mb-4">
               <span>(현재버전: </span>
               <span className="current-stroke-version inline">{ version }</span>
               <span>, 최신버전: </span>
               <span className="latest-stroke-version inline"></span>)
-            </div>
+            </div> */}
             <div className="w-full">
               최신버전의 스킨 파일을 다운로드 받을 수 있는 페이지로 이동하시겠습니까?
             </div>

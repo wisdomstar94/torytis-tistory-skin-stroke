@@ -81,7 +81,7 @@ export function Guestbook() {
                         "w-full pl-0 text-xs",
                         "flex-auto md:flex-1 lg:flex-auto xl:flex-1",
                       )}>
-                      <div className="comment-desc whitespace-pre-wrap">[##_guest_rep_desc_##]</div>
+                      <div className="comment-desc whitespace-pre-wrap break-all">[##_guest_rep_desc_##]</div>
                       {/* <CallJavascript 
                         code="removeHTMLTag({ className: 'comment-desc', isExecute: true })"
                         /> */}
@@ -188,7 +188,7 @@ export function Guestbook() {
                                 "mt-1 md:mt-0 lg:mt-1 xl:mt-0",
                                 "pl-14 md:pl-3 lg:pl-14 xl:pl-3",
                               )}>
-                              <div className="comment-desc whitespace-pre-wrap">[##_guest_rep_desc_##]</div>
+                              <div className="comment-desc whitespace-pre-wrap break-all">[##_guest_rep_desc_##]</div>
                               {/* <CallJavascript 
                                 code="removeHTMLTag({ className: 'comment-desc', isExecute: true })"
                                 /> */}

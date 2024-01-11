@@ -315,6 +315,9 @@ function checkFigureTags(isExecute?: boolean) {
   const callback = (element: HTMLElement) => {
     const dataKeStyle = element.getAttribute('data-ke-style');
     const dataKeAlign = element.getAttribute('data-ke-align');
+    const dataKeType = element.getAttribute('data-ke-type');
+    if (dataKeType?.trim() === 'opengraph') return;
+
     const dataKe = (function() {
       if (typeof dataKeStyle === 'string') return dataKeStyle;
       if (typeof dataKeAlign === 'string') return dataKeAlign;
