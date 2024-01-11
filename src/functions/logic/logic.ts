@@ -225,5 +225,7 @@ export function getPostImageElements() {
   const elementList: HTMLImageElement[] = [];
   const result = document.querySelectorAll<HTMLImageElement>(`.contents_style figure.imageblock img`);
   result.forEach(v => elementList.push(v));
+  const result2 = document.querySelectorAll<HTMLImageElement>(`.contents_style figure.imagegridblock img`);
+  result2.forEach(v => elementList.push(v));
   return elementList;
 }
