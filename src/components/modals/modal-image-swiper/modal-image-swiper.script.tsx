@@ -1,9 +1,10 @@
-import { hideModal, showModal } from "../../forms/modal/modal.script";
+import { hideModal, isModalHide, showModal } from "../../forms/modal/modal.script";
 import { generateModalImageSwiper_BottomImageListItemElement, generateModalImageSwiper_SlideItemElement, getModalImageSwiperElements, getModalImageSwiperWrapperElement, getModalImageSwiper_BottomImageItemElements, getModalImageSwiper_BottomImageListContainerElement, getModalImageSwiper_BottomImageListElement } from "./modal-image-swiper.element";
 import { IModalImageSwiper } from "./modal-image-swiper.interface";
 import Swiper from 'swiper';
 
 export const swipers: IModalImageSwiper.SwiperItem[] = [];
+const imageCountMap: Map<string, number> = new Map();
 
 window.addEventListener('load', () => {
   getModalImageSwiperElements().forEach(swiperElement => {
@@ -30,9 +31,24 @@ window.addEventListener('load', () => {
       //   el: '.swiper-scrollbar',
       // },
     });
+    const id = swiperElement.getAttribute('data-id')?.toString() ?? '';
     swipers.push({
-      id: swiperElement.getAttribute('data-id').toString(),
+      id,
       swiper,
+    });
+
+    window.addEventListener('keydown', function(event) {
+      if (isModalHide(id)) return;
+
+      const key = event.key.toLowerCase();
+
+      if (key === 'arrowleft') {
+        slideToIndex(id, swiper.realIndex - 1, true);
+      }
+
+      if (key === 'arrowright') {
+        slideToIndex(id, swiper.realIndex + 1, true);
+      }
     });
   });
 
@@ -41,8 +57,8 @@ window.addEventListener('load', () => {
 
   const closeButtonElement = document.querySelector<HTMLElement>(`.modal-image-swiper-container-close-button`);
   closeButtonElement?.addEventListener('click', () => {
-    const modalImageSwiperElement = closeButtonElement.parentElement.parentElement;
-    const modalImageSwiperId = modalImageSwiperElement.id;
+    const modalImageSwiperElement = closeButtonElement.parentElement?.parentElement;
+    const modalImageSwiperId = modalImageSwiperElement?.id;
     hideModalImageSwiper(modalImageSwiperId);
   });
 });
@@ -68,6 +84,8 @@ export function initModalImageSwiperContent(id: string, imageItems: IModalImageS
   const bottomImageListElement = getModalImageSwiper_BottomImageListElement(id);
   const swiperWrapperElement = getModalImageSwiperWrapperElement(id);
 
+  imageCountMap.set(id, imageItems.length);
+
   imageItems.forEach(k => {
     const bottomitem = generateModalImageSwiper_BottomImageListItemElement(id, k);
     bottomImageListElement?.appendChild(bottomitem);
@@ -78,10 +96,22 @@ export function initModalImageSwiperContent(id: string, imageItems: IModalImageS
 }
 
 export function slideToIndex(id: string, index: number, isBottomItemAutoFocus?: boolean) {
-  swipers.find(k => k.id === id).swiper.slideTo(index, 300);
+  if (index < 0) {
+    return;
+  }
+  const targetSwiper = swipers?.find(k => k.id === id);
+  if (targetSwiper === undefined) {
+    return;
+  }
+  const itemCount = imageCountMap.get(id);
+
+  if (index > (itemCount ?? 0) - 1) {
+    return;
+  }
+  targetSwiper.swiper.slideTo(index, 300);
 
   const bottomItemElements = getModalImageSwiper_BottomImageItemElements(id);
-  bottomItemElements.forEach((item, itemIndex) => {
+  bottomItemElements?.forEach((item, itemIndex) => {
     if (itemIndex === index) {
       item.classList.add('active');
     } else {
@@ -91,7 +121,9 @@ export function slideToIndex(id: string, index: number, isBottomItemAutoFocus?: 
 
   if (isBottomItemAutoFocus === true) {
     const bottomUlContainer = getModalImageSwiper_BottomImageListContainerElement(id);
-    const applyScrollLeft = bottomItemElements.find((k, _index) => _index === index).offsetLeft;
-    bottomUlContainer.scrollLeft = applyScrollLeft;
+    const applyScrollLeft = bottomItemElements?.find((k, _index) => _index === index)?.offsetLeft;
+    if (applyScrollLeft !== undefined && bottomUlContainer !== undefined && bottomUlContainer !== null) {
+      bottomUlContainer.scrollLeft = applyScrollLeft;
+    }
   }
 }

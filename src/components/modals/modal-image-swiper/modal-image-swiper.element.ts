@@ -80,7 +80,7 @@ export function generateModalImageSwiper_SlideItemElement(imageItem: IModalImage
         });
 
         svg
-          .call(_zoom, zoomIdentity)
+          .call(_zoom as any, zoomIdentity)
         ;
       },
     }),
@@ -102,7 +102,7 @@ export function getModalImageSwiper_BottomImageListContainerElement(id: string) 
 export function getModalImageSwiper_BottomImageListElement(id: string) {
   const container = getModalImageSwiper_BottomImageListContainerElement(id);
   if (container === null) return null;
-  return container.querySelector<HTMLUListElement>(`.bottom-image-list`);
+  return container?.querySelector<HTMLUListElement>(`.bottom-image-list`);
 }
 
 export function getModalImageSwiper_BottomImageItemElements(id: string) {
@@ -111,7 +111,7 @@ export function getModalImageSwiper_BottomImageItemElements(id: string) {
     return;
   }
   const elements: HTMLElement[] = [];
-  target.querySelectorAll<HTMLElement>(`.bottom-image-list-item`).forEach(t => elements.push(t));
+  target?.querySelectorAll<HTMLElement>(`.bottom-image-list-item`).forEach(t => elements.push(t));
   return elements;
 }
 

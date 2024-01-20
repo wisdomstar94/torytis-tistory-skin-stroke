@@ -1,7 +1,15 @@
 {
   "compilerOptions": {
+		"strict": true,
+		"allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
     "resolveJsonModule": true,
     "esModuleInterop": true
-  }
+  },
+  "include": [
+		"./src/**/*",
+		"./torytis-build.tsx",
+		"./torytis-env.d.ts",
+		"./torytis-variable.d.ts"
+	]
 }

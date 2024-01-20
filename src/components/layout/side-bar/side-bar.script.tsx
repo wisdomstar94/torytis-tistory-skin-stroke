@@ -35,8 +35,8 @@ function checkDarkMode(isExecute: boolean) {
   }
 
   const darkModeCheckbox = document.querySelector<HTMLInputElement>('input#dark_mode_switch');
-  const darkModeSwitchButtonComponent = darkModeCheckbox.parentElement;
-  const darkModeSwitchButtonBody = darkModeSwitchButtonComponent.querySelector<HTMLDivElement>('.switch-button-body');
+  const darkModeSwitchButtonComponent = darkModeCheckbox?.parentElement;
+  const darkModeSwitchButtonBody = darkModeSwitchButtonComponent?.querySelector<HTMLDivElement>('.switch-button-body');
   // console.log('@darkModeSwitchButtonComponent', darkModeSwitchButtonComponent);
 
   if (isDarkMode()) {
@@ -47,7 +47,7 @@ function checkDarkMode(isExecute: boolean) {
   }
 
   darkModeSwitchButtonBody?.addEventListener('click', () => {
-    const finallyChecked = !darkModeCheckbox.checked;
+    const finallyChecked = !darkModeCheckbox?.checked;
     localStorage.setItem('is_dark_mode', finallyChecked === true ? 'true' : 'false');
 
     const htmlElement = document.querySelector<HTMLElement>('html');
@@ -65,7 +65,7 @@ function checkNoticeEmpty(isExecute: boolean) {
   }
 
   const ul = getSideBarRecentNoticeUlElement();
-  if (ul.children.length === 0) {
+  if (ul?.children.length === 0) {
     const li = document.createElement('li');
     const span = document.createElement('span');
     span.classList.add('text-xs', 'text-slate-500', 'dark:text-white', 'dark-c:text-white');

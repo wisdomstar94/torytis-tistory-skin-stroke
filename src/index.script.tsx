@@ -5,7 +5,7 @@ import { getPostImageElements, isDarkMode } from "./functions/logic/logic";
 import copy from 'copy-to-clipboard';
 
 if (isDarkMode()) {
-  document.querySelector<HTMLElement>('html').classList.add('dark');
+  document.querySelector<HTMLElement>('html')?.classList.add('dark');
 }
 
 window.addEventListener('load', () => {
@@ -111,6 +111,8 @@ function checkPostsIndexItemThumbnailImageError(isExecute: boolean, thisObj: HTM
     return;
   }
 
+  if (thisObj === undefined) return;
+
   thisObj.style.display = 'none';
 }
 
@@ -119,8 +121,8 @@ function checkPostsIndexItemThumbnailImageLoad(isExecute: boolean, thisObj: HTML
     return;
   }
 
-  const defaultImgContainer = thisObj.parentElement.querySelector<HTMLElement>(`.posts-index-item-thumbnail-img-default-container`);
-  if (defaultImgContainer !== null) {
+  const defaultImgContainer = thisObj?.parentElement?.querySelector<HTMLElement>(`.posts-index-item-thumbnail-img-default-container`);
+  if (defaultImgContainer !== null && defaultImgContainer !== undefined) {
     defaultImgContainer.style.display = 'none';
   }
 }
@@ -141,11 +143,13 @@ function removeHTMLTag(obj: {
 
   // console.log('@className', className);
 
-  const elements = document.querySelectorAll(`.${className}`);
+  const elements = document.querySelectorAll<HTMLElement>(`.${className}`);
 
   // console.log('@elements', elements);
   elements.forEach((element: HTMLElement) => {
-    element.innerHTML = element.textContent;
+    if (element.textContent) {
+      element.innerHTML = element.textContent;
+    }
   });
 }
 
@@ -166,10 +170,13 @@ function subscribeCommnetListDomEvent(isExecute: boolean) {
     // console.log('@record', record);
     convertCommentDesc();
   });
-  observer.observe(document.querySelector('.comment-list'), {
-    childList: true,
-    
-  });
+
+  const target = document.querySelector('.comment-list');
+  if (target !== null) {
+    observer.observe(target, {
+      childList: true,
+    });
+  }
 }
 
 function postDeleteButtonClick(isExecute: boolean) {
@@ -274,7 +281,7 @@ function checkDarkModeFontColor() {
         dataOriginalColor = styleColor;
       }
 
-      if (targetNode.classList.contains('dark')) {
+      if (targetNode?.classList.contains('dark') === true) {
         // 다크모드일 경우 처리할 내용 작성..
         if (['rgb(51, 51, 51)', '#333'].includes(dataOriginalColor)) {
           node.style.color = '#fff';
@@ -298,11 +305,13 @@ function checkDarkModeFontColor() {
   const observer = new MutationObserver((mutations, observer) => {
     check();
   });
-  observer.observe(targetNode, {
-    attributes: true,
-    childList: false,
-    subtree: false,
-  });
+  if (targetNode !== null) {
+    observer.observe(targetNode, {
+      attributes: true,
+      childList: false,
+      subtree: false,
+    });
+  }  
 }
 
 function checkFigureTags(isExecute?: boolean) {
@@ -415,9 +424,9 @@ function codeBlockCopyButtonClick(isExecute: boolean, thisObj?: HTMLElement) {
   // console.log('@thisObj', thisObj);
   const preElement = thisObj.parentElement;
   
-  const codeRows = preElement.querySelectorAll('code > table > tbody > tr > td.hljs-ln-code');
+  const codeRows = preElement?.querySelectorAll('code > table > tbody > tr > td.hljs-ln-code');
   let copyText = '';
-  codeRows.forEach(row => {
+  codeRows?.forEach(row => {
     copyText += row.textContent + '\n';
   });
   // console.log('@copyText', copyText);

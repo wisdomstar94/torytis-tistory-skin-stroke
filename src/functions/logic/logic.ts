@@ -17,10 +17,10 @@ export function getCategoryCntText() {
   const pathnameSplit = location.pathname.split('/');
   const categoryName = decodeURIComponent(pathnameSplit[pathnameSplit.length - 1]).trim();
 
-  const linkItemAElements = document.querySelectorAll('ul.category_list a.link_item');
-  const linkItemASubElements = document.querySelectorAll('ul.category_list a.link_sub_item');
+  const linkItemAElements = document.querySelectorAll<HTMLElement>('ul.category_list a.link_item');
+  const linkItemASubElements = document.querySelectorAll<HTMLElement>('ul.category_list a.link_sub_item');
   
-  const linkElements = [];
+  const linkElements: HTMLElement[] = [];
   linkItemAElements.forEach((element) => {
     linkElements.push(element);
   });
@@ -33,7 +33,7 @@ export function getCategoryCntText() {
   for (const element of linkElements) {
     const childNodes = element.childNodes;
     const firstNode = childNodes[0];
-    const data = firstNode.data;
+    const data = (firstNode as any)?.data;
     if (typeof data !== 'string') {
       continue;
     }
@@ -223,9 +223,7 @@ export function elementSvg<K extends keyof SVGElementTagNameMap>(params: {
 
 export function getPostImageElements() {
   const elementList: HTMLImageElement[] = [];
-  const result = document.querySelectorAll<HTMLImageElement>(`.contents_style figure.imageblock img`);
+  const result = document.querySelectorAll<HTMLImageElement>(`.contents_style figure.imageblock img, .contents_style figure.imagegridblock img`);
   result.forEach(v => elementList.push(v));
-  const result2 = document.querySelectorAll<HTMLImageElement>(`.contents_style figure.imagegridblock img`);
-  result2.forEach(v => elementList.push(v));
   return elementList;
 }

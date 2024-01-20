@@ -40,6 +40,15 @@ export function ModalImageSwiper(props: IModalImageSwiper.Props) {
 
                 {/* If we need scrollbar */}
                 {/* <div className="swiper-scrollbar"></div> */}
+
+                {/* <input 
+                  type="text" 
+                  readOnly={true} 
+                  className={classes(
+                    "image-swiper-modal-keyboard-control-input",
+                    "w-0 h-0 opacity-0 absolute -top-96 -left-96 overflow-hidden"
+                  )} 
+                  /> */}
               </div>
             </div>
           </div>
