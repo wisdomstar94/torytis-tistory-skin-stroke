@@ -1,3 +1,4 @@
+import { Var } from '../../../../torytis-variable-object';
 import { classes } from '../../../functions/common/common';
 import { CallJavascript } from '../../call-javascript-function/call-javascript-function.component';
 import { SvgPhotoOff } from '../../svgs/svg-photo-off/svg-photo-off.component';
@@ -11,8 +12,8 @@ export function HomeCover() {
         data-title="home-cover" 
         className={classes(
           'w-full flex flex-wrap gap-4 relative items-stretch content-start',
-          '[##_var_cover_list_max_col_count_##]',
-          '[##_var_cover_list_half_max_col_count_##]',
+          Var['[##_var_cover_list_max_col_count_##]'],
+          Var['[##_var_cover_list_half_max_col_count_##]'],
         )}>
         
         <NormalPageTitleRow />

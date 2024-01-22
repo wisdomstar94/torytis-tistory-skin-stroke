@@ -1,3 +1,4 @@
+import { Var } from "../../../../torytis-variable-object";
 import { classes } from "../../../functions/common/common";
 import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { ModalImageSwiper } from "../../modals/modal-image-swiper/modal-image-swiper.component";
@@ -112,10 +113,11 @@ export function PostsNoticePermalinkItem() {
         <div
           className={classes(
             "contents-wrapper-container",
-            "[##_var_is_codeblock_copy_button_show_##]",
-            "[##_var_darkmode_post_table_style_##]",
-            "block m-0 p-0 relative [##_var_post_youtube_horizontal_align_##]",
-            "[##_var_is_post_codeblock_darkmode_text_color_all_white_##]",
+            Var['[##_var_is_codeblock_copy_button_show_##]'],
+            Var['[##_var_darkmode_post_table_style_##]'],
+            "block m-0 p-0 relative",
+            Var['[##_var_post_youtube_horizontal_align_##]'],
+            Var['[##_var_is_post_codeblock_darkmode_text_color_all_white_##]'],
           )}>
           [##_article_rep_desc_##]
 
@@ -125,7 +127,7 @@ export function PostsNoticePermalinkItem() {
                 __html: `
                   <style>
                     .contents-wrapper-container .contents_style > * {
-                      line-height: [##_var_blog_post_all_line_height_##];
+                      line-height: ${Var['[##_var_blog_post_all_line_height_##]']};
                     }
                   </style>
                 `,

@@ -1,0 +1,31 @@
+import { ICommon } from "../../../interfaces/common.interface";
+
+export function SvgArrowUp(props: ICommon.SvgProps) {
+  const {
+    className,
+    width,
+    height,
+    strokeWidth,
+  } = props;
+
+  return (
+    <>
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        className={className}
+        width={width ?? 24}
+        height={height ?? 24}
+        viewBox="0 0 24 24" 
+        strokeWidth={strokeWidth ?? 2}
+        stroke="currentColor" 
+        fill="none" 
+        strokeLinecap="round" 
+        strokeLinejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 5l0 14" className={className} fill="currentColor" stroke="currentColor" />
+        <path d="M18 11l-6 -6" className={className} fill="currentColor" stroke="currentColor" />
+        <path d="M6 11l6 -6" className={className} fill="currentColor" stroke="currentColor" />
+      </svg>
+    </>
+  );
+}

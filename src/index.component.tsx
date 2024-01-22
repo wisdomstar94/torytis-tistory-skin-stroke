@@ -19,6 +19,7 @@ import { HomeCover } from "./components/content/home-cover/home-cover.component"
 import { version } from '../package.json';
 import { LatestVersionNotice } from "./components/latest-version-notice/latest-version-notice.component";
 import { RootContainer } from "./components/layout/root-container/root-container.component";
+import { Var } from "../torytis-variable-object";
 
 export default function App() {
   return (
@@ -37,7 +38,7 @@ export default function App() {
         <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js" defer></script>
         
         <s_if_var_google_adsense_script_url>
-          <script async src="[##_var_google_adsense_script_url_##]" crossOrigin="anonymous"></script>
+          <script async src={Var['[##_var_google_adsense_script_url_##]']} crossOrigin="anonymous"></script>
         </s_if_var_google_adsense_script_url>
 
         <s_if_var_side_bar_scrollbar_track_color 
@@ -45,7 +46,7 @@ export default function App() {
             __html: `
               <style>
                 #common-side-bar::-webkit-scrollbar-track {
-                  background-color: [##_var_side_bar_scrollbar_track_color_##];
+                  background-color: ${Var['[##_var_side_bar_scrollbar_track_color_##]']};
                 }
               </style>
             `,
@@ -58,7 +59,7 @@ export default function App() {
             __html: `
               <style>
                 #common-side-bar::-webkit-scrollbar-thumb {
-                  background-color: [##_var_side_bar_scrollbar_thumb_color_##];
+                  background-color: ${Var['[##_var_side_bar_scrollbar_thumb_color_##]']};
                 }
               </style>
             `,
@@ -71,7 +72,7 @@ export default function App() {
             __html: `
               <style>
                 #[##_body_id_##] .common-post-index-item {
-                  border-color: [##_var_post_index_item_border_color_##];
+                  border-color: ${Var['[##_var_post_index_item_border_color_##]']};
                 }
               </style>
             `,
@@ -84,8 +85,8 @@ export default function App() {
             __html: `
               <style>
                 #[##_body_id_##] .common-post-index-item:hover {
-                  border-color: [##_var_post_index_item_border_active_color_##];
-                  outline-color: [##_var_post_index_item_border_active_color_##];
+                  border-color: ${Var['[##_var_post_index_item_border_active_color_##]']};
+                  outline-color: ${Var['[##_var_post_index_item_border_active_color_##]']};
                 }
               </style>
             `,

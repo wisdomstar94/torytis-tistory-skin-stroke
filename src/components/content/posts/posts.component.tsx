@@ -1,3 +1,4 @@
+import { Var } from "../../../../torytis-variable-object";
 import { classes } from "../../../functions/common/common";
 import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { PostsNormalIndexItem } from "../posts-normal-index-item/posts-normal-index-item.component";
@@ -13,7 +14,7 @@ export function Posts() {
       <div 
         className={classes(
           "w-full block relative",
-          "[##_var_total_list_max_col_count_##]",
+          Var['[##_var_total_list_max_col_count_##]'],
         )}>
         <ul
           // posts-list

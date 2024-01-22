@@ -7,8 +7,8 @@
     "esModuleInterop": true
   },
   "include": [
+		"./torytis-variable-object.ts",
 		"./src/**/*",
-		"./torytis-build.tsx",
 		"./torytis-env.d.ts",
 		"./torytis-variable.d.ts"
 	]

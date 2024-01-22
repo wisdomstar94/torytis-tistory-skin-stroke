@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 import { classes } from "../../../functions/common/common";
+import { GoToScrollTopButton } from "../../go-to-scroll-top-button/go-to-scroll-top-button.component";
+import { Var } from "../../../../torytis-variable-object";
 
 export function RootContainer({ children }: { children: ReactNode }) {
   return (
@@ -20,13 +22,14 @@ export function RootContainer({ children }: { children: ReactNode }) {
             __html: `
               <style>
                 .blog-root-container {
-                  max-width: [##_var_blog_screen_max_width_##]px;
+                  max-width: ${Var['[##_var_blog_screen_max_width_##]']}px;
                 }
               </style>
             `,
           }}
           />
       </s_if_var_blog_screen_max_width>
+      <GoToScrollTopButton />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { Var } from "../../../../torytis-variable-object";
 import { classes } from "../../../functions/common/common";
 import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { SvgPencil } from "../../svgs/svg-pencil/svg-pencil.component";
@@ -98,7 +99,7 @@ export function SideBar() {
                   <div
                     className={classes(
                       "dark-mode-switch-button",
-                      "[##_var_dark_mode_type_##]",
+                      Var['[##_var_dark_mode_type_##]'],
                       "w-full flex flex-wrap relative items-center justify-start gap-2",
                     )}>
                     <div
@@ -117,7 +118,7 @@ export function SideBar() {
                         />
                     </div>
                     <s_if_var_dark_mode_type>
-                      <CallJavascript code={`if ("[##_var_dark_mode_type_##]".trim() === "darkmode_fixed") { applyForceDarkMode(true); }`} />
+                      <CallJavascript code={`if ("${Var['[##_var_dark_mode_type_##]']}".trim() === "darkmode_fixed") { applyForceDarkMode(true); }`} />
                     </s_if_var_dark_mode_type>
                     <CallJavascript code="checkDarkMode(true)" />
                   </div>
