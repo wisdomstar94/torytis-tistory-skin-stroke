@@ -424,11 +424,23 @@ function codeBlockCopyButtonClick(isExecute: boolean, thisObj?: HTMLElement) {
   // console.log('@thisObj', thisObj);
   const preElement = thisObj.parentElement;
   
-  const codeRows = preElement?.querySelectorAll('code > table > tbody > tr > td.hljs-ln-code');
+  if (preElement === null) {
+    alert('복사할 수 없습니다.');
+    return;
+  }
+
+  const code = preElement.querySelector('code');
+  const codeRows = preElement.querySelectorAll('code > table > tbody > tr > td.hljs-ln-code');
+  
   let copyText = '';
-  codeRows?.forEach(row => {
-    copyText += row.textContent + '\n';
-  });
+  
+  if (codeRows.length > 0) {
+    codeRows?.forEach(row => {
+      copyText += row.textContent + '\n';
+    });
+  } else if (code !== null) {
+    copyText += code.textContent + '\n';
+  }
   // console.log('@copyText', copyText);
 
   copy(copyText);
