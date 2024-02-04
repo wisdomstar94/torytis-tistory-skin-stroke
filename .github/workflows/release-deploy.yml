@@ -17,7 +17,8 @@ jobs:
           node-version: 18
       - run: npm install
       - run: npm run build
-      - run: tar -czvf ./stroke_${{ github.ref_name }}.zip ./.torytis/*
+      - run: mv ./.torytis ./stroke_${{ github.ref_name }}
+      - run: tar -czvf ./stroke_${{ github.ref_name }}.zip ./stroke_${{ github.ref_name }}/*
 
       - name: asset upload 
         uses: svenstaro/upload-release-action@v2
