@@ -28,11 +28,13 @@ function disposePermalinkContent(isExecute: boolean) {
     return;
   }
 
-  const permalinkContentDivElements = getPermalinkContentDivElements();
-  permalinkContentDivElements.forEach(element => {
-    element.style.backgroundColor = 'transparent';
-    element.style.opacity = '1';
-  });
+  document.querySelector<HTMLElement>(`.contents-wrapper-container`)?.classList.remove(`div-and-span-opacity-0`);
+
+  // const permalinkContentDivElements = getPermalinkContentDivElements();
+  // permalinkContentDivElements.forEach(element => {
+  //   element.style.backgroundColor = 'transparent';
+  //   element.style.opacity = '1';
+  // });
 
   const permalinkContentPElements = getPermalinkContentPElements();
   permalinkContentPElements.forEach(element => {
@@ -41,11 +43,11 @@ function disposePermalinkContent(isExecute: boolean) {
     }
   });
 
-  const permalinkContentDivSpanElements = getPermalinkContentDivSpanElements();
-  permalinkContentDivSpanElements.forEach(element => {
-    element.style.backgroundColor = 'transparent';
-    element.style.opacity = '1';
-  });
+  // const permalinkContentDivSpanElements = getPermalinkContentDivSpanElements();
+  // permalinkContentDivSpanElements.forEach(element => {
+  //   element.style.backgroundColor = 'transparent';
+  //   element.style.opacity = '1';
+  // });
 
   const permalinkContentHeadingElements = getPermalinkContentHeadingElements();
   permalinkContentHeadingElements.forEach(element => {
@@ -201,7 +203,7 @@ function checkCodeBlock() {
   const postBody = document.body.querySelector('.contents_style');
   if (postBody === null) return;
 
-  const codeBlockElements = postBody.querySelectorAll(`pre[data-ke-type='codeblock']`);
+  const codeBlockElements = postBody.querySelectorAll(`pre[data-ke-type='codeblock'], pre[data-ke-language]`);
   // console.log('@codeBlockElements', codeBlockElements);
 
   codeBlockElements.forEach(element => {

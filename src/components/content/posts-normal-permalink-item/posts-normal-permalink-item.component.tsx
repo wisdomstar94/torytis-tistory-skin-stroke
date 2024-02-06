@@ -115,6 +115,7 @@ export function PostsNormalPermalinkItem() {
         <div
           className={classes(
             "contents-wrapper-container",
+            "div-and-span-opacity-0",
             Var['[##_var_is_codeblock_copy_button_show_##]'],
             Var['[##_var_darkmode_post_table_style_##]'],
             "block m-0 p-0 relative",
@@ -122,6 +123,26 @@ export function PostsNormalPermalinkItem() {
             Var['[##_var_is_post_codeblock_darkmode_text_color_all_white_##]'],
           )}>
           [##_article_rep_desc_##]
+
+          <s_if_var_codeblock_font_url>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `
+                  <style>
+                    @font-face {
+                      font-family: 'codeblock-font';
+                      src : '${Var["[##_var_codeblock_font_url_##]"]}';
+                    }
+
+                    .contents-wrapper-container pre[data-ke-type='codeblock'] > code, 
+                    .contents-wrapper-container pre[data-ke-language] > code {
+                      font-family: 'codeblock-font';
+                    }
+                  </style>
+                `
+              }}
+              />
+          </s_if_var_codeblock_font_url>
 
           <s_if_var_blog_post_all_line_height>
             <div

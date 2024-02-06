@@ -93,26 +93,47 @@ function getItemElement(text: string, className: string) {
   const li = document.createElement('li');
   li.classList.add(
     "posts-index-item",
-    "block",
+    "flex",
+    "flex-nowrap",
     "m-0",
-    "py-3",
+    // "py-3",
     "px-0",
     "relative",
     "list-none",
     "cursor-pointer",
-    "border-b",
-    "border-dotted",
-    "border-b-ccc",
-    className,
+    "text-aaa", "dark:text-777", "dark-c:text-777",
+    "active:text-black", "dark:active:text-white", "dark-c:active:text-white",
   );
+  for (const item of className.split(' ')) {
+    if (item.trim() !== '') {
+      li.classList.add(item)
+    };
+  }
+
+  const span2 = document.createElement('span');
+  span2.classList.add(
+    "overflow-hidden", "w-0",
+    "parent-title-1depth:w-[36px]", 
+    "parent-title-2depth:w-[72px]",
+    "flex", "flex-wrap", "flex-shrink", "justify-end",
+    "box-border", "pr-2",
+  );
+  // span2.textContent = '⤷';
 
   const span = document.createElement('span');
   span.classList.add(
-    "text-aaa", "dark:text-777", "dark-c:text-777",
-    "parent-1-active:text-black", "dark:parent-1-active:text-white", "dark-c:parent-1-active:text-white",
+    "only-text",
+    "py-3",
+    "whitespace-pre-line",
+    "break-all",
+    "w-full", "flex", "flex-wrap",
+    "border-b",
+    "border-dotted",
+    "border-b-ccc",
   );
   span.textContent = text;
 
+  li.appendChild(span2);
   li.appendChild(span);
 
   return li;
@@ -146,14 +167,14 @@ function getEmptyItemElement() {
 }
 
 function getMl(headingTag: string) {
-  if (Array.from<string>(['h1', 'h2']).includes(headingTag)) {
-    return 'ml-0';
+  if (Array.from<string>(['h2']).includes(headingTag)) {
+    return '';
   }
-  if (Array.from<string>(['h3', 'h4']).includes(headingTag)) {
-    return 'ml-4';
+  if (Array.from<string>(['h3']).includes(headingTag)) {
+    return 'title-1depth';
   }
-  if (Array.from<string>(['h5', 'h6']).includes(headingTag)) {
-    return 'ml-8';
+  if (Array.from<string>(['h4']).includes(headingTag)) {
+    return 'title-2depth';
   }
-  return '0';
+  return '';
 }

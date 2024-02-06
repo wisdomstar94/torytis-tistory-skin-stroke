@@ -31,15 +31,27 @@ pre > code {
 
 #tt-body-page {
   .contents-wrapper-container {
+    &.div-and-span-opacity-0 {
+      .contents_style {
+        > div {
+          opacity: 0;
+    
+          > span {
+            opacity: 0;
+          }
+        }
+      }  
+    }
+
     .contents_style {
       > div {
-        opacity: 0;
+        background-color: transparent !important;
   
         > span {
-          opacity: 0;
+          background-color: transparent !important;
         }
       }
-  
+
       ul, ol {
         width: 100%;
         display: flex;
@@ -201,7 +213,7 @@ pre > code {
         }
       }
   
-      > pre[data-ke-type='codeblock'] {
+      > pre[data-ke-type='codeblock'], pre[data-ke-language] {
         position: relative;
         border: 1px solid #ccc;
         background-color: #f6f6f6;
@@ -309,7 +321,7 @@ pre > code {
           }
         }
 
-        > pre[data-ke-type='codeblock'] {
+        > pre {
           border: 1px solid #fff;
           background-color: transparent;
           border-radius: 12px;
@@ -317,6 +329,7 @@ pre > code {
 
           code.hljs {
             background-color: transparent;
+            color: #fff;
 
             table {
               td {
@@ -494,7 +507,7 @@ pre > code {
 
       &.is_post_codeblock_darkmode_text_color_all_white_true {
         .contents_style {
-          > pre[data-ke-type='codeblock'] {
+          > pre[data-ke-type='codeblock'], pre[data-ke-language] {
             code.hljs {
               table {
                 td {

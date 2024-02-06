@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { classes } from "../../../functions/common/common";
-import { GoToScrollTopButton } from "../../go-to-scroll-top-button/go-to-scroll-top-button.component";
 import { Var } from "../../../../torytis-variable-object";
+import { FloatButtonArea } from "../../content/float-button-area/float-button-area.component";
 
 export function RootContainer({ children }: { children: ReactNode }) {
   return (
@@ -29,7 +29,7 @@ export function RootContainer({ children }: { children: ReactNode }) {
           }}
           />
       </s_if_var_blog_screen_max_width>
-      <GoToScrollTopButton />
+      <FloatButtonArea />
     </>
   );
 }

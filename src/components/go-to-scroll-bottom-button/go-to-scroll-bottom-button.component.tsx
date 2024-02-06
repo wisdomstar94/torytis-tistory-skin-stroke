@@ -1,12 +1,12 @@
 import { classes } from "../../functions/common/common";
-import { SvgArrowUp } from "../svgs/svg-arrow-up/svg-arrow-up.component";
+import { SvgArrowDown } from "../svgs/svg-arrow-down/svg-arrow-down.component";
 
-export function GoToScrollTopButton() {
+export function GoToScrollBottomButton() {
   return (
     <>
       <button 
         className={classes(
-          "go-to-scroll-top-button",
+          "go-to-scroll-bottom-button",
           "w-10 h-10 border cursor-pointer",
           "bg-white hover:bg-gray-200 dark:bg-black dark:hover:bg-gray-800",
           "border-black dark:border-white",
@@ -15,7 +15,7 @@ export function GoToScrollTopButton() {
           "my-show:inline-flex",
           "rounded-full"
         )}>
-        <SvgArrowUp
+        <SvgArrowDown
           width={20}
           height={20}
           className={classes(

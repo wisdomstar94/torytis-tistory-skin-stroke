@@ -80,7 +80,9 @@ export function getPostsIndexLiElement(text: string | null, index: number) {
   
   for (let i = 0; i < ul.children.length; i++) {
     const li = ul.children[i] as HTMLLIElement;
-    if (li.textContent?.trim() === text.trim() && index === i) {
+    if (li === undefined) continue;
+    const textSpan = li.querySelector<HTMLElement>('span.only-text');
+    if (textSpan?.textContent?.trim() === text.trim() && index === i) {
       return li;
     }
   }

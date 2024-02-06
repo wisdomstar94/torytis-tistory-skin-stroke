@@ -113,6 +113,7 @@ export function PostsNoticePermalinkItem() {
         <div
           className={classes(
             "contents-wrapper-container",
+            "div-and-span-opacity-0",
             Var['[##_var_is_codeblock_copy_button_show_##]'],
             Var['[##_var_darkmode_post_table_style_##]'],
             "block m-0 p-0 relative",

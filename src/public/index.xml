@@ -208,6 +208,14 @@
         <description>본문글의 전체 행간 (단위포함, ex. 1.2rem, 10px ...)</description>
         <type>STRING</type>
       </variable>
+      <variable>
+        <name>codeblock_font_url</name>
+        <label>
+          <![CDATA[ 코드블럭 폰트 URL ]]>
+        </label>
+        <description>코드블럭 폰트 URL</description>
+        <type>STRING</type>
+      </variable>
     </variablegroup>
     <variablegroup name="홈커버 아이템 옵션">
       <variable>

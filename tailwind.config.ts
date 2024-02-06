@@ -100,6 +100,11 @@ const variantPlugin: PluginCreator = ({ addVariant }) => {
   addVariant('my-copyed', '.my-copyed&');
   addVariant('parent-1-my-copyed', '.my-copyed > &');
 
+  addVariant('title-1depth', '.title-1depth&');
+  addVariant('parent-title-1depth', '.title-1depth > &');
+  addVariant('title-2depth', '.title-2depth&');
+  addVariant('parent-title-2depth', '.title-2depth > &');
+
   // addVariant('dark-c', '.dark &');
 };
 
