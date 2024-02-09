@@ -203,7 +203,7 @@ function checkCodeBlock() {
   const postBody = document.body.querySelector('.contents_style');
   if (postBody === null) return;
 
-  const codeBlockElements = postBody.querySelectorAll(`pre[data-ke-type='codeblock'], pre[data-ke-language]`);
+  const codeBlockElements = postBody.querySelectorAll(`pre[data-ke-type='codeblock'], pre[data-ke-language], pre[class='gml']`);
   // console.log('@codeBlockElements', codeBlockElements);
 
   codeBlockElements.forEach(element => {

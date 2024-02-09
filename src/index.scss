@@ -213,10 +213,10 @@ pre > code {
         }
       }
   
-      > pre[data-ke-type='codeblock'], pre[data-ke-language] {
+      > pre[data-ke-type='codeblock'], pre[data-ke-language], pre[class='gml'] {
         position: relative;
         border: 1px solid #ccc;
-        background-color: #f6f6f6;
+        background-color: #f6f6f6 !important;
         border-radius: 12px;
         padding: 20px;
         margin-bottom: 8px;
@@ -321,9 +321,13 @@ pre > code {
           }
         }
 
+        .hljs-keyword, .hljs-selector-tag, .hljs-subst {
+          color: #888;
+        }
+
         > pre {
           border: 1px solid #fff;
-          background-color: transparent;
+          background-color: rgba(0, 0, 0, 0) !important;
           border-radius: 12px;
           padding: 20px;
 
@@ -507,7 +511,9 @@ pre > code {
 
       &.is_post_codeblock_darkmode_text_color_all_white_true {
         .contents_style {
-          > pre[data-ke-type='codeblock'], pre[data-ke-language] {
+          > pre[data-ke-type='codeblock'], pre[data-ke-language], pre[class='gml'] {
+            color: #fff !important;
+
             code.hljs {
               table {
                 td {
