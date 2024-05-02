@@ -104,6 +104,8 @@ const variantPlugin: PluginCreator = ({ addVariant }) => {
   addVariant('parent-title-1depth', '.title-1depth > &');
   addVariant('title-2depth', '.title-2depth&');
   addVariant('parent-title-2depth', '.title-2depth > &');
+  addVariant('title-3depth', '.title-3depth&');
+  addVariant('parent-title-3depth', '.title-3depth > &');
 
   // addVariant('dark-c', '.dark &');
 };

@@ -61,6 +61,10 @@ pre > code {
         margin-bottom: 8px;
         position: relative;
 
+        &:not([class]) {
+          list-style-type: disc;
+        }
+
         li {
           width: 100%;
           margin-bottom: 4px;
@@ -69,8 +73,8 @@ pre > code {
       }
   
       > h1, > h2, > h3, > h4, > h5, > h6 {
-        margin-top: 12px;
-        margin-bottom: 12px;
+        margin-top: 26px;
+        margin-bottom: 10px;
       }
   
       > p {
@@ -101,9 +105,9 @@ pre > code {
         border-left: 1px solid #ccc;
         background-color: #fff;
 
-        > tbody {
+        > tbody, > thead {
           > tr {
-            > td {
+            > td, > th {
               padding: 8px;
             }
           }
@@ -111,9 +115,9 @@ pre > code {
 
         // 테이블 스타일이 없는 경우
         &:not([data-ke-style='style1']):not([data-ke-style='style2']):not([data-ke-style='style3']):not([data-ke-style='style4']):not([data-ke-style='style5']):not([data-ke-style='style6']):not([data-ke-style='style7']):not([data-ke-style='style8']):not([data-ke-style='style9']):not([data-ke-style='style10']):not([data-ke-style='style11']):not([data-ke-style='style12']):not([data-ke-style='style13']):not([data-ke-style='style14']):not([data-ke-style='style15']):not([data-ke-style='style16']) {
-          > tbody {
+          > tbody, > thead {
             > tr {
-              > td {
+              > td, > th {
                 border-right: 1px solid #ccc;
                 border-bottom: 1px solid #ccc;
               }
@@ -140,7 +144,7 @@ pre > code {
               }
 
               &:first-child {
-                > td {
+                > td, > th {
                   border-right: 1px solid #ccc;
                 }
               }
@@ -171,7 +175,7 @@ pre > code {
               }
 
               &:first-child {
-                > td {
+                > td, > th {
                   border-right: transparent;
                 }
               }
@@ -190,7 +194,7 @@ pre > code {
         {
           > tbody {
             > tr {
-              > td {
+              > td, > th {
                 border-right: 1px solid #ccc;
                 border-bottom: 1px solid #ccc;
               }
@@ -204,7 +208,7 @@ pre > code {
 
           > tbody {
             > tr {
-              > td {
+              > td, > th {
                 border-right: transparent;
                 border-bottom: transparent;
               }
@@ -213,7 +217,7 @@ pre > code {
         }
       }
   
-      > pre[data-ke-type='codeblock'], pre[data-ke-language], pre[class='gml'] {
+      pre[data-ke-type='codeblock'], pre[data-ke-language], pre[class='gml'], li.codeblock {
         position: relative;
         border: 1px solid #ccc;
         background-color: #f6f6f6 !important;
@@ -221,7 +225,7 @@ pre > code {
         padding: 20px;
         margin-bottom: 8px;
   
-        code.hljs {
+        code {
           background-color: transparent;
   
           table {
@@ -249,6 +253,16 @@ pre > code {
   
       p {
         margin-bottom: 4px !important;
+      }
+
+      code.small-codeblock {
+        position: relative;
+        border: 1px solid #ccc;
+        background-color: #f6f6f6 !important;
+        border-radius: 12px;
+        padding: 2px 8px;
+        margin: 2px;
+        display: inline-block;
       }
     }
 
@@ -325,13 +339,14 @@ pre > code {
           color: #888;
         }
 
-        > pre {
+        > pre, li.codeblock {
           border: 1px solid #fff;
           background-color: rgba(0, 0, 0, 0) !important;
           border-radius: 12px;
           padding: 20px;
+          white-space: pre;
 
-          code.hljs {
+          code {
             background-color: transparent;
             color: #fff;
 
@@ -373,6 +388,12 @@ pre > code {
             color: #ccc !important; 
           }
         }
+
+        code.small-codeblock {
+          border: 1px solid #fff;
+          background-color: rgba(0, 0, 0, 0) !important;
+          color: #fff;
+        }
       }
 
       &.darkmode_post_table_style_auto_convert {
@@ -407,7 +428,7 @@ pre > code {
 
                 > tr {
                   &:first-child {
-                    > td {
+                    > td, > th {
                       border-bottom: 1px solid #fff;
                     }
                   }
@@ -433,7 +454,7 @@ pre > code {
 
                 > tr {
                   &:first-child {
-                    > td {
+                    > td, > th {
                       border-bottom: 2px solid #fff;
                     }
                   }
@@ -447,13 +468,13 @@ pre > code {
             &[data-ke-style='style7'] {
               > tbody {
                 > tr {
-                  > td {
+                  > td, > th {
                     border-right: 1px solid #ccc;
                     border-bottom: 1px solid #ccc;
                   }
 
                   &:nth-child(even) {
-                    > td {
+                    > td, > th {
                       background-color: rgba(255, 255, 255, 0.2);
                     }                
                   }
@@ -467,7 +488,7 @@ pre > code {
             &[data-ke-style='style15'] {
               > tbody {
                 > tr {
-                  > td {
+                  > td, > th {
                     &:first-child {
                       background-color: #333;
                       color: #fff;
@@ -475,7 +496,7 @@ pre > code {
                   }
 
                   &:first-child {
-                    > td {
+                    > td, > th {
                       border-top: transparent;
                       border-left: transparent;
                       background-color: #666;
@@ -498,7 +519,7 @@ pre > code {
     
               > tbody {
                 > tr {
-                  > td {
+                  > td, > th {
                     border-right: transparent;
                     border-bottom: transparent;
                   }
@@ -511,10 +532,10 @@ pre > code {
 
       &.is_post_codeblock_darkmode_text_color_all_white_true {
         .contents_style {
-          > pre[data-ke-type='codeblock'], pre[data-ke-language], pre[class='gml'] {
+          pre[data-ke-type='codeblock'], pre[data-ke-language], pre[class='gml'], li.codeblock {
             color: #fff !important;
 
-            code.hljs {
+            code {
               table {
                 td {
                   > span {
@@ -544,4 +565,24 @@ pre > code {
   &[data-status='비공개'] {
     display: flex;
   }
+}
+
+.rep-name-area {
+  display: block;
+  flex-wrap: wrap;
+  position: relative;
+  gap: 2px;
+
+  > img, > a {
+    display: inline;
+    position: relative;
+  }
+
+  > span {
+    display: inline-block;
+  }
+  // > span {
+  //   margin-left: 0;
+  //   margin-right: 0;
+  // }
 }

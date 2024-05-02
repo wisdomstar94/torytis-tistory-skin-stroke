@@ -1,7 +1,7 @@
 import { initModalImageSwiperContent, showModalImageSwiper } from "./components/modals/modal-image-swiper/modal-image-swiper.script";
 import { classes } from "./functions/common/common";
 import { getPermalinkContentDivElements, getPermalinkContentDivSpanElements, getPermalinkContentHeadingElements, getPermalinkContentPElements, getPostsIndexItemLiElements } from "./functions/element/element";
-import { getPostImageElements, isDarkMode } from "./functions/logic/logic";
+import { element, getPostImageElements, isDarkMode } from "./functions/logic/logic";
 import copy from 'copy-to-clipboard';
 
 if (isDarkMode()) {
@@ -21,6 +21,7 @@ window.addEventListener('load', () => {
   window.hljs.initLineNumbersOnLoad();
   checkDarkModeFontColor();
   checkFigureTags(false);
+  checkHTags();
 });
 
 function disposePermalinkContent(isExecute: boolean) {
@@ -203,10 +204,50 @@ function checkCodeBlock() {
   const postBody = document.body.querySelector('.contents_style');
   if (postBody === null) return;
 
+  const preElements = postBody.querySelectorAll('pre');
+  preElements.forEach(elem => {
+    const codeElement = elem.querySelector('code');
+    if (codeElement !== null && typeof elem.getAttribute('data-ke-type') !== 'string') {
+      elem.setAttribute('data-ke-type', 'codeblock');
+    }
+  });
+
+  const codeblocks: Element[] = [];
+
   const codeBlockElements = postBody.querySelectorAll(`pre[data-ke-type='codeblock'], pre[data-ke-language], pre[class='gml']`);
+  codeBlockElements.forEach((element) => {
+    codeblocks.push(element);
+  });
+
+  // const codeBlockElements2 = postBody.querySelectorAll(`li > code`);
+  // codeBlockElements2.forEach((element) => {
+  //   if (element.parentElement !== null) {
+  //     element.parentElement.classList.add('codeblock');
+  //     if (codeblocks.find(x => x === element.parentElement) === undefined) {
+  //       codeblocks.push(element.parentElement);
+  //     }
+  //   }
+  // });
+
+  const codeBlockElements2 = postBody.querySelectorAll(`code`);
+  codeBlockElements2.forEach((element) => {
+    // console.log('@element.classList.value', element.classList.value);
+    const classString = element.classList.value.trim();
+    // console.log('@classString', classString);
+    if (classString !== '') {
+      return;
+    }
+
+    // console.log('@...', { element, 'small-codeblock': '' });
+    element.classList.add('small-codeblock');
+  });
+
   // console.log('@codeBlockElements', codeBlockElements);
 
-  codeBlockElements.forEach(element => {
+  // console.log('@codeblocks...', codeblocks);
+
+  codeblocks.forEach(element => {
+    // console.log('@codeblocks.element', element);
     const div = Element({
       tag: 'div',
       className: classes("absolute inline-flex top-2 right-2 cursor-pointer group/copy-button"),
@@ -221,7 +262,6 @@ function checkCodeBlock() {
               "w-6 h-6",
               "stroke-black/60 group-hover/copy-button:stroke-black",
               "dark:stroke-white/70 dark:group-hover/copy-button:stroke-white",
-              "dark-c:stroke-white/70 dark-c:group-hover/copy-button:stroke-white",
               "inline-flex parent-1-my-copyed:hidden",
             )
           }" 
@@ -243,7 +283,6 @@ function checkCodeBlock() {
               "w-6 h-6",
               "stroke-black/60 group-hover/copy-button:stroke-black",
               "dark:stroke-white/70 dark:group-hover/copy-button:stroke-white",
-              "dark-c:stroke-white/70 dark-c:group-hover/copy-button:stroke-white",
               "hidden parent-1-my-copyed:inline-flex",
             )
           }" 
@@ -263,6 +302,15 @@ function checkCodeBlock() {
     });
 
     element.appendChild(div);
+  });
+}
+
+function checkHTags() {
+  document.querySelectorAll('.contents-wrapper-container h1, .contents-wrapper-container h2, .contents-wrapper-container h3, .contents-wrapper-container h4, .contents-wrapper-container h5, .contents-wrapper-container h6').forEach(item => {
+    const value = item.getAttribute('data-ke-size');
+    if (typeof value !== 'string') {
+      item.setAttribute('data-ke-size', '');
+    }
   });
 }
 
@@ -431,18 +479,21 @@ function codeBlockCopyButtonClick(isExecute: boolean, thisObj?: HTMLElement) {
     return;
   }
 
-  const code = preElement.querySelector('code');
+  const codes = preElement.querySelectorAll('code');
+  const code = codes[0];
   const codeRows = preElement.querySelectorAll('code > table > tbody > tr > td.hljs-ln-code');
   
   let copyText = '';
   
-  if (codeRows.length > 0) {
+  if (codes.length > 1) {
+    copyText += preElement.textContent;
+  } else if (codeRows.length > 0) {
     codeRows?.forEach(row => {
       copyText += row.textContent + '\n';
     });
   } else if (code !== null) {
     copyText += code.textContent + '\n';
-  }
+  } 
   // console.log('@copyText', copyText);
 
   copy(copyText);

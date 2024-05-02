@@ -124,6 +124,8 @@ export function PostsNormalPermalinkItem() {
           )}>
           [##_article_rep_desc_##]
 
+          <CallJavascript code="checkHTags()" />
+
           <s_if_var_codeblock_font_url>
             <div
               dangerouslySetInnerHTML={{
@@ -360,6 +362,7 @@ export function PostsNormalPermalinkItem() {
                             )}>
                             <div
                               className={classes(
+                                "rep-name-area",
                                 "block text-xs mb-1",
                               )}>
                               [##_rp_rep_name_##]
@@ -377,8 +380,9 @@ export function PostsNormalPermalinkItem() {
                       </div>
                       <div
                         className={classes(
-                          "w-full pl-0 text-xs",
+                          "w-full text-xs",
                           "flex-auto md:flex-1 lg:flex-auto xl:flex-1",
+                          "pl-0 md:pl-3 lg:pl-0 xl:pl-3",
                         )}>
                         <div className="comment-desc whitespace-pre-wrap break-all">[##_rp_rep_desc_##]</div>
                         {/* <CallJavascript 
@@ -430,7 +434,7 @@ export function PostsNormalPermalinkItem() {
                               <div
                                 className={classes(
                                   "flex flex-nowrap",
-                                  "w-full md:w-[224px] lg:w-full xl:w-[224px]",
+                                  "w-full md:w-[244px] lg:w-full xl:w-[244px]",
                                 )}>
                                 <div
                                   className={classes(
@@ -446,11 +450,11 @@ export function PostsNormalPermalinkItem() {
                                   <div
                                     className={classes(
                                       "w-full flex items-start justify-start relative",
-                                      "flex-wrap md:flex-nowrap lg:flex-wrap xl:flex-nowrap",
+                                      "flex-nowrap",
                                     )}>
                                     <div
                                       className={classes(
-                                        "w-[46px] h-[46px] mr-2 block relative",
+                                        "w-[46px] h-[46px] mr-2 block relative flex-shrink-0",
                                       )}>
                                       <img 
                                         src="[##_rp_rep_logo_##]" 
@@ -464,16 +468,18 @@ export function PostsNormalPermalinkItem() {
                                     </div>
                                     <div
                                       className={classes(
-                                        "inline-block relative",
+                                        "w-full inline-flex relative flex-wrap",
                                       )}>
                                       <div 
                                         className={classes(
+                                          "w-full rep-name-area",
                                           "block text-xs mb-1 relative",
                                         )}>
                                         [##_rp_rep_name_##]
                                       </div>
                                       <div 
                                         className={classes(
+                                          "w-full",
                                           'time',
                                           "block text-xs mb-1 relative",
                                           "text-888 dark:text-ccc dark-c:text-ccc",

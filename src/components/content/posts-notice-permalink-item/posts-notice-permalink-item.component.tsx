@@ -122,6 +122,8 @@ export function PostsNoticePermalinkItem() {
           )}>
           [##_article_rep_desc_##]
 
+          <CallJavascript code="checkHTags()" />
+
           <s_if_var_blog_post_all_line_height>
             <div
               dangerouslySetInnerHTML={{

@@ -62,6 +62,7 @@ export function Guestbook() {
                           )}>
                           <div 
                             className={classes(
+                              "rep-name-area",
                               "block text-xs mb-1 relative",
                             )}>
                             [##_guest_rep_name_##]
@@ -129,7 +130,7 @@ export function Guestbook() {
                             <div
                               className={classes(
                                 "flex flex-nowrap",
-                                "w-full md:w-[224px] lg:w-full xl:w-[224px]",
+                                "w-full md:w-[244px] lg:w-full xl:w-[244px]",
                               )}>
                               <div 
                                 className={classes(
@@ -144,11 +145,12 @@ export function Guestbook() {
                                 )}>
                                 <div 
                                   className={classes(
-                                    "w-full flex flex-wrap items-start justify-start relative",
+                                    "w-full flex items-start justify-start relative",
+                                    "flex-nowrap",
                                   )}>
                                   <div 
                                     className={classes(
-                                      "w-[46px] h-[46px] mr-2 block relative",
+                                      "w-[46px] h-[46px] mr-2 block relative flex-shrink-0",
                                     )}>
                                     <img 
                                       className={classes(
@@ -162,16 +164,18 @@ export function Guestbook() {
                                   </div>
                                   <div
                                     className={classes(
-                                      "inline-block relative",
+                                      "w-full inline-flex relative flex-wrap",
                                     )}>
                                     <div 
                                       className={classes(
-                                        "block text-xs mb-1",
+                                        "w-full rep-name-area",
+                                        "block text-xs mb-1 relative",
                                       )}>
                                       [##_guest_rep_name_##]
                                     </div>
                                     <div 
                                       className={classes(
+                                        "w-full",
                                         styles['time'],
                                         "block text-xs mb-1",
                                       )}>

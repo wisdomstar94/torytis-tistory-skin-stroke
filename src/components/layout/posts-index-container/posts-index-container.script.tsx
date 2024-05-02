@@ -115,6 +115,7 @@ function getItemElement(text: string, className: string) {
     "overflow-hidden", "w-0",
     "parent-title-1depth:w-[36px]", 
     "parent-title-2depth:w-[72px]",
+    "parent-title-3depth:w-[108px]",
     "flex", "flex-wrap", "flex-shrink", "justify-end",
     "box-border", "pr-2",
   );
@@ -167,14 +168,29 @@ function getEmptyItemElement() {
 }
 
 function getMl(headingTag: string) {
-  if (Array.from<string>(['h2']).includes(headingTag)) {
+  if (isH1Exist()) {
+    if (Array.from<string>(['h2']).includes(headingTag)) {
+      return 'title-1depth';
+    }
+    if (Array.from<string>(['h3']).includes(headingTag)) {
+      return 'title-2depth';
+    }
+    if (Array.from<string>(['h4']).includes(headingTag)) {
+      return 'title-3depth';
+    }
+    return '';
+  } else {
+    if (Array.from<string>(['h3']).includes(headingTag)) {
+      return 'title-1depth';
+    }
+    if (Array.from<string>(['h4']).includes(headingTag)) {
+      return 'title-2depth';
+    }
     return '';
   }
-  if (Array.from<string>(['h3']).includes(headingTag)) {
-    return 'title-1depth';
-  }
-  if (Array.from<string>(['h4']).includes(headingTag)) {
-    return 'title-2depth';
-  }
-  return '';
+}
+
+function isH1Exist() {
+  const h1Tag = document.querySelector('#tt-body-page .contents_style > h1');
+  return h1Tag !== null;
 }
