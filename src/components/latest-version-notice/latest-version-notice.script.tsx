@@ -26,7 +26,7 @@ function checkSkinVersion() {
 
   axios
     // .get('https://github.com/wisdomstar94/torytis-tistory-skin-stroke/releases/latest')
-    .get('https://cdn.jsdelivr.net/gh/wisdomstar94/torytis-tistory-skin-stroke/package.json')
+    .get(`https://cdn.jsdelivr.net/gh/wisdomstar94/torytis-tistory-skin-stroke/package.json?t=${Date.now()}`)
     .then(res => {
       const result = res.data;
       // const domParser = new DOMParser();
