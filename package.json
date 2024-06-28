@@ -1,6 +1,6 @@
 {
   "name": "torytis-tistory-skin-stroke",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "index.js",
   "scripts": {
 		"dev": "torytis dev",
@@ -27,6 +27,6 @@
     "swiper": "^11",
     "tailwindcss": "^3",
     "typescript": "^5",
-    "@wisdomstar94/torytis": "^1.2.0"
+    "@wisdomstar94/torytis": "^1.2.1"
   }
 }

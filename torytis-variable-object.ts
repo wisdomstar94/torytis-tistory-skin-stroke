@@ -11,6 +11,7 @@ export const Var = {
 	"[##_var_darkmode_post_table_style_##]": "[##_var_darkmode_post_table_style_##]",
 	"[##_var_blog_post_all_line_height_##]": "[##_var_blog_post_all_line_height_##]",
 	"[##_var_codeblock_font_url_##]": "[##_var_codeblock_font_url_##]",
+	"[##_var_post_image_viewer_type_##]": "[##_var_post_image_viewer_type_##]",
 	"[##_var_cover_list_max_col_count_##]": "[##_var_cover_list_max_col_count_##]",
 	"[##_var_cover_list_half_max_col_count_##]": "[##_var_cover_list_half_max_col_count_##]",
 	"[##_var_total_list_max_col_count_##]": "[##_var_total_list_max_col_count_##]",

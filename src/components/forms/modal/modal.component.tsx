@@ -1,3 +1,4 @@
+import { Var } from "../../../../torytis-variable-object";
 import { classes } from "../../../functions/common/common";
 import { IModal } from "./modal.interface";
 import './modal.scss';
@@ -18,6 +19,7 @@ export function Modal(props: IModal.Props) {
   return (
     <>
       <div
+        data-post-image-viewer-type={Var['[##_var_post_image_viewer_type_##]']}
         className={classes(
           "modal-container",
           "fixed top-0 left-0 overflow-hidden flex items-center justify-center content-center z-10",

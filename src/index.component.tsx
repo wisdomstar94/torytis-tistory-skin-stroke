@@ -98,6 +98,7 @@ export default function App() {
         id="[##_body_id_##]"
         data-skin-name="stroke"
         data-skin-version={version}
+        data-post-image-viewer-type={Var['[##_var_post_image_viewer_type_##]']}
         className={classes(
           "!transition-colors !duration-300 bg-white dark:bg-black dark-c:bg-black",
         )}

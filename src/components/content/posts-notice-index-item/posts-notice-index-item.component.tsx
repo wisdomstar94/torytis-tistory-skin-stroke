@@ -57,8 +57,6 @@ export function PostsNoticeIndexItem() {
                 tt-onload="checkPostsIndexItemThumbnailImageLoad(true, this)"
                 />
             </s_notice_rep_thumbnail>
-            
-            <CallJavascript code="checkPostsIndexItemThumbnailImage(true)" />
           </div>
           <div
             className={classes(

@@ -216,6 +216,21 @@
         <description>코드블럭 폰트 URL</description>
         <type>STRING</type>
       </variable>
+      <variable>
+        <name>post_image_viewer_type</name>
+        <label>
+          <![CDATA[ 이미지 뷰어 타입 ]]>
+        </label>
+        <description>이미지 뷰어 타입</description>
+        <type>SELECT</type>
+        <option><![CDATA[
+          [
+            {"name":"post_image_viewer_type_tistory_image_viewer", "label":"티스토리 이미지 뷰어", "value":"post_image_viewer_type_tistory_image_viewer"},
+            {"name":"post_image_viewer_type_stroke_image_viewer", "label":"Stroke 스킨 이미지 뷰어", "value":"post_image_viewer_type_stroke_image_viewer"}
+          ]
+        ]]></option>
+        <default>post_image_viewer_type_tistory_image_viewer</default>
+      </variable>
     </variablegroup>
     <variablegroup name="홈커버 아이템 옵션">
       <variable>

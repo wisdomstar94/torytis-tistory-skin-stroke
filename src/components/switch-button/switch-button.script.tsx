@@ -9,15 +9,20 @@ function switchButtonBodyClick(isExecute: boolean, thisObj: HTMLElement | undefi
     return;
   }
 
+  if (thisObj === undefined) return;
+
   const switchButtonComponent = findClassMatchElementByRootParent('switch-button-component', thisObj);
+  if (switchButtonComponent === null) return;
+
   const switchButtonBody = switchButtonComponent.querySelector<HTMLElement>('.switch-button-body');
   const checkbox = switchButtonComponent.querySelector<HTMLInputElement>('.switch-button-hidden-checkbox');
   if (switchButtonComponent === null) {
     return;
   }
-  if (checkbox.checked) {
-    switchButtonBody.classList.remove('active');
+  if (checkbox?.checked === true) {
+    switchButtonBody?.classList.remove('active');
   } else {
-    switchButtonBody.classList.add('active');
+    switchButtonBody?.classList.add('active');
   }
 }
+(window as any).switchButtonBodyClick = switchButtonBodyClick;

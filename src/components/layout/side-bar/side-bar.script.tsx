@@ -58,6 +58,7 @@ function checkDarkMode(isExecute: boolean) {
     }
   });
 }
+(window as any).checkDarkMode = checkDarkMode;
 
 function checkNoticeEmpty(isExecute: boolean) {
   if (isExecute !== true) {
@@ -74,3 +75,4 @@ function checkNoticeEmpty(isExecute: boolean) {
     ul.appendChild(li);
   }
 }
+(window as any).checkNoticeEmpty = checkNoticeEmpty;

@@ -22,6 +22,7 @@ window.addEventListener('load', () => {
   checkDarkModeFontColor();
   checkFigureTags(false);
   checkHTags();
+  subscribeBodyTag();
 });
 
 function disposePermalinkContent(isExecute: boolean) {
@@ -64,6 +65,7 @@ function disposePermalinkContent(isExecute: boolean) {
     });
   });
 }
+(window as any).disposePermalinkContent = disposePermalinkContent;
 
 function disposeIndexItemNewSymbol(isExecute: boolean, itemsParentSelector: string) {
   if (isExecute !== true) {
@@ -90,8 +92,15 @@ function disposeIndexItemNewSymbol(isExecute: boolean, itemsParentSelector: stri
     element.querySelector('.overlay-info-area .new-post-symbol')?.classList.add('my-show');
   }
 }
+(window as any).disposeIndexItemNewSymbol = disposeIndexItemNewSymbol;
 
 function postImageSwiperModalInit(isExecute: boolean) {
+  const post_image_viewer_type = document.body.getAttribute('data-post-image-viewer-type');
+  switch(post_image_viewer_type) {
+    case 'post_image_viewer_type_tistory_image_viewer': return;
+    default: break;
+  }
+
   if (isExecute !== true) {
     return;
   }
@@ -108,6 +117,7 @@ function postImageSwiperModalInit(isExecute: boolean) {
     };
   }));
 } 
+(window as any).postImageSwiperModalInit = postImageSwiperModalInit;
 
 function checkPostsIndexItemThumbnailImageError(isExecute: boolean, thisObj: HTMLElement | undefined) {
   if (isExecute !== true) {
@@ -118,6 +128,7 @@ function checkPostsIndexItemThumbnailImageError(isExecute: boolean, thisObj: HTM
 
   thisObj.style.display = 'none';
 }
+(window as any).checkPostsIndexItemThumbnailImageError = checkPostsIndexItemThumbnailImageError;
 
 function checkPostsIndexItemThumbnailImageLoad(isExecute: boolean, thisObj: HTMLElement | undefined) {
   if (isExecute !== true) {
@@ -129,6 +140,7 @@ function checkPostsIndexItemThumbnailImageLoad(isExecute: boolean, thisObj: HTML
     defaultImgContainer.style.display = 'none';
   }
 }
+(window as any).checkPostsIndexItemThumbnailImageLoad = checkPostsIndexItemThumbnailImageLoad;
 
 function removeHTMLTag(obj: {
   isExecute?: boolean;
@@ -196,6 +208,7 @@ function postDeleteButtonClick(isExecute: boolean) {
   if (realDeleteButton === null) return;
   realDeleteButton.click();
 }
+(window as any).postDeleteButtonClick = postDeleteButtonClick;
 
 function checkCodeBlock() {
   const contentsWrapperContainer = document.querySelector('.contents-wrapper-container.is_codeblock_copy_button_show_true');
@@ -313,6 +326,7 @@ function checkHTags() {
     }
   });
 }
+(window as any).checkHTags = checkHTags;
 
 function checkDarkModeFontColor() {
   const targetNode = document.querySelector('html');
@@ -413,6 +427,7 @@ function checkFigureTags(isExecute?: boolean) {
     callback(element);
   });
 }
+(window as any).checkFigureTags = checkFigureTags;
 
 function Element(props: {
   tag: keyof HTMLElementTagNameMap;
@@ -508,3 +523,28 @@ function codeBlockCopyButtonClick(isExecute: boolean, thisObj?: HTMLElement) {
 }
 codeBlockCopyButtonClick(false);
 
+function subscribeBodyTag() {
+  const targetNode = document.querySelector('body');
+
+  const check = () => {
+    // console.log('body childlist changed!');
+    const post_image_viewer_type = document.body.getAttribute('data-post-image-viewer-type');
+    if (post_image_viewer_type !== 'post_image_viewer_type_tistory_image_viewer') {
+      document.querySelector('#__phocus__')?.remove();
+    }
+  };
+
+  const observer = new MutationObserver((mutations, observer) => {
+    check();
+  });
+  
+  // console.log('@targetNode', targetNode);
+  if (targetNode !== null) {
+    // console.log('body observe start!');
+    observer.observe(targetNode, {
+      attributes: false,
+      childList: true,
+      subtree: false,
+    });
+  }
+}

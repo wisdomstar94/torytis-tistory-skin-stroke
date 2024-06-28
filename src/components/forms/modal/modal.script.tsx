@@ -14,6 +14,7 @@ export function showModal(id: string | undefined) {
   modal.classList.add('my-show');
   modal.classList.remove('my-hide');
 }
+(window as any).showModal = showModal;
 
 export function hideModal(id: string | undefined) {
   if (id === undefined) return;
@@ -24,6 +25,7 @@ export function hideModal(id: string | undefined) {
   modal.classList.add('my-hide');
   modal.classList.remove('my-show');
 }
+(window as any).hideModal = hideModal;
 
 export function isModalHide(id: string | undefined) {
   if (id === undefined) return true;

@@ -1,6 +1,10 @@
 .modal-container {
   width: 0;
   height: 0;
+
+  &#post-image-swiper-modal:not([data-post-image-viewer-type='post_image_viewer_type_stroke_image_viewer']) {
+    display: none !important;
+  }
 }
 
 // modal container

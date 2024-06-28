@@ -24,3 +24,4 @@ function disposeNormalPageTitle(isExecute: boolean) {
     }
   }
 }
+(window as any).disposeNormalPageTitle = disposeNormalPageTitle;

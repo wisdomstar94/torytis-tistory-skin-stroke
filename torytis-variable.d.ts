@@ -26,6 +26,8 @@ declare namespace JSX {
 		's_not_var_blog_post_all_line_height': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 		's_if_var_codeblock_font_url': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 		's_not_var_codeblock_font_url': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		's_if_var_post_image_viewer_type': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		's_not_var_post_image_viewer_type': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 		's_if_var_cover_list_max_col_count': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 		's_not_var_cover_list_max_col_count': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 		's_if_var_cover_list_half_max_col_count': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
