@@ -28,6 +28,7 @@ function applyForceDarkMode(isExecute: boolean) {
   const htmlElement = document.querySelector<HTMLElement>('html');
   htmlElement?.classList.add('dark');
 }
+(window as any).applyForceDarkMode = applyForceDarkMode;
 
 function checkDarkMode(isExecute: boolean) {
   if (isExecute === false) {
