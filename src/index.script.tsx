@@ -1,7 +1,7 @@
 import { initModalImageSwiperContent, showModalImageSwiper } from "./components/modals/modal-image-swiper/modal-image-swiper.script";
 import { classes } from "./functions/common/common";
-import { getPermalinkContentDivElements, getPermalinkContentDivSpanElements, getPermalinkContentHeadingElements, getPermalinkContentPElements, getPostsIndexItemLiElements } from "./functions/element/element";
-import { element, getPostImageElements, isDarkMode } from "./functions/logic/logic";
+import { getPermalinkContentHeadingElements, getPermalinkContentPElements } from "./functions/element/element";
+import { getPostImageElements, isDarkMode } from "./functions/logic/logic";
 import copy from 'copy-to-clipboard';
 
 if (isDarkMode()) {
@@ -521,6 +521,7 @@ function codeBlockCopyButtonClick(isExecute: boolean, thisObj?: HTMLElement) {
     }, 1000);
   }
 }
+(window as any).codeBlockCopyButtonClick = codeBlockCopyButtonClick;
 codeBlockCopyButtonClick(false);
 
 function subscribeBodyTag() {
