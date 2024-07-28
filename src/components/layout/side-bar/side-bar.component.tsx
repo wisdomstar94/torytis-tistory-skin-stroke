@@ -77,7 +77,7 @@ export function SideBar() {
               className={classes(
                 "w-full mt-2 flex flex-wrap gap-6",
               )}>
-                <s_sidebar>
+              <s_sidebar>
                 <s_sidebar_element>
                   <tt_html_comment>블로그명</tt_html_comment>
                   <div
@@ -95,12 +95,40 @@ export function SideBar() {
                 </s_sidebar_element>
 
                 <s_sidebar_element>
+                  <tt_html_comment>블로그 프로필</tt_html_comment>
+                  <div
+                    className={classes(
+                      "w-full flex flex-wrap gap-4 relative items-center",
+                    )}>
+                    <img 
+                      src="[##_image_##]" 
+                      alt="프로필사진" 
+                      className={classes(
+                        "inline-flex w-[52px] h-[52px] object-cover object-center rounded-full overflow-hidden",
+                        "outline outline-1",
+                        "outline-black dark:outline-white",
+                      )} 
+                      />
+                    <span 
+                      className={classes(
+                        "text-sm inline-flex",
+                        "text-black dark:text-white"
+                      )}
+                      >
+                      [##_blogger_##]
+                    </span>
+                  </div>
+                </s_sidebar_element>
+
+                <s_sidebar_element>
                   <tt_html_comment>다크모드 스위치 버튼</tt_html_comment>
                   <div
                     className={classes(
                       "dark-mode-switch-button",
                       Var['[##_var_dark_mode_type_##]'],
                       "w-full flex flex-wrap relative items-center justify-start gap-2",
+                      "border-b border-solid",
+                      "border-b-black dark:border-white dark-c:border-white",
                     )}>
                     <div
                       className={classes(
@@ -121,6 +149,7 @@ export function SideBar() {
                       <CallJavascript code={`if ("${Var['[##_var_dark_mode_type_##]']}".trim() === "darkmode_fixed") { applyForceDarkMode(true); }`} />
                     </s_if_var_dark_mode_type>
                     <CallJavascript code="checkDarkMode(true)" />
+                    <div className={classes("w-full block mb-4")} />
                   </div>
                 </s_sidebar_element>
 
