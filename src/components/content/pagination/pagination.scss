@@ -8,7 +8,7 @@
   color: #000;
 }
 .num-a:hover {
-  background-color: #eee;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .num-a > span {
   display: inline-flex;
@@ -19,8 +19,6 @@
   background-color: #000;
   color: #fff;
 }
-
-
 
 // @media (prefers-color-scheme: dark) {
 //   .num-a {
@@ -42,11 +40,11 @@
 .dark {
   .num-a {
     border: 1px solid #fff;
-    background-color: #000;
+    // background-color: #000;
     color: #fff;
   }
   .num-a:hover {
-    background-color: #333;
+    background-color: rgba(255, 255, 255, 0.3);
   }
   .num-a > span {
     // ...

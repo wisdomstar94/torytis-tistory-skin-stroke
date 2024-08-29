@@ -137,6 +137,50 @@
         <type>STRING</type>
       </variable>
     </variablegroup>
+    <variablegroup name="배경 색상 설정">
+      <variable>
+        <name>background_color_at_sidebar_light</name>
+        <label>
+          <![CDATA[ 사이드바 배경 색상 (라이트 모드) ]]>
+        </label>
+        <type>STRING</type>
+      </variable>
+      <variable>
+        <name>background_color_at_sidebar_dark</name>
+        <label>
+          <![CDATA[ 사이드바 배경 색상 (다크 모드) ]]>
+        </label>
+        <type>STRING</type>
+      </variable>
+      <variable>
+        <name>background_color_at_blog_light</name>
+        <label>
+          <![CDATA[ 블로그 전체 배경 색상 (라이트 모드) ]]>
+        </label>
+        <type>STRING</type>
+      </variable>
+      <variable>
+        <name>background_color_at_blog_dark</name>
+        <label>
+          <![CDATA[ 블로그 전체 배경 색상 (다크 모드) ]]>
+        </label>
+        <type>STRING</type>
+      </variable>
+      <variable>
+        <name>background_color_at_post_index_light</name>
+        <label>
+          <![CDATA[ 목차 배경 색상 (라이트 모드) ]]>
+        </label>
+        <type>STRING</type>
+      </variable>
+      <variable>
+        <name>background_color_at_post_index_dark</name>
+        <label>
+          <![CDATA[ 목차 배경 색상 (다크 모드) ]]>
+        </label>
+        <type>STRING</type>
+      </variable>
+    </variablegroup>
     <variablegroup name="포스트 설정">
       <variable>
         <name>post_youtube_horizontal_align</name>
