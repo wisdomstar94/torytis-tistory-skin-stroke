@@ -1,4 +1,4 @@
-import { Var } from "../../../../torytis-variable-object";
+import { Var } from "@/consts/torytis-variable-object";
 import { classes } from "../../../functions/common/common";
 
 export function PostsIndexContainer() {

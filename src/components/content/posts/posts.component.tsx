@@ -1,4 +1,4 @@
-import { Var } from "../../../../torytis-variable-object";
+import { Var } from "@/consts/torytis-variable-object";
 import { classes } from "../../../functions/common/common";
 import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { PostsNormalIndexItem } from "../posts-normal-index-item/posts-normal-index-item.component";
@@ -11,23 +11,25 @@ import { PostsProtectedPermalinkItem } from "../posts-protected-permalink-item/p
 export function Posts() {
   return (
     <>
-      <div 
+      <div
         className={classes(
           "w-full block relative",
-          Var['[##_var_total_list_max_col_count_##]'],
-        )}>
+          Var["[##_var_total_list_max_col_count_##]"]
+        )}
+      >
         <ul
           // posts-list
           className={classes(
             "posts-list",
             "w-full grid m-0 p-0 relative items-stretch gap-5",
-            
+
             "grid-cols-1",
             "md:total_list_max_col_count_2:grid-cols-2 md:total_list_max_col_count_3:grid-cols-2 md:total_list_max_col_count_4:grid-cols-2 md:total_list_max_col_count_5:grid-cols-2 md:total_list_max_col_count_6:grid-cols-4 md:total_list_max_col_count_7:grid-cols-4 md:total_list_max_col_count_8:grid-cols-4",
             "xl:total_list_max_col_count_1:grid-cols-1 xl:total_list_max_col_count_2:grid-cols-2 xl:total_list_max_col_count_3:grid-cols-3 xl:total_list_max_col_count_4:grid-cols-4 xl:total_list_max_col_count_5:grid-cols-5 xl:total_list_max_col_count_6:grid-cols-6 xl:total_list_max_col_count_7:grid-cols-7 xl:total_list_max_col_count_8:grid-cols-8",
 
-            "tt-body-page:!grid-cols-1",
-          )}>
+            "tt-body-page:!grid-cols-1"
+          )}
+        >
           {/* 일반 포스트 */}
           <s_article_rep>
             {/* index item */}

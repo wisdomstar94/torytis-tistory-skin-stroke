@@ -1,4 +1,4 @@
-import { Var } from "../../../../torytis-variable-object";
+import { Var } from "@/consts/torytis-variable-object";
 import { classes } from "../../../functions/common/common";
 import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { ModalImageSwiper } from "../../modals/modal-image-swiper/modal-image-swiper.component";

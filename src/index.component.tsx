@@ -1,4 +1,3 @@
-import React from "react";
 import "./index.scss";
 import "swiper/css";
 import { TopBar } from "./components/layout/top-bar/top-bar.component";
@@ -19,7 +18,7 @@ import { HomeCover } from "./components/content/home-cover/home-cover.component"
 import { version } from "../package.json";
 import { LatestVersionNotice } from "./components/latest-version-notice/latest-version-notice.component";
 import { RootContainer } from "./components/layout/root-container/root-container.component";
-import { Var } from "../torytis-variable-object";
+import { Var } from "@/consts/torytis-variable-object";
 
 export default function App() {
   return (
