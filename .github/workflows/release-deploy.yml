@@ -1,9 +1,9 @@
-name: 'release deploy'
+name: "release deploy"
 
 on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - "v[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
   build:
@@ -14,13 +14,13 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 18
+          node-version: 20
       - run: npm install
       - run: npm run build
       - run: mv ./.torytis ./stroke_${{ github.ref_name }}
       - run: tar -czvf ./stroke_${{ github.ref_name }}.zip ./stroke_${{ github.ref_name }}/*
 
-      - name: asset upload 
+      - name: asset upload
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
