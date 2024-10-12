@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: 20
       - run: npm install
+      - run: npm install sass-embedded-linux-x64
       - run: npm run build
       - run: mv ./.torytis ./stroke_${{ github.ref_name }}
       - run: tar -czvf ./stroke_${{ github.ref_name }}.zip ./stroke_${{ github.ref_name }}/*
