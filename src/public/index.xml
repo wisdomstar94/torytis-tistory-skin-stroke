@@ -144,6 +144,7 @@
           <![CDATA[ 사이드바 배경 색상 (라이트 모드) ]]>
         </label>
         <type>STRING</type>
+        <description>사이드바 배경 색상 (라이트 모드)을 입력하세요.</description>
       </variable>
       <variable>
         <name>background_color_at_sidebar_dark</name>
@@ -151,6 +152,7 @@
           <![CDATA[ 사이드바 배경 색상 (다크 모드) ]]>
         </label>
         <type>STRING</type>
+        <description>사이드바 배경 색상 (다크 모드)을 입력하세요.</description>
       </variable>
       <variable>
         <name>background_color_at_blog_light</name>
@@ -158,6 +160,7 @@
           <![CDATA[ 블로그 전체 배경 색상 (라이트 모드) ]]>
         </label>
         <type>STRING</type>
+        <description>블로그 전체 배경 색상 (라이트 모드)을 입력하세요.</description>
       </variable>
       <variable>
         <name>background_color_at_blog_dark</name>
@@ -165,6 +168,7 @@
           <![CDATA[ 블로그 전체 배경 색상 (다크 모드) ]]>
         </label>
         <type>STRING</type>
+        <description>블로그 전체 배경 색상 (다크 모드)을 입력하세요.</description>
       </variable>
       <variable>
         <name>background_color_at_post_index_light</name>
@@ -172,6 +176,7 @@
           <![CDATA[ 목차 배경 색상 (라이트 모드) ]]>
         </label>
         <type>STRING</type>
+        <description>목차 배경 색상 (라이트 모드)을 입력하세요.</description>
       </variable>
       <variable>
         <name>background_color_at_post_index_dark</name>
@@ -179,6 +184,7 @@
           <![CDATA[ 목차 배경 색상 (다크 모드) ]]>
         </label>
         <type>STRING</type>
+        <description>목차 배경 색상 (다크 모드)을 입력하세요.</description>
       </variable>
     </variablegroup>
     <variablegroup name="포스트 설정">

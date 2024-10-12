@@ -12,7 +12,7 @@
 
   text-align: center;
   color: #ccc;
-  border-right: 1px solid #CCC;
+  border-right: 1px solid #ccc;
   vertical-align: top;
   padding-right: 5px !important;
   white-space: nowrap !important;
@@ -35,24 +35,25 @@ pre > code {
       .contents_style {
         > div {
           opacity: 0;
-    
+
           > span {
             opacity: 0;
           }
         }
-      }  
+      }
     }
 
     .contents_style {
       > div {
         background-color: transparent !important;
-  
+
         > span {
           background-color: transparent !important;
         }
       }
 
-      ul, ol {
+      ul,
+      ol {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
@@ -71,31 +72,36 @@ pre > code {
           position: relative;
         }
       }
-  
-      > h1, > h2, > h3, > h4, > h5, > h6 {
+
+      > h1,
+      > h2,
+      > h3,
+      > h4,
+      > h5,
+      > h6 {
         margin-top: 26px;
         margin-bottom: 10px;
       }
-  
+
       > p {
         margin-bottom: 4px;
       }
 
       > blockquote {
         // &[data-ke-style='style1'] {
-        //   color: #ccc !important; 
+        //   color: #ccc !important;
         // }
 
-        &[data-ke-style='style2'] {
+        &[data-ke-style="style2"] {
           color: #999;
-          border-left: 4px solid #CACACA;
+          border-left: 4px solid #cacaca;
           padding: 4px 12px;
           position: relative;
         }
 
         // &[data-ke-style='style3'] {
         //   background-color: transparent;
-        //   color: #ccc !important; 
+        //   color: #ccc !important;
         // }
       }
 
@@ -105,19 +111,33 @@ pre > code {
         border-left: 1px solid #ccc;
         background-color: #fff;
 
-        > tbody, > thead {
+        > tbody,
+        > thead {
           > tr {
-            > td, > th {
+            > td,
+            > th {
               padding: 8px;
             }
           }
         }
 
         // 테이블 스타일이 없는 경우
-        &:not([data-ke-style='style1']):not([data-ke-style='style2']):not([data-ke-style='style3']):not([data-ke-style='style4']):not([data-ke-style='style5']):not([data-ke-style='style6']):not([data-ke-style='style7']):not([data-ke-style='style8']):not([data-ke-style='style9']):not([data-ke-style='style10']):not([data-ke-style='style11']):not([data-ke-style='style12']):not([data-ke-style='style13']):not([data-ke-style='style14']):not([data-ke-style='style15']):not([data-ke-style='style16']) {
-          > tbody, > thead {
+        &:not([data-ke-style="style1"]):not([data-ke-style="style2"]):not(
+            [data-ke-style="style3"]
+          ):not([data-ke-style="style4"]):not([data-ke-style="style5"]):not(
+            [data-ke-style="style6"]
+          ):not([data-ke-style="style7"]):not([data-ke-style="style8"]):not(
+            [data-ke-style="style9"]
+          ):not([data-ke-style="style10"]):not([data-ke-style="style11"]):not(
+            [data-ke-style="style12"]
+          ):not([data-ke-style="style13"]):not([data-ke-style="style14"]):not(
+            [data-ke-style="style15"]
+          ):not([data-ke-style="style16"]) {
+          > tbody,
+          > thead {
             > tr {
-              > td, > th {
+              > td,
+              > th {
                 border-right: 1px solid #ccc;
                 border-bottom: 1px solid #ccc;
               }
@@ -125,15 +145,13 @@ pre > code {
           }
         }
 
-        &[data-ke-style='style1'],  
-        &[data-ke-style='style2'],
-        &[data-ke-style='style3'],
-        &[data-ke-style='style8'],
-        &[data-ke-style='style9'],
-        &[data-ke-style='style10'],
-        &[data-ke-style='style11']
-        {
-          
+        &[data-ke-style="style1"],
+        &[data-ke-style="style2"],
+        &[data-ke-style="style3"],
+        &[data-ke-style="style8"],
+        &[data-ke-style="style9"],
+        &[data-ke-style="style10"],
+        &[data-ke-style="style11"] {
           > tbody {
             > tr {
               &:not(:first-child) {
@@ -144,11 +162,12 @@ pre > code {
               }
 
               &:first-child {
-                > td, > th {
+                > td,
+                > th {
                   border-right: 1px solid #ccc;
                 }
               }
-  
+
               // &:first-child {
               //   > td {
               //     border-top: 1px solid #ccc;
@@ -159,10 +178,10 @@ pre > code {
           }
         }
 
-        &[data-ke-style='style8'],
-        &[data-ke-style='style9'],
-        &[data-ke-style='style10'],
-        &[data-ke-style='style11'] {
+        &[data-ke-style="style8"],
+        &[data-ke-style="style9"],
+        &[data-ke-style="style10"],
+        &[data-ke-style="style11"] {
           border-left: transparent;
 
           > tbody {
@@ -175,7 +194,8 @@ pre > code {
               }
 
               &:first-child {
-                > td, > th {
+                > td,
+                > th {
                   border-right: transparent;
                 }
               }
@@ -183,18 +203,18 @@ pre > code {
           }
         }
 
-        &[data-ke-style='style4'],
-        &[data-ke-style='style5'],
-        &[data-ke-style='style6'],
-        &[data-ke-style='style7'],
-        &[data-ke-style='style12'],
-        &[data-ke-style='style13'],
-        &[data-ke-style='style14'],
-        &[data-ke-style='style15']
-        {
+        &[data-ke-style="style4"],
+        &[data-ke-style="style5"],
+        &[data-ke-style="style6"],
+        &[data-ke-style="style7"],
+        &[data-ke-style="style12"],
+        &[data-ke-style="style13"],
+        &[data-ke-style="style14"],
+        &[data-ke-style="style15"] {
           > tbody {
             > tr {
-              > td, > th {
+              > td,
+              > th {
                 border-right: 1px solid #ccc;
                 border-bottom: 1px solid #ccc;
               }
@@ -202,13 +222,14 @@ pre > code {
           }
         }
 
-        &[data-ke-style='style16'] {
+        &[data-ke-style="style16"] {
           border-top: transparent;
           border-left: transparent;
 
           > tbody {
             > tr {
-              > td, > th {
+              > td,
+              > th {
                 border-right: transparent;
                 border-bottom: transparent;
               }
@@ -216,22 +237,25 @@ pre > code {
           }
         }
       }
-  
-      pre[data-ke-type='codeblock'], pre[data-ke-language], pre[class='gml'], li.codeblock {
+
+      pre[data-ke-type="codeblock"],
+      pre[data-ke-language],
+      pre[class="gml"],
+      li.codeblock {
         position: relative;
         border: 1px solid #ccc;
         background-color: #f6f6f6 !important;
         border-radius: 12px;
         padding: 20px;
         margin-bottom: 8px;
-  
+
         code {
           background-color: transparent;
-  
+
           table {
             // color: #fff !important;
             font-size: 12ppx;
-  
+
             td {
               > span {
                 // color: #fff !important;
@@ -241,16 +265,16 @@ pre > code {
           }
         }
       }
-  
+
       a {
         color: #0982f8;
         text-decoration: underline;
-  
+
         &:hover {
           color: #55aaff;
         }
       }
-  
+
       p {
         margin-bottom: 4px !important;
       }
@@ -269,7 +293,7 @@ pre > code {
     // 유튜브 영상 수평 정렬
     &.post_youtube_horizontal_align_left {
       .contents_style {
-        figure[data-video-host='youtube'] {
+        figure[data-video-host="youtube"] {
           display: flex;
           justify-content: flex-start;
         }
@@ -278,7 +302,7 @@ pre > code {
 
     &.post_youtube_horizontal_align_center {
       .contents_style {
-        figure[data-video-host='youtube'] {
+        figure[data-video-host="youtube"] {
           display: flex;
           justify-content: center;
         }
@@ -287,7 +311,7 @@ pre > code {
 
     &.post_youtube_horizontal_align_right {
       .contents_style {
-        figure[data-video-host='youtube'] {
+        figure[data-video-host="youtube"] {
           display: flex;
           justify-content: flex-end;
         }
@@ -309,10 +333,12 @@ pre > code {
       }
 
       table {
-        th, td {
+        th,
+        td {
           color: #fff !important;
 
-          a, span {
+          a,
+          span {
             color: #fff !important;
           }
         }
@@ -327,7 +353,7 @@ pre > code {
           }
         }
 
-        > figure[data-ke-type='opengraph'] {
+        > figure[data-ke-type="opengraph"] {
           .og-text {
             .og-title {
               color: #fff !important;
@@ -335,11 +361,14 @@ pre > code {
           }
         }
 
-        .hljs-keyword, .hljs-selector-tag, .hljs-subst {
+        .hljs-keyword,
+        .hljs-selector-tag,
+        .hljs-subst {
           color: #888;
         }
 
-        > pre, li.codeblock {
+        > pre,
+        li.codeblock {
           border: 1px solid #fff;
           background-color: rgba(0, 0, 0, 0) !important;
           border-radius: 12px;
@@ -375,17 +404,17 @@ pre > code {
         }
 
         > blockquote {
-          &[data-ke-style='style1'] {
-            color: #ccc !important; 
+          &[data-ke-style="style1"] {
+            color: #ccc !important;
           }
 
-          &[data-ke-style='style2'] {
-            color: #ccc !important; 
+          &[data-ke-style="style2"] {
+            color: #ccc !important;
           }
 
-          &[data-ke-style='style3'] {
+          &[data-ke-style="style3"] {
             background-color: transparent;
-            color: #ccc !important; 
+            color: #ccc !important;
           }
         }
 
@@ -405,16 +434,27 @@ pre > code {
             color: #fff;
 
             // 테이블 스타일이 없는 경우
-            &:not([data-ke-style='style1']):not([data-ke-style='style2']):not([data-ke-style='style3']):not([data-ke-style='style4']):not([data-ke-style='style5']):not([data-ke-style='style6']):not([data-ke-style='style7']):not([data-ke-style='style8']):not([data-ke-style='style9']):not([data-ke-style='style10']):not([data-ke-style='style11']):not([data-ke-style='style12']):not([data-ke-style='style13']):not([data-ke-style='style14']):not([data-ke-style='style15']):not([data-ke-style='style16']) {
+            &:not([data-ke-style="style1"]):not([data-ke-style="style2"]):not(
+                [data-ke-style="style3"]
+              ):not([data-ke-style="style4"]):not([data-ke-style="style5"]):not(
+                [data-ke-style="style6"]
+              ):not([data-ke-style="style7"]):not([data-ke-style="style8"]):not(
+                [data-ke-style="style9"]
+              ):not([data-ke-style="style10"]):not(
+                [data-ke-style="style11"]
+              ):not([data-ke-style="style12"]):not(
+                [data-ke-style="style13"]
+              ):not([data-ke-style="style14"]):not(
+                [data-ke-style="style15"]
+              ):not([data-ke-style="style16"]) {
               border-top: 1px solid #ccc;
               border-left: 1px solid #ccc;
             }
 
             // 첫번째 행의 아래줄에만 강조되어있는 스타일
-            &[data-ke-style='style1'],
-            &[data-ke-style='style2'],
-            &[data-ke-style='style3']
-            {
+            &[data-ke-style="style1"],
+            &[data-ke-style="style2"],
+            &[data-ke-style="style3"] {
               border-top: 1px solid #999;
               border-left: 1px solid #999;
 
@@ -428,7 +468,8 @@ pre > code {
 
                 > tr {
                   &:first-child {
-                    > td, > th {
+                    > td,
+                    > th {
                       border-bottom: 1px solid #fff;
                     }
                   }
@@ -436,11 +477,10 @@ pre > code {
               }
             }
 
-            &[data-ke-style='style8'],
-            &[data-ke-style='style9'],
-            &[data-ke-style='style10'],
-            &[data-ke-style='style11']
-            {
+            &[data-ke-style="style8"],
+            &[data-ke-style="style9"],
+            &[data-ke-style="style10"],
+            &[data-ke-style="style11"] {
               border-top: 1px solid #999;
               border-left: transparent;
 
@@ -454,7 +494,8 @@ pre > code {
 
                 > tr {
                   &:first-child {
-                    > td, > th {
+                    > td,
+                    > th {
                       border-bottom: 2px solid #fff;
                     }
                   }
@@ -462,33 +503,36 @@ pre > code {
               }
             }
 
-            &[data-ke-style='style4'], 
-            &[data-ke-style='style5'],
-            &[data-ke-style='style6'],
-            &[data-ke-style='style7'] {
+            &[data-ke-style="style4"],
+            &[data-ke-style="style5"],
+            &[data-ke-style="style6"],
+            &[data-ke-style="style7"] {
               > tbody {
                 > tr {
-                  > td, > th {
+                  > td,
+                  > th {
                     border-right: 1px solid #ccc;
                     border-bottom: 1px solid #ccc;
                   }
 
                   &:nth-child(even) {
-                    > td, > th {
+                    > td,
+                    > th {
                       background-color: rgba(255, 255, 255, 0.2);
-                    }                
+                    }
                   }
                 }
               }
             }
 
-            &[data-ke-style='style12'], 
-            &[data-ke-style='style13'],
-            &[data-ke-style='style14'],
-            &[data-ke-style='style15'] {
+            &[data-ke-style="style12"],
+            &[data-ke-style="style13"],
+            &[data-ke-style="style14"],
+            &[data-ke-style="style15"] {
               > tbody {
                 > tr {
-                  > td, > th {
+                  > td,
+                  > th {
                     &:first-child {
                       background-color: #333;
                       color: #fff;
@@ -496,7 +540,8 @@ pre > code {
                   }
 
                   &:first-child {
-                    > td, > th {
+                    > td,
+                    > th {
                       border-top: transparent;
                       border-left: transparent;
                       background-color: #666;
@@ -513,13 +558,14 @@ pre > code {
               }
             }
 
-            &[data-ke-style='style16'] {
+            &[data-ke-style="style16"] {
               border-top: transparent;
               border-left: transparent;
-    
+
               > tbody {
                 > tr {
-                  > td, > th {
+                  > td,
+                  > th {
                     border-right: transparent;
                     border-bottom: transparent;
                   }
@@ -532,7 +578,10 @@ pre > code {
 
       &.is_post_codeblock_darkmode_text_color_all_white_true {
         .contents_style {
-          pre[data-ke-type='codeblock'], pre[data-ke-language], pre[class='gml'], li.codeblock {
+          pre[data-ke-type="codeblock"],
+          pre[data-ke-language],
+          pre[class="gml"],
+          li.codeblock {
             color: #fff !important;
 
             code {
@@ -548,13 +597,13 @@ pre > code {
         }
       }
     }
-  } 
+  }
 }
 
 .post-permalink-secret-status-icon {
   display: none;
 
-  &[data-status='비공개'] {
+  &[data-status="비공개"] {
     display: inline-flex;
   }
 }
@@ -562,7 +611,7 @@ pre > code {
 .secret-post-symbol {
   display: none;
 
-  &[data-status='비공개'] {
+  &[data-status="비공개"] {
     display: flex;
   }
 }
@@ -573,7 +622,8 @@ pre > code {
   position: relative;
   gap: 2px;
 
-  > img, > a {
+  > img,
+  > a {
     display: inline;
     position: relative;
   }
@@ -585,4 +635,10 @@ pre > code {
   //   margin-left: 0;
   //   margin-right: 0;
   // }
+}
+
+#chartdiv {
+  #chartctx {
+    width: 100% !important;
+  }
 }
