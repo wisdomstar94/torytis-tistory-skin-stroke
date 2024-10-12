@@ -33,7 +33,7 @@ export function TopBar() {
                 "text-black dark:text-white dark-c:text-white"
               )}
             >
-              [##_title_##] 테스트
+              [##_title_##]
             </div>
           </div>
           <div
