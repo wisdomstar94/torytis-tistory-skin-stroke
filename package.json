@@ -25,6 +25,7 @@
     "express": "^4.21.1",
     "esbuild": "^0",
     "esbuild-sass-plugin": "^3",
+    "sass-embedded": "^1",
     "fast-xml-parser": "^4",
     "postcss-modules": "^6",
     "react": "^18",
