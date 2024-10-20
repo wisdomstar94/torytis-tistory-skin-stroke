@@ -34,7 +34,9 @@
 }
 
 .tt_category {
-  .link_tit, .link_item, .link_sub_item {
+  .link_tit,
+  .link_item,
+  .link_sub_item {
     display: inline-flex;
     align-items: flex-start;
     align-content: flex-start;
@@ -47,7 +49,7 @@
     }
   }
 
-  img[alt='N'] {
+  img[alt="N"] {
     margin-top: 3px;
   }
 
@@ -60,7 +62,7 @@
     color: #777;
 
     &::before {
-      content: 'ㄴ ';
+      content: "ㄴ ";
       margin-right: 4px;
     }
   }
@@ -70,7 +72,7 @@
     position: relative;
 
     &::before {
-      content: '';
+      content: "";
       margin-left: 4px !important;
       display: inline-block;
       position: relative;
@@ -98,6 +100,10 @@ html {
       border-bottom: 1px solid #000;
       padding-bottom: 1.5rem;
     }
+
+    .adsbygoogle {
+      width: 267px;
+    }
   }
 
   &.dark {
@@ -106,26 +112,26 @@ html {
         border-bottom: 1px solid #fff;
 
         svg {
-          g[stroke='\#000000'] {
+          g[stroke="\#000000"] {
             path {
               stroke: #fff;
               stroke-opacity: 1;
             }
 
-            &[stroke-opacity='0'] {
+            &[stroke-opacity="0"] {
               path {
                 stroke-opacity: 0;
-              } 
+              }
             }
           }
 
-          g[fill='\#000000'] {
+          g[fill="\#000000"] {
             text {
               fill: #fff;
             }
           }
         }
       }
-    } 
+    }
   }
 }
