@@ -1,16 +1,22 @@
-import { initModalImageSwiperContent, showModalImageSwiper } from "./components/modals/modal-image-swiper/modal-image-swiper.script";
+import {
+  initModalImageSwiperContent,
+  showModalImageSwiper,
+} from "./components/modals/modal-image-swiper/modal-image-swiper.script";
 import { classes } from "./functions/common/common";
-import { getPermalinkContentHeadingElements, getPermalinkContentPElements } from "./functions/element/element";
+import {
+  getPermalinkContentHeadingElements,
+  getPermalinkContentPElements,
+} from "./functions/element/element";
 import { getPostImageElements, isDarkMode } from "./functions/logic/logic";
-import copy from 'copy-to-clipboard';
+import copy from "copy-to-clipboard";
 
 if (isDarkMode()) {
-  document.querySelector<HTMLElement>('html')?.classList.add('dark');
+  document.querySelector<HTMLElement>("html")?.classList.add("dark");
 }
 
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
   disposePermalinkContent(false);
-  disposeIndexItemNewSymbol(false, '');
+  disposeIndexItemNewSymbol(false, "");
   postImageSwiperModalInit(false);
   checkPostsIndexItemThumbnailImageError(false, undefined);
   checkPostsIndexItemThumbnailImageLoad(false, undefined);
@@ -30,7 +36,9 @@ function disposePermalinkContent(isExecute: boolean) {
     return;
   }
 
-  document.querySelector<HTMLElement>(`.contents-wrapper-container`)?.classList.remove(`div-and-span-opacity-0`);
+  document
+    .querySelector<HTMLElement>(`.contents-wrapper-container`)
+    ?.classList.remove(`div-and-span-opacity-0`);
 
   // const permalinkContentDivElements = getPermalinkContentDivElements();
   // permalinkContentDivElements.forEach(element => {
@@ -39,9 +47,13 @@ function disposePermalinkContent(isExecute: boolean) {
   // });
 
   const permalinkContentPElements = getPermalinkContentPElements();
-  permalinkContentPElements.forEach(element => {
-    if (Array.from<string>(['#000', '#000000', 'rgb(0, 0, 0)']).includes(element.style.color)) {
-      element.style.color = 'inherit';
+  permalinkContentPElements.forEach((element) => {
+    if (
+      Array.from<string>(["#000", "#000000", "rgb(0, 0, 0)"]).includes(
+        element.style.color
+      )
+    ) {
+      element.style.color = "inherit";
     }
   });
 
@@ -52,27 +64,34 @@ function disposePermalinkContent(isExecute: boolean) {
   // });
 
   const permalinkContentHeadingElements = getPermalinkContentHeadingElements();
-  permalinkContentHeadingElements.forEach(element => {
-    if (Array.from<string>(['#000', '#000000', 'rgb(0, 0, 0)']).includes(element.style.color)) {
-      element.style.color = 'inherit';
+  permalinkContentHeadingElements.forEach((element) => {
+    if (
+      Array.from<string>(["#000", "#000000", "rgb(0, 0, 0)"]).includes(
+        element.style.color
+      )
+    ) {
+      element.style.color = "inherit";
     }
   });
 
   const postImageElements = getPostImageElements();
   postImageElements.forEach((imgElement, index) => {
-    imgElement.addEventListener('click', () => {
-      showModalImageSwiper('post-image-swiper-modal', index);
+    imgElement.addEventListener("click", () => {
+      showModalImageSwiper("post-image-swiper-modal", index);
     });
   });
 }
 (window as any).disposePermalinkContent = disposePermalinkContent;
 
-function disposeIndexItemNewSymbol(isExecute: boolean, itemsParentSelector: string) {
+function disposeIndexItemNewSymbol(
+  isExecute: boolean,
+  itemsParentSelector: string
+) {
   if (isExecute !== true) {
     return;
   }
 
-  if (typeof itemsParentSelector !== 'string') {
+  if (typeof itemsParentSelector !== "string") {
     console.error(`itemsParentSelector 인자가 주어지지 않았습니다.`);
     return;
   }
@@ -82,23 +101,31 @@ function disposeIndexItemNewSymbol(isExecute: boolean, itemsParentSelector: stri
   // getPostsIndexItemLiElements().forEach(element => {
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
-    const datetimeString = element.querySelector('.index-item-datetime-text')?.textContent;
+    const datetimeString = element.querySelector(
+      ".index-item-datetime-text"
+    )?.textContent;
     // console.log('@element', element);
     // console.log('@datetimeString', datetimeString);
-    if (typeof datetimeString !== 'string') continue;
+    if (typeof datetimeString !== "string") continue;
     const date = new Date(datetimeString);
     if (isNaN(date.getFullYear())) continue;
-    if (Date.now() - date.getTime() > (1000 * 60 * 60 * 24 * 3)) continue;
-    element.querySelector('.overlay-info-area .new-post-symbol')?.classList.add('my-show');
+    if (Date.now() - date.getTime() > 1000 * 60 * 60 * 24 * 3) continue;
+    element
+      .querySelector(".overlay-info-area .new-post-symbol")
+      ?.classList.add("my-show");
   }
 }
 (window as any).disposeIndexItemNewSymbol = disposeIndexItemNewSymbol;
 
 function postImageSwiperModalInit(isExecute: boolean) {
-  const post_image_viewer_type = document.body.getAttribute('data-post-image-viewer-type');
-  switch(post_image_viewer_type) {
-    case 'post_image_viewer_type_tistory_image_viewer': return;
-    default: break;
+  const post_image_viewer_type = document.body.getAttribute(
+    "data-post-image-viewer-type"
+  );
+  switch (post_image_viewer_type) {
+    case "post_image_viewer_type_tistory_image_viewer":
+      return;
+    default:
+      break;
   }
 
   if (isExecute !== true) {
@@ -110,47 +137,55 @@ function postImageSwiperModalInit(isExecute: boolean) {
     return;
   }
 
-  initModalImageSwiperContent('post-image-swiper-modal', postImageElements.map((x, index) => {
-    return {
-      src: x.src,
-      index,
-    };
-  }));
-} 
+  initModalImageSwiperContent(
+    "post-image-swiper-modal",
+    postImageElements.map((x, index) => {
+      return {
+        src: x.src,
+        index,
+      };
+    })
+  );
+}
 (window as any).postImageSwiperModalInit = postImageSwiperModalInit;
 
-function checkPostsIndexItemThumbnailImageError(isExecute: boolean, thisObj: HTMLElement | undefined) {
+function checkPostsIndexItemThumbnailImageError(
+  isExecute: boolean,
+  thisObj: HTMLElement | undefined
+) {
   if (isExecute !== true) {
     return;
   }
 
   if (thisObj === undefined) return;
 
-  thisObj.style.display = 'none';
+  thisObj.style.display = "none";
 }
-(window as any).checkPostsIndexItemThumbnailImageError = checkPostsIndexItemThumbnailImageError;
+(window as any).checkPostsIndexItemThumbnailImageError =
+  checkPostsIndexItemThumbnailImageError;
 
-function checkPostsIndexItemThumbnailImageLoad(isExecute: boolean, thisObj: HTMLElement | undefined) {
+function checkPostsIndexItemThumbnailImageLoad(
+  isExecute: boolean,
+  thisObj: HTMLElement | undefined
+) {
   if (isExecute !== true) {
     return;
   }
 
-  const defaultImgContainer = thisObj?.parentElement?.querySelector<HTMLElement>(`.posts-index-item-thumbnail-img-default-container`);
+  const defaultImgContainer =
+    thisObj?.parentElement?.querySelector<HTMLElement>(
+      `.posts-index-item-thumbnail-img-default-container`
+    );
   if (defaultImgContainer !== null && defaultImgContainer !== undefined) {
-    defaultImgContainer.style.display = 'none';
+    defaultImgContainer.style.display = "none";
   }
 }
-(window as any).checkPostsIndexItemThumbnailImageLoad = checkPostsIndexItemThumbnailImageLoad;
+(window as any).checkPostsIndexItemThumbnailImageLoad =
+  checkPostsIndexItemThumbnailImageLoad;
 
-function removeHTMLTag(obj: {
-  isExecute?: boolean;
-  className: string;
-}) {
+function removeHTMLTag(obj: { isExecute?: boolean; className: string }) {
   // console.log('@removeHTMLTag', obj);
-  const {
-    isExecute,
-    className,
-  } = obj;
+  const { isExecute, className } = obj;
 
   if (isExecute !== true) {
     return;
@@ -171,7 +206,7 @@ function removeHTMLTag(obj: {
 function convertCommentDesc() {
   // console.log(`document.querySelector('.comment-list')`, document.querySelector('.comment-list'));
   // console.log(`document.querySelector('.comment-list').children`, document.querySelector('.comment-list').children);
-  removeHTMLTag({ isExecute: true, className: 'comment-desc' });
+  removeHTMLTag({ isExecute: true, className: "comment-desc" });
 }
 
 function subscribeCommnetListDomEvent(isExecute: boolean) {
@@ -186,7 +221,7 @@ function subscribeCommnetListDomEvent(isExecute: boolean) {
     convertCommentDesc();
   });
 
-  const target = document.querySelector('.comment-list');
+  const target = document.querySelector(".comment-list");
   if (target !== null) {
     observer.observe(target, {
       childList: true,
@@ -199,35 +234,46 @@ function postDeleteButtonClick(isExecute: boolean) {
     return;
   }
 
-  const result = prompt('해당 글을 삭제하시려면 "삭제" 라고 입력 후 확인을 클릭해주세요.');
-  if (result !== '삭제') {
+  const result = prompt(
+    '해당 글을 삭제하시려면 "삭제" 라고 입력 후 확인을 클릭해주세요.'
+  );
+  if (result !== "삭제") {
     return;
   }
 
-  const realDeleteButton = document.querySelector<HTMLAnchorElement>('#real_post_delete_button');
+  const realDeleteButton = document.querySelector<HTMLAnchorElement>(
+    "#real_post_delete_button"
+  );
   if (realDeleteButton === null) return;
   realDeleteButton.click();
 }
 (window as any).postDeleteButtonClick = postDeleteButtonClick;
 
 function checkCodeBlock() {
-  const contentsWrapperContainer = document.querySelector('.contents-wrapper-container.is_codeblock_copy_button_show_true');
+  const contentsWrapperContainer = document.querySelector(
+    ".contents-wrapper-container.is_codeblock_copy_button_show_true"
+  );
   if (contentsWrapperContainer === null) return;
 
-  const postBody = document.body.querySelector('.contents_style');
+  const postBody = document.body.querySelector(".contents_style");
   if (postBody === null) return;
 
-  const preElements = postBody.querySelectorAll('pre');
-  preElements.forEach(elem => {
-    const codeElement = elem.querySelector('code');
-    if (codeElement !== null && typeof elem.getAttribute('data-ke-type') !== 'string') {
-      elem.setAttribute('data-ke-type', 'codeblock');
+  const preElements = postBody.querySelectorAll("pre");
+  preElements.forEach((elem) => {
+    const codeElement = elem.querySelector("code");
+    if (
+      codeElement !== null &&
+      typeof elem.getAttribute("data-ke-type") !== "string"
+    ) {
+      elem.setAttribute("data-ke-type", "codeblock");
     }
   });
 
   const codeblocks: Element[] = [];
 
-  const codeBlockElements = postBody.querySelectorAll(`pre[data-ke-type='codeblock'], pre[data-ke-language], pre[class='gml']`);
+  const codeBlockElements = postBody.querySelectorAll(
+    `pre[data-ke-type='codeblock'], pre[data-ke-language], pre[class='gml']`
+  );
   codeBlockElements.forEach((element) => {
     codeblocks.push(element);
   });
@@ -247,37 +293,37 @@ function checkCodeBlock() {
     // console.log('@element.classList.value', element.classList.value);
     const classString = element.classList.value.trim();
     // console.log('@classString', classString);
-    if (classString !== '') {
+    if (classString !== "") {
       return;
     }
 
     // console.log('@...', { element, 'small-codeblock': '' });
-    element.classList.add('small-codeblock');
+    element.classList.add("small-codeblock");
   });
 
   // console.log('@codeBlockElements', codeBlockElements);
 
   // console.log('@codeblocks...', codeblocks);
 
-  codeblocks.forEach(element => {
+  codeblocks.forEach((element) => {
     // console.log('@codeblocks.element', element);
     const div = Element({
-      tag: 'div',
-      className: classes("absolute inline-flex top-2 right-2 cursor-pointer group/copy-button"),
+      tag: "div",
+      className: classes(
+        "absolute inline-flex top-2 right-2 cursor-pointer group/copy-button"
+      ),
       attrs: {
         onclick: "codeBlockCopyButtonClick(true, this)",
       },
       innerHTML: `
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
-          class="${
-            classes(
-              "w-6 h-6",
-              "stroke-black/60 group-hover/copy-button:stroke-black",
-              "dark:stroke-white/70 dark:group-hover/copy-button:stroke-white",
-              "inline-flex parent-1-my-copyed:hidden",
-            )
-          }" 
+          class="${classes(
+            "w-6 h-6",
+            "stroke-black/60 group-hover/copy-button:stroke-black",
+            "dark:stroke-white/70 dark:group-hover/copy-button:stroke-white",
+            "inline-flex parent-1-my-copyed:hidden"
+          )}" 
           view-box="0 0 24 24" 
           stroke-width="2"
           stroke="currentColor" 
@@ -291,14 +337,12 @@ function checkCodeBlock() {
 
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
-          class="${
-            classes(
-              "w-6 h-6",
-              "stroke-black/60 group-hover/copy-button:stroke-black",
-              "dark:stroke-white/70 dark:group-hover/copy-button:stroke-white",
-              "hidden parent-1-my-copyed:inline-flex",
-            )
-          }" 
+          class="${classes(
+            "w-6 h-6",
+            "stroke-black/60 group-hover/copy-button:stroke-black",
+            "dark:stroke-white/70 dark:group-hover/copy-button:stroke-white",
+            "hidden parent-1-my-copyed:inline-flex"
+          )}" 
           width="24" 
           height="24" 
           viewBox="0 0 24 24" 
@@ -319,36 +363,44 @@ function checkCodeBlock() {
 }
 
 function checkHTags() {
-  document.querySelectorAll('.contents-wrapper-container h1, .contents-wrapper-container h2, .contents-wrapper-container h3, .contents-wrapper-container h4, .contents-wrapper-container h5, .contents-wrapper-container h6').forEach(item => {
-    const value = item.getAttribute('data-ke-size');
-    if (typeof value !== 'string') {
-      item.setAttribute('data-ke-size', '');
-    }
-  });
+  document
+    .querySelectorAll(
+      ".contents-wrapper-container h1, .contents-wrapper-container h2, .contents-wrapper-container h3, .contents-wrapper-container h4, .contents-wrapper-container h5, .contents-wrapper-container h6"
+    )
+    .forEach((item) => {
+      const value = item.getAttribute("data-ke-size");
+      if (typeof value !== "string") {
+        item.setAttribute("data-ke-size", "");
+      }
+    });
 }
 (window as any).checkHTags = checkHTags;
 
 function checkDarkModeFontColor() {
-  const targetNode = document.querySelector('html');
+  const targetNode = document.querySelector("html");
 
   const check = () => {
     // console.log('@@dark 변동');
-    const pNodes = document.querySelectorAll<HTMLElement>(`.contents-wrapper-container .contents_style p`);
-    const spanNodes = document.querySelectorAll<HTMLElement>(`.contents-wrapper-container .contents_style span`);
+    const pNodes = document.querySelectorAll<HTMLElement>(
+      `.contents-wrapper-container .contents_style p`
+    );
+    const spanNodes = document.querySelectorAll<HTMLElement>(
+      `.contents-wrapper-container .contents_style span`
+    );
 
     const nodeCallback = (node: HTMLElement) => {
       const styleColor = node.style.color;
 
-      let dataOriginalColor = node.getAttribute('data-original-color');
+      let dataOriginalColor = node.getAttribute("data-original-color");
       if (dataOriginalColor === null) {
-        node.setAttribute('data-original-color', styleColor);
+        node.setAttribute("data-original-color", styleColor);
         dataOriginalColor = styleColor;
       }
 
-      if (targetNode?.classList.contains('dark') === true) {
+      if (targetNode?.classList.contains("dark") === true) {
         // 다크모드일 경우 처리할 내용 작성..
-        if (['rgb(51, 51, 51)', '#333'].includes(dataOriginalColor)) {
-          node.style.color = '#fff';
+        if (["rgb(51, 51, 51)", "#333"].includes(dataOriginalColor)) {
+          node.style.color = "#fff";
         }
       } else {
         node.style.color = dataOriginalColor;
@@ -357,11 +409,11 @@ function checkDarkModeFontColor() {
 
     pNodes.forEach((pNode) => {
       nodeCallback(pNode);
-    });  
+    });
 
     spanNodes.forEach((pNode) => {
       nodeCallback(pNode);
-    });  
+    });
   };
 
   check();
@@ -375,49 +427,48 @@ function checkDarkModeFontColor() {
       childList: false,
       subtree: false,
     });
-  }  
+  }
 }
 
 function checkFigureTags(isExecute?: boolean) {
   if (isExecute !== true) return;
 
   // 정렬 셋팅
-  const figuresEmoticon = document.querySelectorAll<HTMLElement>('.contents-wrapper-container .contents_style > figure[data-ke-type="emoticon"]');
-  const figuresYoutubePlugin = document.querySelectorAll<HTMLElement>('.contents-wrapper-container .contents_style > figure[data-ke-type="video"]');
-  
+  const figuresEmoticon = document.querySelectorAll<HTMLElement>(
+    '.contents-wrapper-container .contents_style > figure[data-ke-type="emoticon"]'
+  );
+  const figuresYoutubePlugin = document.querySelectorAll<HTMLElement>(
+    '.contents-wrapper-container .contents_style > figure[data-ke-type="video"]'
+  );
+
   const callback = (element: HTMLElement) => {
-    const dataKeStyle = element.getAttribute('data-ke-style');
-    const dataKeAlign = element.getAttribute('data-ke-align');
-    const dataKeType = element.getAttribute('data-ke-type');
-    if (dataKeType?.trim() === 'opengraph') return;
+    const dataKeStyle = element.getAttribute("data-ke-style");
+    const dataKeAlign = element.getAttribute("data-ke-align");
+    const dataKeType = element.getAttribute("data-ke-type");
+    if (dataKeType?.trim() === "opengraph") return;
 
-    const dataKe = (function() {
-      if (typeof dataKeStyle === 'string') return dataKeStyle;
-      if (typeof dataKeAlign === 'string') return dataKeAlign;
+    const dataKe = (function () {
+      if (typeof dataKeStyle === "string") return dataKeStyle;
+      if (typeof dataKeAlign === "string") return dataKeAlign;
       return undefined;
     })();
 
-    const alignItems = (function() {
-      if (dataKe === 'alignLeft') {
-        return '!items-start';
+    const alignItems = (function () {
+      if (dataKe === "alignLeft") {
+        return "!items-start";
       }
-      if (dataKe === 'alignCenter') {
-        return '!items-center';
+      if (dataKe === "alignCenter") {
+        return "!items-center";
       }
-      if (dataKe === 'alignRight') {
-        return '!items-end';
+      if (dataKe === "alignRight") {
+        return "!items-end";
       }
       return undefined;
     })();
 
-    if (typeof alignItems !== 'string') return;
-    element.style.removeProperty('text-align');
-    element.classList.add(
-      '!flex', 
-      'flex-wrap', 
-      'flex-col',
-      alignItems,
-    );
+    if (typeof alignItems !== "string") return;
+    element.style.removeProperty("text-align");
+    element.classList.add("!flex", "flex-wrap", "flex-col", alignItems);
   };
 
   figuresEmoticon.forEach((element) => {
@@ -436,20 +487,14 @@ function Element(props: {
   children?: HTMLElement[];
   innerHTML?: string;
 }): HTMLElement {
-  const {
-    tag,
-    className,
-    attrs,
-    children,
-    innerHTML,
-  } = props;
+  const { tag, className, attrs, children, innerHTML } = props;
 
   const element = document.createElement(tag);
 
-  if (typeof className === 'string') {
-    const classNameSplit = className.split(' ');
+  if (typeof className === "string") {
+    const classNameSplit = className.split(" ");
     for (const cn of classNameSplit) {
-      if (cn.trim() === '') {
+      if (cn.trim() === "") {
         continue;
       }
       element.classList.add(cn);
@@ -470,7 +515,7 @@ function Element(props: {
     }
   }
 
-  if (typeof innerHTML === 'string') {
+  if (typeof innerHTML === "string") {
     element.innerHTML = innerHTML;
   }
 
@@ -488,36 +533,38 @@ function codeBlockCopyButtonClick(isExecute: boolean, thisObj?: HTMLElement) {
 
   // console.log('@thisObj', thisObj);
   const preElement = thisObj.parentElement;
-  
+
   if (preElement === null) {
-    alert('복사할 수 없습니다.');
+    alert("복사할 수 없습니다.");
     return;
   }
 
-  const codes = preElement.querySelectorAll('code');
+  const codes = preElement.querySelectorAll("code");
   const code = codes[0];
-  const codeRows = preElement.querySelectorAll('code > table > tbody > tr > td.hljs-ln-code');
-  
-  let copyText = '';
-  
+  const codeRows = preElement.querySelectorAll(
+    "code > table > tbody > tr > td.hljs-ln-code"
+  );
+
+  let copyText = "";
+
   if (codes.length > 1) {
     copyText += preElement.textContent;
   } else if (codeRows.length > 0) {
-    codeRows?.forEach(row => {
-      copyText += row.textContent + '\n';
+    codeRows?.forEach((row) => {
+      copyText += row.textContent + "\n";
     });
   } else if (code !== null) {
-    copyText += code.textContent + '\n';
-  } 
+    copyText += code.textContent + "\n";
+  }
   // console.log('@copyText', copyText);
 
   copy(copyText);
   // alert('코드가 복사되었습니다.');
 
-  if (!thisObj.classList.contains('my-copyed')) {
-    thisObj.classList.add('my-copyed');
+  if (!thisObj.classList.contains("my-copyed")) {
+    thisObj.classList.add("my-copyed");
     setTimeout(() => {
-      thisObj.classList.remove('my-copyed');
+      thisObj.classList.remove("my-copyed");
     }, 1000);
   }
 }
@@ -525,20 +572,24 @@ function codeBlockCopyButtonClick(isExecute: boolean, thisObj?: HTMLElement) {
 codeBlockCopyButtonClick(false);
 
 function subscribeBodyTag() {
-  const targetNode = document.querySelector('body');
+  const targetNode = document.querySelector("body");
 
   const check = () => {
     // console.log('body childlist changed!');
-    const post_image_viewer_type = document.body.getAttribute('data-post-image-viewer-type');
-    if (post_image_viewer_type !== 'post_image_viewer_type_tistory_image_viewer') {
-      document.querySelector('#__phocus__')?.remove();
+    const post_image_viewer_type = document.body.getAttribute(
+      "data-post-image-viewer-type"
+    );
+    if (
+      post_image_viewer_type !== "post_image_viewer_type_tistory_image_viewer"
+    ) {
+      document.querySelector("#__phocus__")?.remove();
     }
   };
 
   const observer = new MutationObserver((mutations, observer) => {
     check();
   });
-  
+
   // console.log('@targetNode', targetNode);
   if (targetNode !== null) {
     // console.log('body observe start!');

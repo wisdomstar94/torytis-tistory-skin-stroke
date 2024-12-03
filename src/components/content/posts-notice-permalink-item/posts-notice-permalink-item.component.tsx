@@ -6,6 +6,7 @@ import { SvgArrowBadgeLeftFilled } from "../../svgs/svg-arrow-badge-left-filled/
 import { SvgArrowBadgeRightFilled } from "../../svgs/svg-arrow-badge-right-filled/svg-arrow-badge-right-filled.component";
 import { SvgShieldLockFilled } from "../../svgs/svg-shield-lock-filled/svg-shield-lock-filled.component";
 import styles from "./posts-notice-permalink-item.module.scss";
+import { PostPermalinkModifiedDatetimeRow } from "../post-permalink-modified-datetime-row/post-permalink-modified-datetime-row.component";
 
 export function PostsNoticePermalinkItem() {
   return (
@@ -64,6 +65,7 @@ export function PostsNoticePermalinkItem() {
           [##_article_rep_date_minute_##]분 [##_article_rep_date_second_##]초에
           업로드 된 글입니다.
         </div>
+        <PostPermalinkModifiedDatetimeRow />
         <div className={classes("block m-0 p-0 relative font-normal text-xs")}>
           작성자: [##_article_rep_author_##]
         </div>

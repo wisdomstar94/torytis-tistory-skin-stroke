@@ -8,6 +8,7 @@ import { SvgArrowForward } from "../../svgs/svg-arrow-forward/svg-arrow-forward.
 import { SvgShieldLockFilled } from "../../svgs/svg-shield-lock-filled/svg-shield-lock-filled.component";
 import { SwitchButton } from "../../switch-button/switch-button.component";
 import "./posts-normal-permalink-item.scss";
+import { PostPermalinkModifiedDatetimeRow } from "../post-permalink-modified-datetime-row/post-permalink-modified-datetime-row.component";
 
 export function PostsNormalPermalinkItem() {
   return (
@@ -66,6 +67,7 @@ export function PostsNormalPermalinkItem() {
           [##_article_rep_date_minute_##]분 [##_article_rep_date_second_##]초에
           업로드 된 글입니다.
         </div>
+        <PostPermalinkModifiedDatetimeRow />
         <div className={classes("block m-0 p-0 relative font-normal text-xs")}>
           작성자: [##_article_rep_author_##]
         </div>

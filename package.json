@@ -1,6 +1,6 @@
 {
   "name": "torytis-tistory-skin-stroke",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"torytis dev\" \"wait-on http://127.0.0.1:3000 && node ./script/watch.mjs\"",
