@@ -320,6 +320,43 @@ pre > code {
   }
 }
 
+.tag-row {
+  display: block;
+  margin: 0;
+  margin-bottom: 4px;
+  padding: 0;
+  position: relative;
+  font-size: 0;
+}
+.tag-row > a {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  word-break: keep-all;
+  color: #000;
+  font-size: 12px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  text-decoration: none;
+  border-radius: 100px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 4px 12px;
+}
+.tag-row > a::before {
+  content: "#";
+}
+
+#tt-body-index {
+  .tag-row {
+    margin-bottom: 0;
+
+    > a:first-child {
+      display: none;
+    }
+  }
+}
+
 // 다크모드 스타일 셋팅
 .dark {
   #tt-body-page {

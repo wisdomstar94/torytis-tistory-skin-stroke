@@ -73,7 +73,7 @@ export function PostsNormalIndexItem() {
           >
             <div
               className={classes(
-                "block m-0 mb-0.5 p-0 relative text-sm font-normal"
+                "w-full block m-0 mb-0.5 p-0 relative text-sm font-normal"
               )}
             >
               {`[ [##_article_rep_category_##] ]`}
@@ -98,12 +98,23 @@ export function PostsNormalIndexItem() {
                 [##_article_rep_date_year_##]-[##_article_rep_date_month_##]-[##_article_rep_date_day_##]&nbsp;[##_article_rep_date_hour_##]:[##_article_rep_date_minute_##]:[##_article_rep_date_second_##]
               </span>
             </div>
-            <div
-              className={classes(
-                "w-full block m-0 p-0 relative text-sm whitespace-pre-line break-all overflow-hidden max-h-[120px]"
-              )}
-            >
-              [##_article_rep_summary_##]
+
+            <div className={classes("w-full flex flex-col gap-4 relative")}>
+              <div
+                className={classes(
+                  "w-full block m-0 p-0 relative text-sm whitespace-pre-line break-all overflow-hidden max-h-[120px]"
+                )}
+              >
+                [##_article_rep_summary_##]
+              </div>
+              <div
+                className={classes(
+                  "w-full block m-0 p-0 relative text-sm whitespace-pre-line break-all overflow-hidden",
+                  "tag-row"
+                )}
+              >
+                <s_tag_label>[##_tag_label_rep_##]</s_tag_label>
+              </div>
             </div>
           </div>
           <PostsIndexItemOverlayContent />
