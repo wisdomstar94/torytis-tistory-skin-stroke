@@ -1,3 +1,4 @@
+import { Var } from "@/consts/torytis-variable-object";
 import { classes } from "../../../functions/common/common";
 import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { SvgPhotoOff } from "../../svgs/svg-photo-off/svg-photo-off.component";
@@ -87,7 +88,12 @@ export function PostsNormalIndexItem() {
                 [##_article_rep_title_##]
               </span>
             </div>
-            <div className={classes("w-full block m-0 mb-4 p-0 relative")}>
+            <div
+              className={classes(
+                "w-full block m-0 mb-4 p-0 relative",
+                "post_index_item_tag_on_off_flag_off:post_index_item_summary_on_off_flag_off:mb-0"
+              )}
+            >
               <span
                 className={classes(
                   "index-item-datetime-text",
@@ -99,10 +105,17 @@ export function PostsNormalIndexItem() {
               </span>
             </div>
 
-            <div className={classes("w-full flex flex-col gap-4 relative")}>
+            <div
+              className={classes(
+                "w-full flex flex-col gap-4 relative",
+                "post_index_item_summary_on_off_flag_off:gap-0",
+                "post_index_item_tag_on_off_flag_off:gap-0"
+              )}
+            >
               <div
                 className={classes(
-                  "w-full block m-0 p-0 relative text-sm whitespace-pre-line break-all overflow-hidden max-h-[120px]"
+                  "w-full block m-0 p-0 relative text-sm whitespace-pre-line break-all overflow-hidden max-h-[120px]",
+                  "post_index_item_summary_on_off_flag_off:hidden"
                 )}
               >
                 [##_article_rep_summary_##]
@@ -110,6 +123,7 @@ export function PostsNormalIndexItem() {
               <div
                 className={classes(
                   "w-full block m-0 p-0 relative text-sm whitespace-pre-line break-all overflow-hidden",
+                  "post_index_item_tag_on_off_flag_off:hidden",
                   "tag-row"
                 )}
               >

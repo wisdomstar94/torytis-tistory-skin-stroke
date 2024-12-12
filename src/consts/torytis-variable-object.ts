@@ -25,5 +25,7 @@ export const Var = {
 	"[##_var_cover_list_max_col_count_##]": "[##_var_cover_list_max_col_count_##]",
 	"[##_var_cover_list_half_max_col_count_##]": "[##_var_cover_list_half_max_col_count_##]",
 	"[##_var_total_list_max_col_count_##]": "[##_var_total_list_max_col_count_##]",
+	"[##_var_post_index_item_summary_on_off_flag_##]": "[##_var_post_index_item_summary_on_off_flag_##]",
+	"[##_var_post_index_item_tag_on_off_flag_##]": "[##_var_post_index_item_tag_on_off_flag_##]",
 	"[##_var_blog_screen_max_width_##]": "[##_var_blog_screen_max_width_##]",
 };

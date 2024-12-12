@@ -133,7 +133,9 @@ export default function App() {
         data-skin-version={version}
         data-post-image-viewer-type={Var["[##_var_post_image_viewer_type_##]"]}
         className={classes(
-          "!transition-colors !duration-300 bg-white dark:bg-black dark-c:bg-black"
+          "!transition-colors !duration-300 bg-white dark:bg-black dark-c:bg-black",
+          Var["[##_var_post_index_item_summary_on_off_flag_##]"],
+          Var["[##_var_post_index_item_tag_on_off_flag_##]"]
         )}
       >
         <s_t3>

@@ -344,6 +344,36 @@
         ]]></option>
         <default>total_list_max_col_count_4</default>
       </variable>
+      <variable>
+        <name>post_index_item_summary_on_off_flag</name>
+        <label>
+          <![CDATA[ 글 목록 아이템 미리보기 내용 표시 여부 ]]>
+        </label>
+        <description>글 목록 아이템 미리보기 내용 표시 여부</description>
+        <type>SELECT</type>
+        <option><![CDATA[
+          [
+            {"name":"post_index_item_summary_on_off_flag_on", "label":"표시", "value":"post_index_item_summary_on_off_flag_on"},
+            {"name":"post_index_item_summary_on_off_flag_off", "label":"미표시", "value":"post_index_item_summary_on_off_flag_off"}
+          ]
+        ]]></option>
+        <default>post_index_item_summary_on_off_flag_on</default>
+      </variable>
+      <variable>
+        <name>post_index_item_tag_on_off_flag</name>
+        <label>
+          <![CDATA[ 글 목록 아이템 태그 표시 여부 ]]>
+        </label>
+        <description>글 목록 아이템 태그 표시 여부</description>
+        <type>SELECT</type>
+        <option><![CDATA[
+          [
+            {"name":"post_index_item_tag_on_off_flag_on", "label":"표시", "value":"post_index_item_tag_on_off_flag_on"},
+            {"name":"post_index_item_tag_on_off_flag_off", "label":"미표시", "value":"post_index_item_tag_on_off_flag_off"}
+          ]
+        ]]></option>
+        <default>post_index_item_tag_on_off_flag_on</default>
+      </variable>
     </variablegroup>
     <variablegroup name="블로그 옵션">
       <variable>
