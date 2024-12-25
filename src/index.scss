@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  overscroll-behavior-x: none;
+  overflow-x: hidden;
+}
+
 .hljs-ln-line.hljs-ln-numbers {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -342,6 +348,10 @@ pre > code {
   margin-right: 8px;
   margin-bottom: 8px;
   padding: 4px 12px;
+
+  &:not([href^="/tag"]) {
+    display: none !important;
+  }
 }
 .tag-row > a::before {
   content: "#";
@@ -349,11 +359,7 @@ pre > code {
 
 #tt-body-index {
   .tag-row {
-    margin-bottom: 0;
-
-    > a:first-child {
-      display: none;
-    }
+    margin-bottom: 0 !important;
   }
 }
 
