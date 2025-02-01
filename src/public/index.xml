@@ -385,6 +385,22 @@
         <type>STRING</type>
         <default>1920</default>
       </variable>
+
+      <variable>
+        <name>main_layout_order_type</name>
+        <label>
+          <![CDATA[ 메인 레이아웃 순서 ]]>
+        </label>
+        <description>메인 레이아웃 순서</description>
+        <type>SELECT</type>
+        <option><![CDATA[
+          [
+            {"name":"main_layout_order_type_normal", "label":"사이드바 - 컨텐츠 - 목차 순", "value":"main_layout_order_type_normal"},
+            {"name":"main_layout_order_type_reverse", "label":"목차 - 컨텐츠 - 사이드바 순", "value":"main_layout_order_type_reverse"}
+          ]
+        ]]></option>
+        <default>main_layout_order_type_normal</default>
+      </variable>
     </variablegroup>
   </variables>
   <cover>

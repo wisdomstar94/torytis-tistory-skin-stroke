@@ -135,7 +135,8 @@ export default function App() {
         className={classes(
           "!transition-colors !duration-300 bg-white dark:bg-black dark-c:bg-black",
           Var["[##_var_post_index_item_summary_on_off_flag_##]"],
-          Var["[##_var_post_index_item_tag_on_off_flag_##]"]
+          Var["[##_var_post_index_item_tag_on_off_flag_##]"],
+          Var["[##_var_main_layout_order_type_##]"]
         )}
       >
         <s_t3>

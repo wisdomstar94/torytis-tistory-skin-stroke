@@ -8,7 +8,8 @@ export function PostsIndexContainer() {
         className={classes(
           "posts-index-container",
           "hidden tt-body-page:hidden tt-body-page:lg:block",
-          "w-[320px] h-screen absolute top-0 right-0"
+          "w-[320px] h-screen absolute top-0",
+          "right-0 main_layout_order_type_reverse:right-auto main_layout_order_type_reverse:left-0"
         )}
       >
         {/* background_color_at_post_index */}
@@ -43,6 +44,8 @@ export function PostsIndexContainer() {
             "scrollbar-w-1",
             "hidden tt-body-page:hidden tt-body-page:lg:block",
 
+            "dark:main_layout_order_type_reverse:border-r-white",
+            "main_layout_order_type_reverse:border-r-black main_layout_order_type_reverse:border-r",
             "!transition-colors !duration-300 bg-white dark:bg-black dark-c:bg-black",
             "text-black dark:text-white dark-c:text-white",
             "border-l-black dark:border-l-white dark-c:border-l-white",

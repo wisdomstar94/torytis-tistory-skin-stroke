@@ -130,6 +130,11 @@ const variantPlugin: PluginCreator = ({ addVariant }) => {
     ".post_index_item_tag_on_off_flag_off&",
   ]);
 
+  addVariant("main_layout_order_type_reverse", [
+    ".main_layout_order_type_reverse &",
+    ".main_layout_order_type_reverse&",
+  ]);
+
   addVariant("active", ".active&");
   addVariant("parent-1-active", ".active > &");
   addVariant("parent-2-active", ".active > * > &");

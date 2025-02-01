@@ -28,4 +28,5 @@ export const Var = {
 	"[##_var_post_index_item_summary_on_off_flag_##]": "[##_var_post_index_item_summary_on_off_flag_##]",
 	"[##_var_post_index_item_tag_on_off_flag_##]": "[##_var_post_index_item_tag_on_off_flag_##]",
 	"[##_var_blog_screen_max_width_##]": "[##_var_blog_screen_max_width_##]",
+	"[##_var_main_layout_order_type_##]": "[##_var_main_layout_order_type_##]",
 };

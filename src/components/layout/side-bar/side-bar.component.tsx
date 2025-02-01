@@ -22,7 +22,12 @@ export function SideBar() {
       />
 
       {/* side bar */}
-      <div className={classes("absolute w-full mini:w-[320px]")}>
+      <div
+        className={classes(
+          "absolute w-full mini:w-[320px]",
+          "main_layout_order_type_reverse:right-0"
+        )}
+      >
         {/* background_color_at_sidebar */}
         <s_if_var_background_color_at_sidebar_light
           dangerouslySetInnerHTML={{
@@ -52,9 +57,14 @@ export function SideBar() {
           id="common-side-bar"
           className={classes(
             "side-bar",
-            "h-screen block fixed top-0 z-[3] overflow-y-scroll border-r border-r-black box-border scrollbar-w-1",
+            "h-screen block fixed top-0 z-[3] overflow-y-scroll box-border scrollbar-w-1",
+            "border-r border-r-black",
+            "main_layout_order_type_reverse:border-l main_layout_order_type_reverse:border-l-black",
+            "main_layout_order_type_reverse:border-l-black dark:main_layout_order_type_reverse:border-l-white",
             "transition-all-300ms lg:transition-none",
             "-translate-x-[320px] lg:translate-x-0",
+            "main_layout_order_type_reverse:-translate-x-0 main_layout_order_type_reverse:lg:translate-x-0",
+            "main_layout_order_type_reverse:translate-x-[320px] main_layout_order_type_reverse:lg:translate-x-0",
             "my-show:translate-x-0",
             "w-full--40px mini:w-[320px]",
 

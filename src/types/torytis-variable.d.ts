@@ -55,5 +55,7 @@ declare namespace JSX {
 		's_not_var_post_index_item_tag_on_off_flag': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 		's_if_var_blog_screen_max_width': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 		's_not_var_blog_screen_max_width': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		's_if_var_main_layout_order_type': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		's_not_var_main_layout_order_type': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 	}
 }
