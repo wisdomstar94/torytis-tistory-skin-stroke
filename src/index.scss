@@ -449,15 +449,24 @@ pre > code {
         > blockquote {
           &[data-ke-style="style1"] {
             color: #ccc !important;
+            > p {
+              color: #ccc !important;
+            }
           }
 
           &[data-ke-style="style2"] {
             color: #ccc !important;
+            > p {
+              color: #ccc !important;
+            }
           }
 
           &[data-ke-style="style3"] {
             background-color: transparent;
             color: #ccc !important;
+            > p {
+              color: #ccc !important;
+            }
           }
         }
 
