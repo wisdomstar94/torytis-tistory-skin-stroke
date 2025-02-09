@@ -29,4 +29,9 @@ export const Var = {
 	"[##_var_post_index_item_tag_on_off_flag_##]": "[##_var_post_index_item_tag_on_off_flag_##]",
 	"[##_var_blog_screen_max_width_##]": "[##_var_blog_screen_max_width_##]",
 	"[##_var_main_layout_order_type_##]": "[##_var_main_layout_order_type_##]",
+	"[##_var_blog_index_post_item_content_summary_minimum_height_##]": "[##_var_blog_index_post_item_content_summary_minimum_height_##]",
+	"[##_var_blog_index_post_item_content_summary_maximum_height_##]": "[##_var_blog_index_post_item_content_summary_maximum_height_##]",
+	"[##_var_blog_index_post_item_thumbnail_img_minimum_height_##]": "[##_var_blog_index_post_item_thumbnail_img_minimum_height_##]",
+	"[##_var_blog_index_post_item_thumbnail_img_maximum_height_##]": "[##_var_blog_index_post_item_thumbnail_img_maximum_height_##]",
+	"[##_var_blog_index_post_item_display_tag_max_count_##]": "[##_var_blog_index_post_item_display_tag_max_count_##]",
 };

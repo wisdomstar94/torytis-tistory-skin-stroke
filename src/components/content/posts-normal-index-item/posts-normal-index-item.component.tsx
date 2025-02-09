@@ -1,8 +1,5 @@
-import { Var } from "@/consts/torytis-variable-object";
 import { classes } from "../../../functions/common/common";
-import { CallJavascript } from "../../call-javascript-function/call-javascript-function.component";
 import { SvgPhotoOff } from "../../svgs/svg-photo-off/svg-photo-off.component";
-import { SvgShieldLockFilled } from "../../svgs/svg-shield-lock-filled/svg-shield-lock-filled.component";
 import { PostsIndexItemOverlayContent } from "../posts-index-item-overlay-content/posts-index-item-overlay-content.component";
 
 export function PostsNormalIndexItem() {
@@ -27,6 +24,7 @@ export function PostsNormalIndexItem() {
         >
           <div
             className={classes(
+              "post-index-item-thumbnail-img-area",
               "w-full block aspect-video relative",
               "min-h-[180px] total_list_max_col_count_5:min-h-[160px] total_list_max_col_count_6:min-h-[140px] total_list_max_col_count_7:min-h-[130px] total_list_max_col_count_8:min-h-[120px]",
               "border-b bg-no-repeat bg-center bg-contain overflow-hidden",
@@ -114,6 +112,7 @@ export function PostsNormalIndexItem() {
             >
               <div
                 className={classes(
+                  "post-index-item-content-summary-area",
                   "w-full block m-0 p-0 relative text-sm whitespace-pre-line break-all overflow-hidden max-h-[120px]",
                   "post_index_item_summary_on_off_flag_off:hidden"
                 )}

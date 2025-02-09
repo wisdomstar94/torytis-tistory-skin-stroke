@@ -401,6 +401,51 @@
         ]]></option>
         <default>main_layout_order_type_normal</default>
       </variable>
+
+      <variable>
+        <name>blog_index_post_item_content_summary_minimum_height</name>
+        <label>
+          <![CDATA[ 블로그 index 글 아이템의 글 요약 영역 최소 높이 (px) ]]>
+        </label>
+        <description>블로그 index 글 아이템의 글 요약 영역 최소 높이 (px)</description>
+        <type>STRING</type>
+      </variable>
+
+      <variable>
+        <name>blog_index_post_item_content_summary_maximum_height</name>
+        <label>
+          <![CDATA[ 블로그 index 글 아이템의 글 요약 영역 최대 높이 (px) ]]>
+        </label>
+        <description>블로그 index 글 아이템의 글 요약 영역 최대 높이 (px)</description>
+        <type>STRING</type>
+      </variable>
+
+      <variable>
+        <name>blog_index_post_item_thumbnail_img_minimum_height</name>
+        <label>
+          <![CDATA[ 블로그 index 글 아이템의 썸네일 이미지 영역 최소 높이 (px) ]]>
+        </label>
+        <description>블로그 index 글 아이템의 썸네일 이미지 영역 최소 높이 (px)</description>
+        <type>STRING</type>
+      </variable>
+
+      <variable>
+        <name>blog_index_post_item_thumbnail_img_maximum_height</name>
+        <label>
+          <![CDATA[ 블로그 index 글 아이템의 썸네일 이미지 영역 최대 높이 (px) ]]>
+        </label>
+        <description>블로그 index 글 아이템의 썸네일 이미지 영역 최대 높이 (px)</description>
+        <type>STRING</type>
+      </variable>
+
+      <variable>
+        <name>blog_index_post_item_display_tag_max_count</name>
+        <label>
+          <![CDATA[ 블로그 index 글 아이템의 태그 표시 최대 갯수 (원하는 갯수에 2를 더해서 입력해주세요.) ]]>
+        </label>
+        <description>블로그 index 글 아이템의 태그 표시 최대 갯수 (원하는 갯수에 2를 더해서 입력해주세요.)</description>
+        <type>STRING</type>
+      </variable>
     </variablegroup>
   </variables>
   <cover>

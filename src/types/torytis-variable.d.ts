@@ -57,5 +57,15 @@ declare namespace JSX {
 		's_not_var_blog_screen_max_width': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 		's_if_var_main_layout_order_type': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 		's_not_var_main_layout_order_type': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		's_if_var_blog_index_post_item_content_summary_minimum_height': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		's_not_var_blog_index_post_item_content_summary_minimum_height': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		's_if_var_blog_index_post_item_content_summary_maximum_height': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		's_not_var_blog_index_post_item_content_summary_maximum_height': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		's_if_var_blog_index_post_item_thumbnail_img_minimum_height': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		's_not_var_blog_index_post_item_thumbnail_img_minimum_height': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		's_if_var_blog_index_post_item_thumbnail_img_maximum_height': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		's_not_var_blog_index_post_item_thumbnail_img_maximum_height': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		's_if_var_blog_index_post_item_display_tag_max_count': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+		's_not_var_blog_index_post_item_display_tag_max_count': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
 	}
 }
