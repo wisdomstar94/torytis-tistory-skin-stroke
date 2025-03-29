@@ -1,4 +1,4 @@
-import "./index.scss";
+import "./index.css";
 import "swiper/css";
 import { TopBar } from "./components/layout/top-bar/top-bar.component";
 import { SideBar } from "./components/layout/side-bar/side-bar.component";

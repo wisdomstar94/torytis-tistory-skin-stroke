@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "./tailwind-settings.css";
+@plugin "./tailwind-plugin.ts";
 
 html,
 body {
@@ -94,21 +94,12 @@ pre > code {
       }
 
       > blockquote {
-        // &[data-ke-style='style1'] {
-        //   color: #ccc !important;
-        // }
-
         &[data-ke-style="style2"] {
           color: #999;
           border-left: 4px solid #cacaca;
           padding: 4px 12px;
           position: relative;
         }
-
-        // &[data-ke-style='style3'] {
-        //   background-color: transparent;
-        //   color: #ccc !important;
-        // }
       }
 
       > table {
@@ -127,7 +118,6 @@ pre > code {
           }
         }
 
-        // 테이블 스타일이 없는 경우
         &:not([data-ke-style="style1"]):not([data-ke-style="style2"]):not(
             [data-ke-style="style3"]
           ):not([data-ke-style="style4"]):not([data-ke-style="style5"]):not(
@@ -173,13 +163,6 @@ pre > code {
                   border-right: 1px solid #ccc;
                 }
               }
-
-              // &:first-child {
-              //   > td {
-              //     border-top: 1px solid #ccc;
-              //     border-left: 1px solid #ccc;
-              //   }
-              // }
             }
           }
         }
@@ -259,12 +242,10 @@ pre > code {
           background-color: transparent;
 
           table {
-            // color: #fff !important;
             font-size: 12ppx;
 
             td {
               > span {
-                // color: #fff !important;
                 margin: 0;
               }
             }
@@ -296,7 +277,6 @@ pre > code {
       }
     }
 
-    // 유튜브 영상 수평 정렬
     &.post_youtube_horizontal_align_left {
       .contents_style {
         figure[data-video-host="youtube"] {
@@ -363,7 +343,6 @@ pre > code {
   }
 }
 
-// 다크모드 스타일 셋팅
 .dark {
   #tt-body-page {
     .another_category {
@@ -425,9 +404,6 @@ pre > code {
             table {
               td {
                 color: #eee;
-                // > span {
-                //   color: #fff !important;
-                // }
 
                 &.hljs-ln-numbers {
                   color: #fff;
@@ -485,7 +461,6 @@ pre > code {
             background-color: transparent;
             color: #fff;
 
-            // 테이블 스타일이 없는 경우
             &:not([data-ke-style="style1"]):not([data-ke-style="style2"]):not(
                 [data-ke-style="style3"]
               ):not([data-ke-style="style4"]):not([data-ke-style="style5"]):not(
@@ -503,7 +478,6 @@ pre > code {
               border-left: 1px solid #ccc;
             }
 
-            // 첫번째 행의 아래줄에만 강조되어있는 스타일
             &[data-ke-style="style1"],
             &[data-ke-style="style2"],
             &[data-ke-style="style3"] {
@@ -683,10 +657,6 @@ pre > code {
   > span {
     display: inline-block;
   }
-  // > span {
-  //   margin-left: 0;
-  //   margin-right: 0;
-  // }
 }
 
 #chartdiv {
