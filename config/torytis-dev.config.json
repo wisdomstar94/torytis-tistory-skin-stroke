@@ -167,7 +167,11 @@
         },
         {
           "type": "Codeblock",
-          "values": ["function main() {", "  console.log(\"안녕하세요!\");", "}"]
+          "values": [
+            "function main() {",
+            "  console.log(\"안녕하세요!\");",
+            "}"
+          ]
         },
         {
           "type": "H4",
@@ -260,6 +264,7 @@
   },
   "skin_setting_variables": {
     "total_list_max_col_count": "total_list_max_col_count_4",
-    "blog_screen_max_width": "1660"
+    "blog_screen_max_width": "1660",
+    "post_index_item_layout_type": "post_index_item_layout_type_row"
   }
 }

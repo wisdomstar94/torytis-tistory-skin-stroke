@@ -27,6 +27,8 @@ export function Posts() {
             "md:total_list_max_col_count_2:grid-cols-2 md:total_list_max_col_count_3:grid-cols-2 md:total_list_max_col_count_4:grid-cols-2 md:total_list_max_col_count_5:grid-cols-2 md:total_list_max_col_count_6:grid-cols-4 md:total_list_max_col_count_7:grid-cols-4 md:total_list_max_col_count_8:grid-cols-4",
             "xl:total_list_max_col_count_1:grid-cols-1 xl:total_list_max_col_count_2:grid-cols-2 xl:total_list_max_col_count_3:grid-cols-3 xl:total_list_max_col_count_4:grid-cols-4 xl:total_list_max_col_count_5:grid-cols-5 xl:total_list_max_col_count_6:grid-cols-6 xl:total_list_max_col_count_7:grid-cols-7 xl:total_list_max_col_count_8:grid-cols-8",
 
+            "post_index_item_layout_type_row:md:grid-cols-1",
+
             "tt-body-page:!grid-cols-1"
           )}
         >

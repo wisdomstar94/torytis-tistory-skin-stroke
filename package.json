@@ -1,6 +1,6 @@
 {
   "name": "torytis-tistory-skin-stroke",
-  "version": "1.2.15",
+  "version": "1.2.16",
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"torytis dev\" \"wait-on http://127.0.0.1:3000 && node ./script/watch.mjs\"",
@@ -13,21 +13,21 @@
     "package:update": "ncu -u"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.0.17",
-    "@tailwindcss/vite": "^4.0.17",
+    "@tailwindcss/postcss": "^4.1.3",
+    "@tailwindcss/vite": "^4.1.3",
     "@types/d3": "^7",
     "@types/express": "^5.0.1",
-    "@types/node": "^22.13.14",
+    "@types/node": "^22.14.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@wisdomstar94/torytis": "^1.5.8",
+    "@wisdomstar94/torytis": "^1.5.9",
     "autoprefixer": "^10.4.21",
     "axios": "^1",
     "concurrently": "^9.1.2",
     "copy-to-clipboard": "^3",
     "npm-check-updates": "^17.1.16",
     "d3": "^7",
-    "express": "^4.21.2",
+    "express": "^5.1.0",
     "fast-xml-parser": "^5",
     "postcss-modules": "^6",
     "react": "^19",
@@ -37,7 +37,7 @@
     "swiper": "^11",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "vite": "^6.2.3",
+    "vite": "^6.2.5",
     "wait-on": "^8.0.3"
   }
 }

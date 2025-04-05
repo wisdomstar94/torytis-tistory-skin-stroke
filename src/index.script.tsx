@@ -600,3 +600,8 @@ function subscribeBodyTag() {
     });
   }
 }
+
+function goToLink(link: string) {
+  location.href = link;
+}
+(window as any).goToLink = goToLink;

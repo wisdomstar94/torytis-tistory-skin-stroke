@@ -374,6 +374,29 @@
         ]]></option>
         <default>post_index_item_tag_on_off_flag_on</default>
       </variable>
+      <variable>
+        <name>post_index_item_layout_type</name>
+        <label>
+          <![CDATA[ 글 목록 레이아웃 ]]>
+        </label>
+        <description>글 목록 레이아웃</description>
+        <type>SELECT</type>
+        <option><![CDATA[
+          [
+            {"name":"post_index_item_layout_type_col", "label":"열(기본 값)", "value":"post_index_item_layout_type_col"},
+            {"name":"post_index_item_layout_type_row", "label":"행", "value":"post_index_item_layout_type_row"}
+          ]
+        ]]></option>
+        <default>post_index_item_layout_type_col</default>
+      </variable>
+      <variable>
+        <name>post_index_item_title_font_size</name>
+        <label>
+          <![CDATA[ 글 목록 아이템 제목 글자 크기 (px) ]]>
+        </label>
+        <description>글 목록 아이템 제목 글자 크기 (px)</description>
+        <type>STRING</type>
+      </variable>
     </variablegroup>
     <variablegroup name="블로그 옵션">
       <variable>

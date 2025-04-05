@@ -119,6 +119,9 @@
 @custom-variant post_index_item_tag_on_off_flag_on (.post_index_item_tag_on_off_flag_on &, .post_index_item_tag_on_off_flag_on&);
 @custom-variant post_index_item_tag_on_off_flag_off (.post_index_item_tag_on_off_flag_off &, .post_index_item_tag_on_off_flag_off&);
 
+@custom-variant post_index_item_layout_type_col (.post_index_item_layout_type_col &, .post_index_item_layout_type_col&);
+@custom-variant post_index_item_layout_type_row (.post_index_item_layout_type_row &, .post_index_item_layout_type_row&);
+
 @custom-variant main_layout_order_type_reverse (.main_layout_order_type_reverse &, .main_layout_order_type_reverse&);
 
 @custom-variant active (.active&);

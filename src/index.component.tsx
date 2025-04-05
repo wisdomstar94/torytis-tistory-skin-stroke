@@ -126,6 +126,18 @@ export default function App() {
             `,
           }}
         ></s_if_var_background_color_at_blog_dark>
+
+        <s_if_var_post_index_item_title_font_size
+          dangerouslySetInnerHTML={{
+            __html: `
+              <style>
+                #post-index-item-title {
+                  font-size: ${Var["[##_var_post_index_item_title_font_size_##]"]}px !important;
+                }
+              </style>
+            `,
+          }}
+        ></s_if_var_post_index_item_title_font_size>
       </head>
       <body
         id="[##_body_id_##]"
@@ -136,7 +148,8 @@ export default function App() {
           "!transition-colors !duration-300 bg-white dark:bg-black dark-c:bg-black",
           Var["[##_var_post_index_item_summary_on_off_flag_##]"],
           Var["[##_var_post_index_item_tag_on_off_flag_##]"],
-          Var["[##_var_main_layout_order_type_##]"]
+          Var["[##_var_main_layout_order_type_##]"],
+          Var["[##_var_post_index_item_layout_type_##]"]
         )}
       >
         <s_t3>
